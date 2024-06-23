@@ -1,0 +1,27 @@
+\JGWitem{Course M, Nov 2006, \#9}
+A casino has a game that makes payouts at a Poisson rate of 5 per hour and the payout amounts are 1, 2, 3, \ldots, without limt. 
+The probability that any given Payout is equal to $i$ is $1/2^i$. Payouts are independent. 
+
+\medskip
+Calculate the probability that there are no payouts of 1, 2, or 3 in a given 20 minute period. 
+
+\showMC{\begin{description}
+\item[(A)] 0.08 
+\item[(B)] 0.13 
+\item[(C)] 0.18 
+\item[(D)] 0.23 
+\item[(E)] 0.28 
+\end{description}}
+
+
+\leaveit{\bsoln
+The game makes payouts of amount $i$ at a Poisson rate of $\lambda_i$ per hour, where $\lambda_i=5/2^i$. The 
+probability we're looking for is
+\[
+   \left(e^{-\lambda_1/3}\right)\cdot\left(e^{-\lambda_2/3}\right)\cdot\left(e^{-\lambda_3/3}\right) 
+    = e^{-(\lambda_1+\lambda_2+\lambda_3)/3} = e^{-35/24} \approx 0.2326
+\]
+\underline{Ans D}
+
+\esoln}
+

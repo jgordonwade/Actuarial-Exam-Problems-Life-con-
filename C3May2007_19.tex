@@ -1,0 +1,40 @@
+\JGWitem{C3 May 2007, 19}
+For whole life insurance of 1 on (40), you are given: 
+\begin{enumerate}
+\item $i= 0.06 $
+\item $p_{50} = p_{51} = p_{52}$ 
+\item The net premium policy values at durations 10 and 13 are equal.
+\item $\ddot{a}_{50} =10.0 $
+\end{enumerate}
+Calculate $p_{50}$.
+\showMC{\begin{description}
+\item[(A)] 0.942 
+\item[(B)] 0.946 
+\item[(C)] 0.950 
+\item[(D)] 0.954 
+\item[(E)] 0.958 
+\end{description}}
+
+\showsol{\bsoln
+Assuming a level net premium of $\pi$, we have
+\[ _t\!V = \Ax{40+t}-\pi\ax**{40+t} = \left(1-d\ax**{40+t}\right) - \pi\ax**{40+t} = 1+(d+\pi)\ax**{40+t}. \]
+Because the net premium policy values at durations 10 and 13 are equal, we have
+ $_{10}\!V  = _{13}\!V$ means $1+(d+\pi)\ax**{50} = 1+(d+\pi)\ax**{53}$ which means $\underline{\ax**{50}=\ax**{53}}.$
+
+\medskip
+Since $p_{50} = p_{51} = p_{52}$ we have $\px[2]{50}=(\px{50})^2$ and $\px[3]{50}=(\px{50})^3$, so that
+\bears  
+    \ax**{50} &=& 1 + v\px{50}\ax**{51}  \\
+                   &=& 1 + v\px{50}\left(1+v\px{51}\ax**{52} \right) \\
+                   &=& 1 + v\px{50}\left(1+v\px{51}\left[1+v\px{52}\ax**{53} \right]\right) \\
+   \ax**{50}  &=& 1 + v\px{50} + \left(v\px{50}\right)^2 + \left(v\px{50}\right)^3\ax**{53}. 
+\eears
+Since $\ax**{50}=10=\ax**{53},$ the above equation means
+\bears
+   10  &=& 1 + v\px{50} + \left(v\px{50}\right)^2 + 10\left(v\px{50}\right)^3 \\
+   10(1-z^3)  &=& 1 + z + z^2, \quad\quad \text{where z}=v\px{50} \\
+    10(1-z^3) &=& \dfrac{1-z^3}{1-z} + 10z^3 \\
+    10(1-z^3) &=& \dfrac{1-z^3}{1-z} \\
+    10 &=& \dfrac{1}{1-z} \quad\quad\Longrightarrow\quad z=\dfrac{9}{10} \quad\quad\Longrightarrow\quad \px{50}=\dfrac{1.06\cdot 9}{10} = \boxed{0.954.}
+\eears
+\esoln}

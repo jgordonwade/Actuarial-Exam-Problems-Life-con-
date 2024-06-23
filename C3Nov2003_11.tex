@@ -1,0 +1,47 @@
+\JGWitem{Nov 2003, \#11}
+ For a fully discrete whole life insurance of 1000 on (60), the annual 
+benefit premium was calculated using the following:
+\begin{enumerate}
+\item $i=0.06$
+\item $q_{60}=0.01376$
+\item $1000 A_{60}=369.33$
+\item $1000 A_{61}=383.00$.
+\end{enumerate}
+A particular insured is expected to experience a first-year mortality 
+rate ten times the rate used to calculate the annual benefit premium. 
+The expected mortality rates for all other years are the ones originally used.
+
+\medskip
+Calculate the expected loss at issue for this insured, based on the original benefit premium.
+\showMC{\begin{description}
+\item[(A)] 72
+\item[(B)] 86
+\item[(C)] 100
+\item[(D)] 114
+\item[(E)] 128
+\end{description}}
+\showsol{\bsoln 
+The original premium is $1000P_{60}$, 
+\[
+  P_{60}={A_{60}\over \ddot{a}_{60}}={dA_{60}\over 1-A_{60}} 
+  = {(0.06/1.06)\cdot 0.36933\over 1-0.36933} = 0.033148.
+\]
+The whole life benefit APV $A_{60}$ can be written as a one-year term benefit APV
+plus a one-year deferred whole life benefit APV:
+\bears
+  A_{60} &=& A_{60:\halfbox{1}}\!\!\!\!\!\!\!\!\raisebox{0.80ex}{$\scriptscriptstyle 1$}\;\;\;
+             + E_{60}A_{61} \\
+         &=& vq_{60} + v(1-q_{60})A_{61}.
+\eears
+The first-year mortality rate $q_{60}$ is magnified by 10. 
+\bears
+  A_{60}^{{\scriptscriptstyle NEW}} &=& 10 vq_{60} + v(1-10 q_{60})A_{61} \\
+  &=& \bigl(0.1376 + (1-0.1376)\cdot 0.383\bigr)/1.06 = 0.44141 \\
+  \Expect{L}&=& \Bigl(1000+{P\over d}\Bigr)A_{60}^{{\scriptscriptstyle NEW}}
+   - {P\over d} \\
+  &=& (1000+585.62)\cdot 0.44141 - 585.62\\
+  &=& 114.29
+\eears
+\showMC{ANS: \underline{D}}
+
+\esoln}

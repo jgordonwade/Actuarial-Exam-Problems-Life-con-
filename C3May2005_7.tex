@@ -1,0 +1,37 @@
+\JGWitem{May 2005 \#7}
+ $Z$ is the present-value random variable for a whole life insurance of $b$ 
+payable at the moment of death of (x).
+
+\medskip
+You are given:
+\begin{enumerate}
+\item $\delta = 0.04$
+\item $\mu_x(t)=0.02$ for $t\geq 0$.
+\item The single benefit premium for this insurance is equal to $\Var{Z}$.
+\end{enumerate}
+Calculate $b$.
+\showMC{\begin{description}
+\item[(A)] 2.75
+\item[(B)] 3.00
+\item[(C)] 3.25
+\item[(D)] 3.50
+\item[(E)] 3.75
+\end{description}}
+\showsol{\bsoln
+The random variable $Z$ is equal to $bZ_x$, and the single benefit premium is $\Expect{Z}$. We need to equate $\Expect{Z}$ with $\Var{Z}$ and solve for $b$.
+\bears
+   \Expect{Z} &=& \Var{Z} \\ 
+   bA_x &=& b^2\left(\pretwo{A}_x - A_x^2\right) \\
+   b &=& \frac{A_x}{\pretwo{A}_x - A_x^2}
+\eears
+Since the force of interest and force of mortality are both constant, we have
+\bears
+   A_x &=& \frac{\mu}{\mu+\delta} = \frac{1}{3} \\
+   \pretwo{A}_x &=& \frac{\mu}{\mu+2\delta} = \frac{1}{5}, 
+\eears
+so that 
+\[
+  b = \frac{1/3}{1/5 - 1/9} = 15/4= \underline{3.75}
+\]
+\esoln}
+

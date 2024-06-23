@@ -1,0 +1,38 @@
+\JGWitem{Nov 2000, \#8}
+ The number of claims, N, made on an insurance portfolio follows the following
+distribution:
+
+\begin{center}\begin{tabular}{|c|c|}\hline
+$n$ & $\Prob{N=n}$ \\ \hline
+0   & 0.7 \\
+2   & 0.2 \\
+3   & 0.1 \\ \hline
+\end{tabular}\end{center}
+
+
+If a claim occurs, the benefit is 0 or 10 with probability 0.8 and 0.2, respectively.
+The number of claims and the benefit for each claim are independent.
+
+\smallskip
+Calculate the probability that aggregate benefits will exceed expected benefits by more
+than 2 standard deviations.
+\showMC{\begin{quote}\begin{description}
+\item[(A)] 0.02
+\item[(B)] 0.05
+\item[(C)] 0.07
+\item[(D)] 0.09
+\item[(E)] 0.12
+\end{description}\end{quote}}
+
+\showsol{\bsoln
+\bears
+   \Expect {N} &=& 0.7 \\
+   \Var{N} &=& 2^2\cdot 0.2 + 3^2\cdot 0.1 -(0.7)^2 = 1.21 \\
+   \Expect{X} &=& 2 \\
+   \Var{X} &=& 10^2\cdot 0.2 - (2)^2 = 16 \\
+   \Var{S} &=& \Expect{N} \Var{X} + \Expect{X}^2 \Var{N} = 0.7 \cdot 16 + 4 \cdot 1.21= 16.04 \\
+   \Std{S} &=& 4.005 \\
+   \Expect{S} + 2\Std{S} &=& 1.4 + 2\cdot 4.005 = 9.4 \\
+   \Prob{S>9.04} &=& 1-\Prob{S=0}  = 1 - \Bigl( 0.7  + 0.2\cdot 8^2 - 0.1\cdot 8^3\Bigr)  = 0.12.
+\eears
+\esoln}

@@ -1,0 +1,25 @@
+\JGWitem{ C3 May 2007, \#24b }
+You are given that \dsy{\int_0^x \mu_z\,dz = 0.01x^{1.2}} and that $i=0.08,$ 
+calculate the expected present value of a life annuity on (75) paying 100 at the end of each year for four years.
+\showsol{\bsoln
+The expected present value of a life annuity on (75) paying 100 at the end of each year for four years is denoted ``$100\ax{\endow{75}{40}}.$''
+Use the ``current payments'' formula
+\[   \ax**{\endowxn} = \sum_{k=0}^{n-1} v^k\px[k]{x} \]
+which in this case comes to
+\[   \ax**{\endow{75}{4}} = 1 + v\px{75} + v^2\px[2]{75} + v^3\px[3]{75}. \]
+Since
+    \dsy{\px[k]{75} = \dfrac{S_0(75+k)}{S_0(75)}}
+and
+\dsy{S_0(x) = \exp\left(-\int_{z=0}^x \mu_z\,dz\right) = \exp\left(-x^{1.2}/100\right), }
+we have
+\[   \px[k]{75} = \dfrac{\exp\left(-x^{1.2}/100\right)}{\exp\left(-75^{1.2}/100\right)} = \exp\left(-\left[(75+k)^{1.2}-75^{1.2}\right]/100\right), \]
+and so 
+\bears
+%=EXP(-((75+R3)^1.2-75^1.2)/100)
+     \px{75}   &=&= \exp\left( -\left[76^{1.2}-75^{1.2}\right]/100\right) = 0.971907, \\
+     \px[2]{75} &=& \exp\left( -\left[77^{1.2}-75^{1.2}\right]/100\right) = 0.944532, \\
+     \px[3]{75} &=& \exp\left( -\left[78^{1.2}-75^{1.2}\right]/100\right) = 0.917861, \\
+     \px[4]{75} &=& \exp\left( -\left[79^{1.2}-75^{1.2}\right]/100\right) = 0.891876, \\
+     100 \ax**{\endow{75}{3}} &= &100\cdot\left( \dfrac{0.971907}{1.08} + \dfrac{0.944532}{1.08^2} + \dfrac{0.917861}{1.08^2} + \dfrac{0.891876}{1.08^2} \right) =  \boxed{309.40}
+\eears
+\esoln}

@@ -1,0 +1,17 @@
+\JGWitem{C3, Nov 2013 \#1}
+You are given:
+\begin{enumerate}
+\item $A_x=0.30$
+\item $A_{x+n}=0.40$
+\item $\dowify{A_{x:\halfbox{n}}} = 0.35$
+\item $i=0.05$
+\end{enumerate}
+Calculate $a_{x:\halfbox{n}}$
+
+\showsol{\bsoln
+\bears
+   \ax{x} &=& \ax**{x} - 1  = \dfrac{1-\Ax{x}}{d} - 1 = \dfrac{1-0.3}{0.05/1.05} - 1 = 13.7 \\
+   \ax{x+n} &=& \ax**{x+n} - 1  = \dfrac{1-\Ax{x+n}}{d} - 1 = \dfrac{1-0.4}{0.05/1.05} = 11.6 \\
+   \ax{x:\angln} &=& \ax{x} - \pureendowxn\ax{x+n} = 13.7 - 0.35\cdot 11.6 = \boxed{9.64}
+\eears
+\esoln}

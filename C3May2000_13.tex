@@ -1,0 +1,41 @@
+\JGWitem{May 2000, \#13}
+ An investment fund is established to provide benefits on 400 independent 
+lives age x.
+\begin{description}
+\item[(i)] On January 1, 2001, each life is issued a 10-year deferred whole life insurance of 1000, payable at the moment of death.
+\item[(ii)] Each life is subject to a constant force of mortality of 0.05.
+\item[(iii)] The force of interest is 0.07.
+\end{description}
+Calculate the amount needed in the investment fund on January 1, 2001, so that the probability,
+as determined by the normal approximation, is 0.95 that the fund will be sufficient to provide
+these benefits.
+\showMC{\begin{description}
+\item[(A)] 55,300
+\item[(B)] 56,400
+\item[(C)] 58,500
+\item[(D)] 59,300
+\item[(E)] 60,100
+\end{description}}
+\showsol{\bsoln
+For one such policy the mean $1000\times \prepostsub{10|}{\bar{A}}{x}$ is $1000\times \mu e^{-10(\mu+\delta)}/(\mu + \delta)$
+so the mean for the portfolio, call it $\mu$, is 
+\[
+   \mu = 400\times 1000\times \prepostsub{10|}{\bar{A}}{x} = 50,199.035.
+\]
+The variance for one policy is $1000^2\times (\prepostsub{10|\!\!\!\!}{\pretwo{\bar{A}}}{x} - \prepostsub{10|}{\bar{A}}{x}^2)$ so 
+\bears
+   \sigma &=& \sqrt{400\times 1000^2\times (\prepostsub{10|\!\!\!\!}{\pretwo{\bar{A}}}{x} - \prepostsub{10|}{\bar{A}}{x}^2)} \\
+   \sigma &=& 20,000\times \sqrt{\prepostsub{10|\!\!\!\!}{\pretwo{\bar{A}}}{x} - \prepostsub{10|}{\bar{A}}{x}^2} \\
+   &=& 3073.143
+\eears
+Now, approximating the distribution of the payout as a normal random variable, we have:
+\bears
+   \Prob{X\leq\xi} &=& 0.95 \\
+   \Prob{\frac{X-\mu}{\sigma}\leq \frac{\xi-\mu}{\sigma}} &=& 0.95 \\
+   \Prob{Z \leq \frac{\xi-\mu}{\sigma}} &=& 0.95 \\
+   \frac{\xi-\mu}{\sigma} &=& 1.6449 \\
+   \xi &=& \mu + 1.6449\times \sigma = 55254.05.
+\eears
+\esoln}
+
+

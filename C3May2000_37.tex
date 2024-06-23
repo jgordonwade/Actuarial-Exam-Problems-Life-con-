@@ -1,0 +1,23 @@
+\JGWitem{May 2000, \#37}
+Given:
+\begin{enumerate}
+\item $p_k$    denotes the probability that the number of claims equals $k$ for $k = 0,1,2, \ldots.$
+\item $\dfrac{p_n}{p_m} = \dfrac{m!}{n!}$ for $n\geq 0$ and $m\geq 0$. 
+\end{enumerate}
+Using the corresponding zero-modified claim count distribution with   $p^M_0   = 0.1,$ 
+calculate $p^M_1.$
+\showsol{\bsoln
+Special case of  $\dfrac{p_n}{p_m} = \dfrac{m!}{n!}$ is when $m=n-1$ in which case we get
+$\dfrac{p_n}{p_{n-1}} = \dfrac{1}{n},$ so that
+\[   p_n = \dfrac{1}{n} p_{n-1}. \]
+This means that the number of claims follows an (a,b,0) distribution with $a=0$ and $b=1.$
+So the number of claims follows the Poisson(1) distribution.
+
+\medskip
+
+For the corresponding zero-modified claim count distribution, the PMF values $p_k^M$ are given by
+\bears   p_k^M &=& \left(\dfrac{1-p_0^M}{1-p_0}\right)p_k \\
+      &=& \left(\dfrac{1-0.1}{1-e^{-1}}\right)\cdot \dfrac{e^{-1}}{k!} \\
+      p_1^M &=&   \left(\dfrac{1-0.1}{1-e^{-1}}\right)\cdot e^{-1} = \boxed{0.52378.}
+\eears
+\esoln}

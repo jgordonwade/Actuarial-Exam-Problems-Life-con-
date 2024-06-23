@@ -1,0 +1,60 @@
+\JGWitem{May 2005 \#28}
+For a life table with a one-year select period, you are given:
+\begin{enumerate}
+\item 
+\begin{tabular}{|c||c|c|c|c|} \hline 
+ $x$ & $l_{[x]}$ & $d_{[x]}$ & $l_{x+1}$ & $\ecirc_{[x]}$ \\ \hline
+ 80  & 1000    & 90     &        & 8.5 \\ \hline
+ 81  & 920     & 90     &        &  \\ \hline
+\end{tabular}
+\item Deaths are uniformly distributed over each year of age.
+\end{enumerate}
+Calculate $\ecirc_{[81]}$.
+\showMC{\begin{description}
+\item[(A)] 8.0
+\item[(B)] 8.1
+\item[(C)] 8.2
+\item[(D)] 8.3
+\item[(E)] 8.4
+\end{description}}
+\showsol{\bsoln
+Complete the table: 
+\begin{center}\begin{tabular}{|c||c|c|c|c|c|} \hline 
+ $x$ & $l_{[x]}$ & $d_{[x]}$ & $l_{x+1}$ & $p_{[x]}$ & $q_{[x]}$ \\ \hline
+ 80  & 1000     & 90      &  910     & 0.910    & 0.0900  \\ \hline
+ 81  & 920      & 90      &  830     & 0.9022   & 0.0978 \\ \hline
+\end{tabular}\end{center}
+We have
+\bears
+    \ecirc_{[x]} &=& \int_{t=0}^\infty \prepostsub{t}{p}{[x]}\,dt 
+                = \int_{t=0}^1 \prepostsub{t}{p}{[x]}\,dt + \int_{t=1}^\infty \prepostsub{t}{p}{[x]}\,dt 
+                =   \ecirc_{[x]:\halfbox{1}} + \int_{t=0}^\infty \prepostsub{t+1}{p}{[x]}\,dt  \\
+                &=& \ecirc_{[x]:\halfbox{1}}  + \int_{t=0}^\infty p_{[x]}\prepostsub{t}{p}{[x]+1}\,dt  
+                = \ecirc_{[x]:\halfbox{1}}   + p_{[x]}\ecirc_{[x]+1}.
+\eears
+We also have 
+\[
+   \ecirc_{[x]:\halfbox{1}} = \frac{1+p_{[x]}}{2} = \frac{q_{[x]}}{2} + p_{[x]}, 
+\]
+so that
+\[
+    \ecirc_{[x]} = \frac{q_{[x]}}{2} + p_{[x]}\left(1+\ecirc_{[x]+1}\right).
+\]
+
+Using this and the fact that the select period is only one year, we have
+\bear
+     \ecirc_{[x]} &=& \frac{1}{2}q_{[x]}  + p_{[x]}\left(1+\ecirc_{x+1}\right)  \label{May2005_28_1} \\
+   \mbox{ and } \quad 
+     \ecirc_{x+1} &=& \frac{\ecirc_{[x]} - (1+p_{[x]})/2 }{p_{[x]}}.  \label{May2005_28_2}
+\eear
+Using these we have the fact that $\px{81} = \ell_{82}/\ell_{81}=830/910 = .91209$
+
+\bears
+   \ecirc_{81} &=& \frac{\ecirc_{[80]} - (1 + p_{[80]}/2) }{p_{[80]}} = 8.2912, \\
+   \ecirc_{82} &=& \frac{\ecirc_{81}  - (1 + p_{81}/2)}{p_{81}} = 8.0430 \\
+   \ecirc_{[81]} &=& \frac{q_{[81]}}{2} + p_{[81]}\left(1+\ecirc_{82}\right) = 8.206
+\eears
+\showMC{\underline{Ans:} C}
+
+\esoln}
+

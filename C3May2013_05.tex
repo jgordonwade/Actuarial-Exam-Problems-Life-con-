@@ -1,0 +1,30 @@
+\JGWitem{May 2013, \#5}
+You are given the following information:
+\begin{description}
+\bull { \ }
+
+     \begin{center}\begin{tabular}{|c|c|c|} \hline
+      Age & $l_x$ & $l_y$   \\ \hline
+      25 & 920   &       \\ \hline
+      26 & 915   &       \\ \hline
+      27 & 905   & 880   \\ \hline
+      28 &       & 850   \\ \hline
+      29 &       & 810   \\ \hline
+     \end{tabular}\end{center}
+\bull Assume the future lifetimes of an individual (x) age 25 and an individual (y) age 27 are indpendent.
+\end{description}
+Calculate the two-year temporary curtate expectation of the last-survivor status, $e_{\overline{25:27}:\,:\halfbox{2}}$
+\showsol{\bsoln
+  \bears
+     e_{\overline{25:27}:\,:\halfbox{2}} &=& p_{\overline{25:27}} + \prepostsub{2}{p}{\overline{25:27}} \\
+    &=& 1-q_{\overline{25:27}} + 1-\prepostsub{2}{q}{\overline{25:27}} \\
+    &=& 2 - (q_{25})(q_{27}) - (\prepostsub{2}{q}{25})(\prepostsub{2}{q}{27}) \\
+    &=& 2 - \left(1-p_{25}\right)\left(1-p_{27}\right) - \left(1-\prepostsub{2}{p}{25}\right)\left(1-\prepostsub{2}{p}{27}\right) \\
+    &=& 2 - \left(1-\frac{915}{920}\right)\left(1-\frac{850}{880}\right) - \left(1-\frac{905}{920}\right)\left(1-\frac{810}{880}\right)  \\
+    &=&    1.99852
+  \eears
+\esoln}
+
+
+ 
+

@@ -1,0 +1,19 @@
+\JGWitem{Nov 2002, \#39}
+For a whole life insurance of 1 on (x), you are given:
+\begin{enumerate}
+     \item The force of mortaility is $\mu_x(t)$. 
+     \item The benefits are payable at the moment of death.
+     \item $\delta = 0.06$
+     \item ${\bar{A}}_{x} = 0.60$
+\end{enumerate}
+Calculate the revised actuarial present value of this insurance assuming $\mu_x(t)$ is increased by $0.03$ for all $t$, and $\delta$ is decreased by $0.03.$
+\showsol{\bsoln
+\bears
+    0.60 &=& \Ax*{x} = 1-\delta\ax*{x} = 1-0.06\ax*{x} \quad\Longrightarrow\quad \ax*{x}=20/3 \\
+    20/3 &=& \ax*{x} = \int_0^\infty e^{-0.06 t}\px[t]{x}^{\scriptscriptstyle old}\,dt \quad\quad\text{(``current payments'' form)} \\
+     &=& \ax*{x} = \int_0^\infty e^{-\delta_{\scriptscriptstyle old} t}\px[t]{x}^{\scriptscriptstyle old}\,dt \\
+     &=& \ax*{x} = \int_0^\infty e^{-\delta_{\scriptscriptstyle new} t}\px[t]{x}^{\scriptscriptstyle new}\,dt \\
+     {\bar{A}}_{x} &=& 1-0.03\cdot 20/3 = 0.80
+\eears
+\esoln}
+

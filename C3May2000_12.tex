@@ -1,0 +1,43 @@
+\JGWitem{May 2000, \#12}
+ For a certain mortality table, you are given:
+\begin{description}
+\item[(i)] $\mu(80.5) = 0.0202$
+\item[(ii)] $\mu(81.5) = 0.0408$
+\item[(iii)] $\mu(82.5) = 0.0619$
+\item[(iv)] Deaths are uniformly distributed between integral ages.
+\end{description}
+
+Calculate the probability that a person age 80.5 will die within two years.
+\showMC{\begin{description}
+\item[(A)] 0.0782
+\item[(B)] 0.0785
+\item[(C)] 0.0790
+\item[(D)] 0.0796
+\item[(E)] 0.0800
+\end{description}}
+
+\showsol{\bsoln
+ We use
+  \begin{itemize}
+     \item the fact that under UDD, for $x$ integers and $s\in [0,1]$ we have
+         \be \label{C3May2000.12.c} \qx[s]{x} = s\cdot \qx{x} \ee and
+         \be \label{C3May2000.12.b} \mu_{x+s}\dfrac{\qx{x}}{1-s\cdot \qx{x}}, \ee and
+     \item  the principle \be \label{C3May2000.12.a} \qx[s+t]{x} = \qx[s]{x} + (\px[s]{x}(\qx[t]{x+s}) \ee
+          which arises from the fact that $\{T_x\leq s+t\}$ is the union of two disjoint events, $\{T\leq s\}$ and $\{T_x\in(s,s+t]\}.$
+   \end{itemize}
+
+   From (\ref{C3May2000.12.b}) and the given problem data we obtain
+   \[  \qx{80} = 0.02, \quad\quad \qx{81}=0.04, \quad\text{and} \quad \qx{82}=0.06. \]
+   Then
+   \bears
+       \qx[2]{80.5} &=& \qx[0.5]{80.5} + (\px[0.5]{80.5})\cdot ( \qx[1.5]{81}) \quad\text{from (\ref{C3May2000.12.a})} \\
+       \qx[2]{80.5} &=& \qx[0.5]{80.5} + (\px[0.5]{80.5})\cdot \bigl[ \qx{81} + (\px{81})(\qx[0.5]{82})\bigr]
+              \quad\text{from (\ref{C3May2000.12.a}) again.} \\
+   \eears
+   Now $\px[0.5]{80.5} = (\px{80})/(\px[0.5]{80})= (\px{80})/(1-\qx[0.5]{80}) = (\px{80})/(1-0.5\cdot \qx{80})
+   =0.98/0.99$, so 
+   \bears
+          \qx[2]{80.5} &=& \dfrac{0.01}{0.99} + \dfrac{0.98}{0.99}\cdot \left[ 0.04 + (0.96)(0.5\cdot 0.06)\right] \\
+              &=& \boxed{0.07821}
+   \eears
+\esoln}

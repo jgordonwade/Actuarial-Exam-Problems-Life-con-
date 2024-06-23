@@ -1,0 +1,39 @@
+\JGWitem{May 2005 \#5}
+ Kings of Fredonia drink glasses of wine at a Poisson rate of 2 glasses per day.
+
+\medskip
+Assassins attempt to poison the king's wine glasses. There is a 0.01 probability that any
+given glass is poisoned. Drinking poisoned wine is always fatal instantly and is the only
+cause of death.
+
+\medskip
+The occurrences of poison in the glasses and the number of glasses drunk are independent
+events.
+\medskip
+
+Calculate the probability that the current king survives at least 30 days.
+\showMC{\begin{description}
+\item[(A)] 0.40
+\item[(B)] 0.45
+\item[(C)] 0.50
+\item[(D)] 0.55
+\item[(E)] 0.60
+\end{description}}
+
+\leaveit{\bsoln
+The poisoned glasses occur at a Poisson rate of $\lambda=2\times 0.01=1/50$ glasses per day.
+
+\medskip
+Denote by $T$ the wait-time until the first poisoned glass. 
+
+We know that $T\sim\mbox{Exponential}(\lambda)$. We want $\Prob{T>30}$ days. 
+\bears
+ \Prob{T>30} &=& 1-\Prob{T\leq 30} = 1-F(30) = 1-\left[1-e^{-30\lambda}\right] = e^{-0.6} \approx 0.549
+\eears
+\underline{Ans: (D)}
+
+\esoln
+}
+
+
+

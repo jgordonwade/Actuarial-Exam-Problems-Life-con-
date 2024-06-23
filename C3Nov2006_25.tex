@@ -1,0 +1,25 @@
+\JGWitem{Nov 2006, \#25}
+ You are given:
+\begin{enumerate}
+\item The future lifetimes of (40) and (50) are independent.
+\item The survival function for (40) is based on a constant force of mortality, $\mu= 0.05.$
+\item The survival function for (50) follows DeMoivre,s law with $\omega =110.$
+\end{enumerate}
+Calculate the probability that (50) dies within 10 years and dies before (40).
+\showsol{\bsoln
+With (x) being (50) and (y) being (40), they're asking for $\termify{\prepostsub{n}{q}{x:\!y}}$, for which we have:
+\[
+    \termify{\prepostsub{n}{q}{x:\!y}} = \int_{t=0}^n \prepostsub{t}{p}{xy}\,f_{T_x}(t)\,dt.
+\]
+From the given data, we have:
+\bears
+    \prepostsub{t}{p}{40} &=& e^{-0.05t} \\
+    \prepostsub{t}{p}{50} &=& \frac{60-t}{60} \\
+    \mu_{50}(t) &=& \frac{1}{60-t}.
+\eears
+So, 
+\[
+    \termify{\prepostsub{n}{q}{x:\!y}} = \int_{t=0}^{10} \dfrac{e^{-0.05t}}{60}\,dt = 0.13115.
+\]
+\esoln}
+    

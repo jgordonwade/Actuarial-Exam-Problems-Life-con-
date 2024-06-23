@@ -1,0 +1,24 @@
+\JGWitem{C3 Nov 2014 \#03} % LTAM Sample Q's (Nov 2019) \#8.14
+Patients are classified as Sick (S), Critical (C), or Discharged (D). Transitions occur daily according to the following Markov transition matrix:
+\[ \begin{array}{c} \text{(S)}  \\  \text{(C)} \\  \text{(D)} \end{array} \left[\begin{array}{ccc} 0.60 & 0.20 & 0.20\\ 0.10 & 0.50 & 0.40 \\ 0.00 & 0.00& 1.00 \end{array}\right]. \]
+Calculate the probability that a patient who is classified as Sick today will be classified as Sick three days later.
+\showsol{\bsoln
+  \[  \left[\begin{array}{ccc} 0.60 & 0.20 & 0.20\\ 0.10 & 0.50 & 0.40 \\ 0.00 & 0.00& 1.00 \end{array}\right]^3 
+       = \left[\begin{array}{rrr}0.25 & 0.186 & 0.564 \\0.093 & 0.157 & 0.75 \\0 & 0 & 1\end{array}\right]
+  \]
+  so the probability that a patient who is classified as Sick today will be classified as Sick three days later is $\boxed{0.25}$ 
+
+  \medskip
+  Or another way:
+  \begin{center}\begin{tabular}{cr} \rule{30pt}{0pt} Path \rule{30pt}{0pt}& ${\rm Prob}\{\text{Path}\}$  \\ \hline
+  \rule{0pt}{22pt}$\text{S}\rightarrow\text{S}\rightarrow{S}\rightarrow{S}$ & $0.6^3 = 0.216 $ \\
+  \rule{0pt}{22pt}$\text{S}\rightarrow\text{S}\rightarrow{C}\rightarrow{S}$ & $0.6\cdot 0.2\cdot 0.1 = 0.012 $ \\
+  \rule{0pt}{22pt}$\text{S}\rightarrow\text{C}\rightarrow{S}\rightarrow{S}$ & $0.2\cdot 0.1\cdot 0.6 = 0.012 $ \\
+  \rule{0pt}{22pt}$\text{S}\rightarrow\text{C}\rightarrow{C}\rightarrow{S}$ & $0.2\cdot 0.5\cdot 0.1 = 0.01 $ \\
+   \hline \rule{0pt}{14pt}\rule{80pt}{0pt} Sum: & 0.25
+\end{tabular}\end{center}
+
+
+\esoln}
+%  Q=[ 0.60  0.20  0.20; 0.10  0.50  0.40 ; 0.00  0.00 1.00]
+  

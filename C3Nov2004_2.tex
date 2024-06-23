@@ -1,0 +1,28 @@
+\JGWitem{Nov 2004, \#2}
+For a group of individuals all age x, you are given:
+\begin{enumerate}
+\item 25\% are smokers (s); 75\% are nonsmokers (ns).
+\item \  \begin{center}\begin{tabular}{ccc} $k$ & $q_{x+k}^{s}$ & $q_{x+k}^{ns}$ \\ \hline
+        0 & 0.10 & 0.05 \\ 
+        1  & 0.20 & 0.10 \\ 
+        2 & 0.30 & 0.15 
+\end{tabular}\end{center}
+\item $i=0.02$.
+\end{enumerate}
+Calculate $1000\,\termify{A_{x:\halfbox{2}}}$ for an individual chosen at random from this group.
+\showsol{\bsoln
+    \bears      
+         \termify{A_{x:\halfbox{2}}} &=& v\prepostsub{0|}{q}{x} + v^2\prepostsub{1|}{q}{x} 
+          = \dfrac{q_{x}}{1.02} + \dfrac{(1-q_{x})q_{x+1}}{1.02^2} 
+    \eears
+ \bears
+      \mbox{Smokers: \ \ } \termify{A_{x:\halfbox{2}}} = \dfrac{0.10}{1.02} + \dfrac{(0.90)0.20}{1.02^2}  &=& 0.27105, \\
+      \mbox{Non-smokers: \ \ } \termify{A_{x:\halfbox{2}}} = \dfrac{0.05}{1.02} + \dfrac{(0.95)0.10}{1.02^2}  &=& 0.14033 \\
+      \\ 
+       \mbox{25-75 weighting: \ \ } 1000\,\termify{A_{x:\halfbox{2}}} = (0.25)\cdot 0.27105 + (0.75)\cdot 0.14033 &=& \boxed{0.17301}
+  \eears
+
+
+\esoln}
+
+     

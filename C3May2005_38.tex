@@ -1,0 +1,47 @@
+\JGWitem{May 2005 \#38}
+ A group of 1000 lives each age 30 sets up a fund to pay 1000 at the end of the first year for
+each member who dies in the first year, and 500 at the end of the second year for each
+member who dies in the second year. Each member pays into the fund an amount equal to
+the single benefit premium for a special 2-year term insurance, with:
+\begin{enumerate}
+\item Benefits:
+  \begin{center}\begin{tabular}{c|c}
+    $k$ & $b_{k+1}$ \\ \hline
+    0 & 1000 \\
+    1 & 500 
+  \end{tabular}\end{center}
+\item Mortality follows the ILT
+\item $i = 0.06$
+\end{enumerate}
+The actual experience of the fund is as follows:
+  \begin{center}\begin{tabular}{ccc}
+   $k$ & Interest Rate Earned & Number of Deaths \\ \hline
+   0 & 0.070 & 1 \\
+   1 & 0.069 & 1 
+  \end{tabular}\end{center}
+Calculate the difference, at the end of the second year, between the expected size of the fund
+as projected at time 0 and the actual fund.
+\showsol{\bsoln
+From the tables we have $\qx{30}=0.00152894$ and $\qx{31}=0.00160886$,
+so that
+$\qx[0|]{30}=0.00152894$, and $\qx[1|]{30} = (1-0.00152894)\cdot 0.00160886 = 0.00160640.$
+So the EPV of th insurance is
+\[   \dfrac{1000}{1.06}\cdot  0.00152894 + \dfrac{500}{1.06^2} \cdot 0.00160640 = 2.15724,\]
+so the total amount collected is $\$2157.24$. The expected amount of this remaining after 2 years is zero.
+
+
+In the first year this amount grows to $\$2157.24\cdot 1.07=2308.25$ and then \$1,000 is removed leaving \$1308.25.
+
+In the second year this amount grows to $\$1308.25\cdot 1.069 = 1398.52$ and then \$500 is removed leaving \$898.52.
+
+So the difference, at the end of the second year, between the expected size of the fund as projected at time 0 and the actual fund is \$898.52.
+
+\esoln}
+
+
+ 
+
+
+
+
+ 

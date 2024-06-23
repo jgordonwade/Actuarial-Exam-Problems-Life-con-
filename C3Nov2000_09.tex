@@ -1,0 +1,38 @@
+\JGWitem{Nov 2000, \#9}
+For a special whole life insurance of 100,000 on (x), you are given:
+\begin{enumerate}
+\item $\delta = 0.06$
+\item The death benefit is payable at the moment of death.
+\item If death occurs by accident during the first 30 years, the death benefit is doubled.
+\item $\mu_x^{(\tau)}(t) = 0.008$ for $t\geq 0$.
+\item $\mu_x^{(1)}(t) = 0.001$ for $t\geq 0$, where $\mu_x^{(1)}$ is the force of decrement due to death by accident.
+\end{enumerate}
+Calculate the single benefit premium for this insurance.
+\showMC{\begin{description}
+\item[(A)] 12,195
+\item[(B)] 12,622
+\item[(C)] 13,044
+\item[(D)] 13,141
+\item[(E)] 13,235
+\end{description}}
+\showsol{\bsoln
+\showMC{\underline{ANS: (C)} \\}
+ Model this insurance as (whole life insurance) + (30-year accident term insurance). 
+
+\medskip
+In general, the APV for an insurance covering times $t$ from 0 to $n$ we have
+\[
+   A = \Expect{e^{-\delta T}} = \int_0^n e^{-\delta t}f_T(t)\,dt.
+\]
+For the whole-life insurance we have $n=\infty$ and $f_T(t) = \mu^{(\tau)}  e^{-\mu^{(\tau)}},$ and \\
+for the term accident insurance we have $n=30$ and $f_T(t) = \mu^{(1)} e^{-\mu^{(\tau)}}.$ So,
+\bears
+   A &=& \left(10^5\int_0^\infty \left(e^{-\delta t}\right)\left(\mu^{(\tau)}e^{-\mu^{(\tau)}}\right)\,dt \right)
+        + \left(10^5\int_0^{30} \left(e^{-\delta t}\right)\left(\mu^{(1)}e^{-\mu^{(\tau)}}\right)\,dt \right) \\
+     &=& 10^5\cdot\left(\frac{\mu^{(\tau)}}{\mu^{(\tau)} + \delta} \;+\;\frac{\mu^{(1)}(1-e^{-30(\mu^{(\tau)}+\delta)})}{\mu^{(\tau)}+\delta}\right) \\
+     &=& 10^5\cdot\left(\frac{0.008}{0.068} + \frac{0.001\cdot(1-e^{-(30)\cdot(0.068)})}{0.068}\right) \\
+    &=& 13044.08
+\eears
+\esoln}
+
+% 10^5*(0.008/0.068 + 0.001*(1-exp(-(30)*(0.061)))/0.061)

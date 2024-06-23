@@ -1,0 +1,49 @@
+\JGWitem{May 2005 \#15}
+ For an increasing 10-year term insurance, you are given:
+\begin{enumerate}
+\item $b_{k+1}=100,000(1+k)$.
+\item Benefits are payable at the end of the year of death.
+\item Mortality follows the Illustrative Life Table.
+\item $i = 0.06$
+\item The single benefit premium for this insurance on (41) is 16,736.
+\end{enumerate}
+Calculate the single benefit premium for this insurance on (40).
+\showMC{\begin{description}
+\item[(A)] 12,700
+\item[(B)] 13,600
+\item[(C)] 14,500
+\item[(D)] 15,500
+\item[(E)] 16,300
+\end{description}}
+\showsol{\bsoln
+We are being asked to compute $100,000\times \termify(IA)_{40:10}$.
+The quantity $b_{k+1}$ represents the amount of the benefit paid at the end of the year of failure if failure occurs after the insured survived for exactly $k$ years. 
+We have:
+\bears
+   \termifyn{(IA)_{40:\halfbox{10}}} &=& \sum_{k=0}^{9} \left(b_{k+1}/100,000\right)v^{k+1}\:\prepostsub{k|}{q}{40} \\
+                  &=& \sum_{k=0}^{9} \left(1+k\right)v^{k+1}\:\prepostsub{k|}{q}{40} \\
+                  &=& \sum_{k=0}^{9} v^{k+1}\:\prepostsub{k|}{q}{40} + \sum_{k=0}^{9} kv^{k+1}\:\prepostsub{k|}{q}{40} \\
+                  &=& \termifyn{A_{40:\halfbox{10}}} + vp_{40}\sum_{k=1}^{9} kv^{k}\:\prepostsub{(k-1)|}{q}{41}  \\
+                  &=& \termifyn{A_{40:\halfbox{10}}} + vp_{40}\sum_{j=0}^{8} (j+1)v^{j+1}\:\prepostsub{j|}{q}{41}  \\
+                  &=& \termifyn{A_{40:\halfbox{10}}} + vp_{40}\left[\termifyn{(IA)_{40:\halfbox{10}}} - 10v^{10}\prepostsub{10|}{q}{41}\right] \\
+                  &=& \termifyn{A_{40:\halfbox{10}}} + vp_{40}\left[(\$16,736/100,000) - 10v^{10}\prepostsub{9|}{q}{41}\right].
+\eears
+We have:
+\bears
+   \termifyn{A_{40:\halfbox{10}}} &=& A_{40} - \prepostsub{10}{E}{40}A_{50} \\ 
+                              &=& 0.161\,3242 - (9611\,0194)\cdot(1.06^{-10}\cdot 0.249\,0475 \\
+                              &=& 0.0276\,6678 \\
+   \prepostsub{10|}{q}{41} &=& \frac{S(50)-S(51)}{S(41)} = 0.00\,5705\,448
+\eears
+so that
+\bears
+   \termifyn{(IA)_{40:\halfbox{10}}} 
+                  &=& \termifyn{A_{40:\halfbox{10}}} + vp_{40}\left[(\$16,736/100,000) - 10v^{10}\prepostsub{9|}{q}{41}\right] \\
+   &=& 0.02766678 - vp_{40}\left[0.16736 - 10v^{10}\times 0.00\,5705\,448\right] \\
+   &=& 0.1551425.
+\eears
+\underline{Ans: 15,514.25}
+
+\esoln}
+
+

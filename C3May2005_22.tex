@@ -1,0 +1,33 @@
+\JGWitem{May 2005 \#22}
+ For a fully discrete 5-payment 10-year decreasing term insurance on (60), 
+you are given:
+\begin{enumerate}
+\item $b_{k+1}=1000(10-k)$
+\item Level benefit premiums are payable for five years and equal 218.15 each.
+\item $q_{60+k} =0.02+0.001k$ for $k = 0, 1, 2,\ldots,9$.
+\item $i = 0.06$.
+\end{enumerate}
+Calculate $\prepostsub{2}{V}{}$, the benefit reserve at the end of year 2.
+\showMC{\begin{description}
+\item[(A)] 70
+\item[(B)] 72
+\item[(C)] 74
+\item[(D)] 76
+\item[(E)] 78
+\end{description}}
+\showsol{\bsoln
+  \underline{Retrospective approach:} \newline
+    \bears
+      \!\!\!\!\!\!\!\!\!
+      \prepostsub{2}{V}{} &=& \mbox{\underline{Actuarial Accumulated Value} of: } \Bigl\{\mbox{Prem's to time 2}\Bigr\} \;-\; 
+                           \Bigl\{\mbox{Ins Cvg to time 2}\Bigr\} \\
+       &=& \frac{1}{\prepostsub{2}{E}{60}}\times 
+              \mbox{\underline{APV} of: } \Bigl\{\mbox{Prem's to time 2}\Bigr\} \;-\; \Bigl\{\mbox{Ins Cvg to time 2}\Bigr\}  \\
+       &=& \frac{1}{\prepostsub{2}{E}{60}} \Bigl[\left\{ \pi(1 + v\,p_{60}) \right\} - 1000\left\{ 10v(\prepostsub{0|}{q}{60}) + 9v^2(\prepostsub{1|}{q}{60})\right\}\Bigr] \\
+       &=& \frac{1}{v^2p_{60}p_{61}} \Bigl[\left\{ \pi(1 + v\,p_{60}) \right\} - 1000\left\{ 10v\,q_{60} + 9v^2\,p_{60}q_{61}\right\}\Bigr] \\
+       &=& \frac{1.06^2}{(0.98)(0.9790)} \Bigl[\left\{ 218.15(1 + 0.98/1.06) \right\} - 10^3\left\{ 0.2/1.06 + 9(0.98)(0.021)/1.06^2\right\}\Bigr] \\ && \\
+       &=& 77.6590
+    \eears
+
+\esoln}
+

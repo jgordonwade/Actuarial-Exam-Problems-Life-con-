@@ -1,0 +1,33 @@
+\JGWitem{C3 May 2016, \#5}
+For a select and ultimate mortality model with a one-year select period, you are given:
+\begin{enumerate}
+\item $p_{[x]} = (1+k)p_x$, for some constant $k$.
+\item $\ddot{a}_{x:\halfbox{n}} = 21.854$
+\item $\ddot{a}_{{\scriptscriptstyle [x]}:\halfbox{n}} = 22.167$
+\end{enumerate}
+Calculate $k$.
+
+\showsol{\bsoln
+  $\ddot{a}_{x:\halfbox{n}} = 1 + vp_x\ddot{a}_{x+1:\halfbox{n-1}}$
+ 
+  Since the select period is only one year, $\prepostsub{k}{E}{[x]} =\prepostsub{k}{E}{x}$ for all $k$ except $k=1$. So,
+  \bears
+       \ddot{a}_{{\scriptscriptstyle [x]}:\halfbox{n}} 
+     = \sum_{j=0}^{n-1} \prepostsub{j}{E}{\scriptscriptstyle [x]} 
+      &=&   1+\sum_{j=1}^{n-1} \prepostsub{j}{E}{\scriptscriptstyle [x]} 
+       \;=\;   1+\sum_{i=0}^{n-2} \prepostsub{i+1}{E}{\scriptscriptstyle [x]} \\
+       &=&   1+vp_{\scriptscriptstyle [x]}\sum_{i=0}^{n-2} \prepostsub{i}{E}{\scriptscriptstyle [x]+1} \\
+       &=&   1+vp_{\scriptscriptstyle [x]}\sum_{i=0}^{n-2} \prepostsub{i}{E}{\scriptscriptstyle x+1} 
+       \;=\;   1+vp_{\scriptscriptstyle [x]}\ddot{a}_{x+1:\halfbox{n-1}} 
+       \;=\;   1+vp_{x}(1+k)\ddot{a}_{x+1:\halfbox{n-1}} \\ \\
+     && \underline{\ddot{a}_{{\scriptscriptstyle [x]}:\halfbox{n}}     =   1+vp_{x}(1+k)\ddot{a}_{x+1:\halfbox{n-1}} }
+\eears
+\bears
+ \ddot{a}_{{\scriptscriptstyle [x]}:\halfbox{n}}     &=&    1+vp_{x}(1+k)\ddot{a}_{x+1:\halfbox{n-1}}  \\
+       &=&   (1+vp_{x}\ddot{a}_{x+1:\halfbox{n-1}} ) + k(\ddot{a}_{x:\halfbox{n}}-1)  \\
+     \ddot{a}_{{\scriptscriptstyle [x]}:\halfbox{n}}    &=&   \ddot{a}_{x:\halfbox{n}}  + k(\ddot{a}_{x:\halfbox{n}}-1) \\ \\
+      &&  k = \dfrac{\ddot{a}_{{\scriptscriptstyle [x]}:\halfbox{n}} - \ddot{a}_{x:\halfbox{n}}}{\ddot{a}_{x:\halfbox{n}}-1} = \boxed{ 0.01545}
+\eears
+\esoln}
+
+

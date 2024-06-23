@@ -1,0 +1,31 @@
+\JGWitem{C3, Nov 2013 \#14}
+For a special 10-year deferred whole life annuity-due of 50,000 on (62), you are given:
+\begin{enumerate}
+\item Level annual benefit premiums are payable for 10 years.
+\item A death benefit, payable at the end of the year of death, is provided only over the deferral period and is the sum of the benefit premiums paid without interest.
+\item $\ddot{a}_{62}=12.2758$
+\item $\ddot{a}_{62:\halfbox{10}} = 7.4574$
+\item $\termifyn{A_{62:\halfbox{10}}} =  0.0910$
+\item ${\displaystyle \sum_{k=1}^{10}  \termifyn{A_{62:\halfbox{k}}}} = 0.4891$
+\end{enumerate}
+Calculate the benefit premium for this special annuity.
+\showsol{\bsoln
+  ``Benefit premiums'' means premiums arising from the use of the Equivalance Principle, which means they are determined
+  by setting $\Expect{\text{Loss}}=0$, so we need to identify the loss random variable --- let's call it $L$ --- for this problem, and let's denote 
+  the level annual benefit premium by $\pi$.
+  \bears
+     L &=& \Bigl[\text{Money paid by ins. co. }\Bigr] - \Bigl[\text{Premiums collected by ins. co. }\Bigr] \\
+     L  &=& \Bigl[50,000\bigl(\prepostsub{10|}{\ddot{Y}}{62}\bigr) + \pi\oneifyn{(IZ)_{62:\halfbox{10}}}\Bigr] - \pi\cdot \ddot{Y}_{62:\halfbox{10}} \\
+     \Expect{L}=0  &=& \Bigl[50,000\bigl(\prepostsub{10|}{\ddot{a}}{62}\bigr) + \pi\oneifyn{(IA)_{62:\halfbox{10}}}\Bigr] - \pi\cdot \ddot{a}_{62:\halfbox{10}} \\
+     0 &=& 50,000\bigl(\prepostsub{10|}{\ddot{a}}{62}\bigr) + \pi\Bigl[\oneifyn{(IA)_{62:\halfbox{10}}} - \ddot{a}_{62:\halfbox{10}}\Bigr] \\
+  \eears
+  \bears
+      \prepostsub{10|}{\ddot{a}}{62} &=&      \ddot{a}_{62}-\ddot{a}_{62:\halfbox{10}}      =12.2758- 7.4574 = 4.8184 \\
+      \oneifyn{(IA)_{62:\halfbox{10}}} &=& 11\termifyn{A_{62:\halfbox{10}}} - \sum_{k=1}^{10}  \termifyn{A_{62:\halfbox{k}}} = 11\cdot 0.0910 - 0.4891 = 0.5119
+   \eears
+   \bears
+           0 &=& 50,000\cdot 4.8184  + \pi\cdot[0.5119 - 7.4574] \quad\Longrightarrow\quad  
+             \boxed{\pi = 34,687.21}
+%             \pi = \dfrac{50,000\cdot 4.8184}{7.4574-0.5119} = \boxed{34,687.21}
+   \eears
+\esoln}

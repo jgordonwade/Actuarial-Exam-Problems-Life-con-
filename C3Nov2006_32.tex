@@ -1,0 +1,35 @@
+\JGWitem{Course M, Nov 2006, \#32}
+For an aggregate loss distribution S: 
+\begin{enumerate}
+\item The number of claims has a negative binomial distribution with $r = 16$ and $\beta= 6.$
+\item The claim amounts are uniformly distributed on the interval $(0, 8).$
+\item The number of claims and claim amounts are mutually independent. 
+\end{enumerate}
+Using the normal approximation for aggregate losses, calculate the premium such that the probability that aggregate losses will exceed the premium is 5\%
+
+\showMC{\begin{description}
+\item[(A)] 500 
+\item[(B)] 520 
+\item[(C)] 540 
+\item[(D)] 560 
+\item[(E)] 580 
+\end{description}}
+
+\leaveit{\bsoln
+\bears
+   \Expect{N} &=& r\beta = 96 \\
+   \Var{N} &=& r\beta(1+\beta) = 672 \\
+   \Expect{X} &=& (b+a)/2 = 4 \\
+   \Var{X} &=& (b-a)^2/12 = 16/3 \\
+   \mu = \Expect{S} &=& \Expect{N}\Expect{X} = 96\times 4 = 384 \\
+   \sigma^2 = \Var{S} &=& \Var{N}\Expect{X}^2 + \Var{X}\Expect{N} \\
+           &=& 672\times 4^2 + (16/3)\times 96 = 11,264 = (106.132)^2 \\
+   \Prob{S\geq \pi} &=& 0.05 \\
+   \Prob{\frac{S-\mu}{\sigma}\leq \frac{\pi-\mu}{\sigma}} &=& 0.95 \\
+   \pi &=& \mu + \sigma\Phi^{-1}(0.95) = 384 + 106.132\times 1.64485 = 558.57
+\eears
+\underline{Ans: D}
+
+\esoln} 
+
+

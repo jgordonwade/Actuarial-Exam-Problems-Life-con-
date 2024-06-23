@@ -1,0 +1,18 @@
+\JGWitem{May 2005 \#21}   % \S2 Single Life Survival
+You are given:
+\begin{enumerate}
+\item $\ecirc_{30:\halfbox{40}} = 27.692$ 
+\item $S_0(x) = 1-\frac{x}{\omega}$ for $0\leq x \leq \omega$
+\item $T(x)$ is the future lifetime random variable for (x).
+\end{enumerate}
+Calculate $\Var{T(30)}$.
+\showsol{\bsoln
+\bears
+   \prepostsub{t}{p}{x} &=& \dfrac{\omega-x-t}{\omega-x} \\
+   \ecirc_{30:\halfbox{40}} = 27.692 &=& \int_{t=0}^{40} \dfrac{\omega-30-t}{\omega-30}\,dt = \int_{t=0}^{40} 1 \,dt -\dfrac{1}{\omega-30}\int_{t=0}^{40} t\, dt \\
+     27.692  &=& 40 - \dfrac{800}{\omega - 30} \\
+     \omega &=& 95 \\
+     T(30)&\sim& \mbox{Uniform}(0,65) \\
+     \Var{T(30)} &=& \dfrac{65^2}{12} = \boxed{352.083}
+\eears
+\esoln}

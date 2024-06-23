@@ -1,0 +1,34 @@
+\JGWitem{May 2001, \#10 (book $6^{th}$ ed \#13.6)}
+For students entering a college, you are given the following from a multiple decrement
+model:
+\begin{enumerate}
+\item 1000 students enter the college at $t = 0 .$
+\item Students leave the college for failure (1) or all other reasons (2).
+\item $\mu^{(1)}(t) = \mu$ and $\mu^{(2)}(t) = 0.04$, both for $t\in[0,4]$.
+\item 48 students are expected to leave the college during their first year due to all causes.
+\end{enumerate}
+Calculate the expected number of students who will leave because of failure during their
+fourth year.
+\showMC{\begin{description}
+\item[(A)] 8
+\item[(B)] 10
+\item[(C)] 24
+\item[(D)] 34
+\item[(E)] 41
+\end{description}}
+\showsol{\bsoln
+\showMC{\underline{ANS: (A)}}
+
+We want $l_3q_3^{(1)}$. 
+
+First, let's get $\mu^{(\tau)}$. Since $\mu^{(\tau)} = \mu^{(1)} = \mu^{(2)}$
+and (from given (d)) $(1000-48) = l_0\,q_0^{(\tau)} = 1000e^{-\mu^{(\tau)}}$, we find 
+$\mu^{(\tau)} = 0.04919$ so that $\mu^{(1)}=0.00919$. 
+
+Now,
+\bears
+   l_3q_3^{(1)} &=& 1000\cdot \prepostsubsup{3}{p}{0}{(\tau)}\cdot q_3^{(1)} \\
+               &=& 1000\cdot \,e^{-3\mu^{(\tau)}}\, \int_0^1 \mu^{(1)}e^{-t\mu^{(\tau)}}\,dt \\
+               &=& 1000\cdot e^{-3\times 0.04919} \left(\frac{0.00919}{0.04919}\right)\left(1-e^{-0.04919}\right) = \underline{7.7373}
+\eears
+\esoln}

@@ -1,0 +1,27 @@
+\JGWitem{May 2007 \#27}
+For a special whole-life insurance, you are given:
+\begin{enumerate}
+ \item $b_t=e^{-t}$ for $t>0$, 
+ \item $\mu$ is a constant,
+ \item $\delta=0.06$, 
+ \item $Z=e^{-T}v^T$, where $T$ is the future lifetime random variable, and
+ \item $\Expect{Z}=0.03636$.
+\end{enumerate}
+Calculate $\Var{Z}$.
+
+\showsol{\bsoln
+Note that $Z=e^{-T}v^T = e^{-T}e^{-\delta T} = e^{-(1+\delta)T}= e^{-1.06T}$. We have:
+\bears
+  0.03636 = \Expect{Z} &=& \int_{t=0}^\infty Z f(t)\,dt \\
+               &=& \int_{t=0}^\infty e^{-1.06t}\cdot\mu e^{-\mu t}\,dt \\
+               &=& \frac{\mu}{1.06+\mu}\int_{t=0}^\infty (1.06+\mu)e^{-(1.06+\mu)t}\,dt \\
+               &=& \frac{\mu}{1.06+\mu} \\
+    &&\Longrightarrow \underline{\mu = 0.04}.
+\eears
+\bears
+  \Expect{Z^2} &=& \int_{t=0}^\infty Z^2 f(t)\,dt \\
+               &=& 0.04\int_{t=0}^\infty e^{-2.16t}\,dt = \frac{0.04}{2.16} = 0.01852, \\
+  \Var{Z} &=& 0.01852 - (0.03636)^2 = 0.017198
+\eears
+
+\esoln}

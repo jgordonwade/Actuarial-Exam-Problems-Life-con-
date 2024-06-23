@@ -1,0 +1,32 @@
+\JGWitem{Course M, Nov 2006, \#40}
+A compound Poisson distribution has $\lambda = 5$ and claim amount distribution as follows: 
+\begin{center}\begin{tabular}{cc}
+  $x$ &  $p(x)$ \\ \hline 
+  100 & 0.80  \\
+  500 & 0.16  \\
+  1000 & 0.04 
+\end{tabular}\end{center}
+Calculate the probability that aggregate claims will be exactly 600. 
+\showMC{\begin{description}
+\item[(A)] 0.022 
+\item[(B)] 0.038 
+\item[(C)] 0.049 
+\item[(D)] 0.060 
+\item[(E)] 0.070 
+\end{description}}
+
+\leaveit{\bsoln
+\bears
+  \Prob{S=600} &=& \sum_{n=0}^\infty \Prob{S=600|N=n}\Prob{N=n} \\
+  &=& \Prob{S=600|N=2}\Prob{N=2} \\ 
+  &&\quad + \quad\Prob{S=600|N=6}\Prob{N=6} \\
+  &=& 2\times 0.8\times 0.16\times\left(\frac{5^2e^{-5}}{2!}\right) + 0.80^6\times \left(\frac{5^6e^{-5}}{6!}\right) \\
+  &=& 0.05989
+\eears
+(The factor of 2 in the first term reflects the fact that there could be a 100 then a 500, or a 500 then a 100.)
+
+\underline{Ans: D}
+
+\esoln} 
+
+

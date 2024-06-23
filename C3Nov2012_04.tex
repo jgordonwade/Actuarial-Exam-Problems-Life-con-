@@ -1,0 +1,31 @@
+\JGWitem{Nov 2012 \#04}
+ A certain whole life policy on (40) pays \$50,000 at the end of year of death if (40) dies in the first 20 years of the policy, and
+ it pays \$100,000 at the end of the year of death otherwise. 
+ The level annual premiums are are payable for 20 years. 
+
+Assuming that mortality follows the Illustrative Life Table and that $i=0.06$, 
+Calculate the net premium policy value at the end of year 10 for this insurance.
+\showsol{\bsoln
+  First we need to premiums. From the equivalence principle, we have
+  \[  0 = 50,000\left(\Ax{40} +\Ex[20]{40}\Ax{60}\right) - P\ax**{\endow{40}{20}}
+      \quad\Longrightarrow \quad P = \dfrac{50,000\left(\Ax{40} +\Ex[20]{40}\Ax{60}\right)}{\ax**{\endow{40}{20}}} \]
+
+  We compute the following values:
+  \bears
+      \Ax{40} =0.1613242, \quad\quad      \Ax{60} =0.369131, \quad\quad 
+      \Ex[20]{40} = 0.2741367, \quad\quad
+      \ax**{40}{20} = 11.761256
+  \eears
+  so that $P = \dfrac{50,000\left(0.1613242 + 0.2741367\cdot 0.369131\right)}{11.761256} = 1,116.02.$
+
+  Now the policy value at $t=10$ is 
+  \bears
+     _{10}\!V &=& 50,000\cdot\left(\Ax{50} +\Ex[10]{50}\Ax{60}\right) - P\ax**{\endow{50}{10}} \\
+     &&    A_{50} = 0.2490\,4748\,5 \\
+     && \Ex[10]{50} = 0.5108\,0642\,1 \\ 
+     && \ax**{\endow{50}{10}} = 7.5737106 \\
+     _{10}\!V &=& 50,000\cdot\left(0.2490475 + 0.51080642\cdot 0.369131\right) - 1116.02\cdot 7.5737106 = \boxed{13,427.69}
+\eears
+\esoln}
+
+

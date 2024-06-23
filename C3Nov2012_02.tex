@@ -1,0 +1,43 @@
+\JGWitem{ MLC Nov 2012, \#2}
+You are given:
+\begin{enumerate}
+\item An excerpt from a select and ultimate life table with a select period of 3 years:
+\begin{center}\begin{tabular}{cccccc}
+    $x$     & $l_{[x]}$ & $l_{[x]+1}$ & $l_{[x]+2}$ & $l_{x+3}$ & $x+3$ \\ \hline
+    60 & 80,000 & 79,000 & 77,000 & 74,000 & 63 \\
+    61 & 78,000 & 76,000 & 73,000 & 70,000 & 64 \\
+    62 & 75,000 & 72,000 & 69,000 & 67,000 & 65 \\
+    63 & 71,000 & 68,000 & 66,000 & 65,000 & 66 
+\end{tabular}\end{center}
+\item Deaths follow a constant force of mortality over each year of age.
+\end{enumerate}
+Calculate $1000\,\prepostsub{2|3}{q}{[60]+0.75}$.
+\showsol{\bsoln
+  I recall that
+  \[
+        \prepostsub{u|t}{q}{x} = \prepostsub{u}{p}{x} - \prepostsub{u+t}{p}{x} = \dfrac{ l_{x+u} - l_{x+u+t} }{l_x}
+  \]
+   and so 
+  \bears
+        \prepostsub{u|t}{q}{[x]+s} &=& \dfrac{ l_{[x]+u+s} - l_{[x]+u+t+s} }{l_{[x]+s}} \quad\mbox{ for }s\in[0,1], \\
+        && \boxed{\prepostsub{2|3}{q}{[60]+0.75} = \dfrac{ l_{[60]+2.75} - l_{[60]+5.75} }{l_{[60]+0.75}}.}
+  \eears
+  So we need these three $l$-values.
+
+  \bigskip
+        
+  We also have to account for the fractional years. Under the {\em ``constant force''} assumption, ``$\prepostsub{s}{p}{x}=(p_x)^s$ for $s\in[0,1]$'', we quickly obtain
+  \[
+       \boxed{l_s = (l_x)^{1-s}\cdot (l_{x+1})^s, \quad\mbox{ for }s\in[0,1].}
+  \]
+  Now we're ready to compute:
+\bears
+    l_{[60]+0.75} &=& (l_{[60]})^{0.25}\cdot (l_{[60]+1})^{0.75} = (80,000)^{0.25}\cdot(79,000)^{0.75} = 79,248.82, \\
+    l_{[60]+2.75} &=& (l_{[60]+2})^{0.25}\cdot (l_{[60]+3})^{0.75} = (77,000)^{0.25}\cdot(74,000)^{0.75} = 74,738.86 \\
+    l_{[60]+5.75} &=& (l_{[60]+5})^{0.25}\cdot (l_{[60]+6})^{0.75} = (67,000)^{0.25}\cdot(65,000)^{0.75} = 65494.33, 
+\eears
+so that
+\[ 
+    1000\cdot \dfrac{ l_{[60]+2.75} - l_{[60]+5.75} }{l_{[60]+0.75}} = \boxed{116.65 =  1000\,\prepostsub{2|3}{q}{[60]+0.75}}
+\]
+\esoln}

@@ -1,0 +1,36 @@
+\JGWitem{C3, Nov 2013, \#16}
+For fully discrete whole life insurances of 1 issued on lives age 50, the annual net premium, P, was calculated using the following:
+\begin{enumerate}
+\item $q_{50}=0.0048$
+\item $i=0.04$
+\item $A_{51}=0.39788$.
+\end{enumerate}
+A particular life has a first year mortality rate 10 times the rate used to calculate P. The mortality rates for all other years are the same as the ones used to calculate P.
+
+\medskip
+Calculate the expected present value of the loss at issue random variable for this life, based on the premium P.
+
+\showsol{\bsoln
+  The loss random variable (``loss at issue'') is given by
+  \[
+       L = Z_{50} - \dfrac{P}{d}(1-Z_{50})
+  \]
+  and since $P$ was computed via the Equivalance Principle (because ``net premium''), we can set $\Expect{L}=0$ and solve for $P$, yielding
+ \[ P=(dA_{50}/(1-A_{50}), \]
+ so $L$ becomes (after simplifying)
+\[    L = \dfrac{Z_{50}-A_{50}}{1-A_{50}}, \]
+which equals zero because $\Expect{Z_{50}}=A_{50}$. 
+
+\bigskip
+The fact that ``a particular life has a first year mortality rate'' changes means
+that $Z_{50}$ changes to, say, $Z_{50}^*\neq Z_{50}$, and $\Expect{Z_{50}^*}\neq A_{50}$.
+Instead, since $q_{50}$ has changed to $10q_{50} = 0.048$, we have
+\bears
+    \Expect{Z_{50}^*} &=& vq_{50}^* + vp_{50}^*A_{51}
+    = \dfrac{0.048}{1.04} + \dfrac{1-0.048}{1.04}\cdot 0.39788 = 0.4103\,6708.
+\eears
+Also, $A_{50} = v\qx{x}+v\px{x}A_{51}=0.0048/1.04 + (1-0.0048)\cdot 0.39788/1.04 = 0.3853\,5594$. So
+\[
+    \Expect{L} = \Expect{\dfrac{Z_{50}-A_{50}}{1-A_{50}}} = \dfrac{0.4103\,6708 - 0.3853\,5594}{1-0.3853\,5594} = \boxed{0.04069}
+\]
+\esoln}

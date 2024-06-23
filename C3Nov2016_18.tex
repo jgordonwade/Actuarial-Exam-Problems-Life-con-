@@ -1,0 +1,26 @@
+\JGWitem{ C3 Nov 2016, \#18}
+For a member of a defined contribution plan who is age 65, you are given:
+\begin{itemize}
+\item[(i)] The member's current salary is 250,000, and there will be no future salary
+increases.
+\item[(ii)] The member's current retirement fund is 1,500,000 and there are no
+expected future contributions prior to retirement.
+\item[(iii)] The retirement fund grows at a rate of 8\% annually.
+\item[(iv)] Upon retirement, the member will use her retirement fund as the single net
+premium for an annuity due that makes quarterly payments.
+\item[(v)] The single net premium is calculated using the Illustrative Life Table and
+$i=0.06.$
+\end{itemize}
+Calculate, using the 2-term Woolhouse approximation, the member's replacement ratio upon retirement at age 66.
+\showsol{\bsoln
+  The retirement fund will grow to $1.08\cdot 1,500,000 = 1,620,000$ by the time the member retires.
+  This will be used to pay for a life annuity with quarterly payments of, say, $P$ year, so
+  \bears
+       1,620,000 &=& P\ax**{66}[(4)] = P\overbrace{(\ax**{66}-3/8)}^{\text{Woolhouse}} = P\cdot(9.63619 - 3/8) = P\cdot 9.26119
+  \eears
+  so $P=174,923.54$. So her replacement ratio is $174,923.54/250,000 = \boxed{0.69969}$
+\esoln}
+
+
+
+

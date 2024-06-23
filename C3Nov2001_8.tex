@@ -1,0 +1,51 @@
+\JGWitem{Nov 2001, \#8}
+ Each of 100 independent lives purchase a single premium 5-year deferred 
+whole life insurance of 10 payable at the moment of death. You are given:
+\begin{enumerate}
+\item $\mu = 0.04$
+\item $\delta = 0.06$
+\item $F$ is the aggregate amount the insurer receives from the 100 lives.
+\end{enumerate}
+Using the normal approximation, calculate $F$ such that the probability the 
+insurer has sufficient funds to pay all claims is $0.95$.
+\showMC{\begin{description}
+\item[(A)] 280
+\item[(B)] 390
+\item[(C)] 500
+\item[(D)] 610
+\item[(E)] 720
+\end{description}}
+
+\showsol{\bsoln
+For a single policy, present value random variable $Z$ for the insurance benefit is given by
+\[ Z = 10\left\{\begin{array}{rl} 0 & \text{if } T_x\leq 5 \\ e^{-\delta T_x} & \text{if }T_x>5\end{array}\right. \]
+and
+\bears
+  \Expect{Z} &=& \int_{t=5}^\infty 10e^{- \delta t}\px[t]{x}\mu_{x+t}\,dt 
+    \\&=& 10\int_{s=0}^\infty e^{ - \delta (s+5)}\px[s+5]{x}\mu_{x+5+s}\,dt
+    \\&=& 10e^{-5\delta}\px[5]{x} \int_{s=0}^\infty e^{ - \delta s} \px[s]{x+1}\mu_{x+5+s}\,dt
+    \\&=& 10\left(e^{-0.06\cdot 5}e^{-0.04\cdot 5}\right)\int_0^\infty e^{-0.06t}\cdot 0.04\cdot e^{-0.04t}\,dt = \underline{2.42612}
+  \\ \Expect{Z^2} &=& 100\int_{t=5}^\infty e^{- 2\delta t}\px[t]{x}\mu_{x+t}\,dt  
+     \\&=& 100\left(e^{-0.12\cdot 5}e^{-0.04\cdot 5}\right)\int_0^\infty e^{-0.12t}\cdot 0.04\cdot e^{-0.04t}\,dt = \underline{11.2332}
+\eears
+so that $\Std{Z}=\sqrt{11.2332-(2.42612)^2} = \sqrt{5.347142}=2.31239.$
+
+Now if $L$ denotes the aggegate loss, then
+\bears
+   L &=& -F + \sum_{i=1}^{100} Z_i
+  \\ \Expect{L} &=& 100\cdot \Expect{Z_i} - F = 100\cdot 2.42612 - F = 242.612-F
+  \\ \Std{L} &=& \sqrt{\Var{\sum_{i=1}^{100} Z_i}} = 10\cdot 2.21239 = 22.1239
+\eears
+Now approximate $L$ as normal random variable and set $\Prob{L\leq 0}=0.95$, and solve for $F$. With $\Phi$ denoting the
+standard normnal CDF, we have
+\bears
+   0.95 &=& \Prob{L\leq 0}
+  = \Prob{\dfrac{L-\Expect{L}}{\Std{L}} \leq \dfrac{-\Expect{L}}{\Std{L}}}
+  \approx \Prob{{\cal Z} \leq \dfrac{-\Expect{L}}{\Std{L}}}
+  = \Phi\left(\dfrac{-\Expect{L}}{\Std{L}}\right) 
+  \\ \Phi^{-1}(0.95) &=& \dfrac{-\Expect{L}}{\Std{L}}
+  \\ 1.64485 &=& \dfrac{F-242.612}{22.1239} \quad\Longrightarrow \boxed{F = 279}
+\eears
+\esoln}
+
+ 

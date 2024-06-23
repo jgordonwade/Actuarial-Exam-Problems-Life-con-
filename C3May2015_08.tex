@@ -1,0 +1,35 @@
+\JGWitem{C3, May 2015, \#8}
+For a fully continuous whole life insurance of 1 on (x), you are given:
+\begin{enumerate}
+    \item L is the present value of the loss at issue random variable if the premium rate is determined by the equivalence principle.
+    \item $L^*$ is the present value of the loss at issue random variable if the premium rate is 0.06.
+    \item $\delta = 0.07$
+    \item $\bar{A}_x = 0.30$
+    \item $\Var{L}=0.18$
+\end{enumerate}
+Calculate $\Var{L^*}$.
+
+\medskip
+(Possible ambiguity: where it says ``the loss at issue random variable if the premium rate is 0.06'', the rate here is {\it not} the interest rate. It is the annual rate at
+which money flows in the annuity which constitutes the premium paymenrs. E.g, the APV of the premium payments is $0.06\bar{a}_x$.)
+
+\showsol{\bsoln
+  Let $\bar{P}$ be the annual premium rate computed under the Equiv. Princ. Then:
+  \bears
+      L&=& \bar{Z}_x - \bar{P}\bar{Y}_x  \\
+      0 &=& \bar{A}_x - \bar{P}\bar{a}_x \hspace{3mm}\Longrightarrow\hspace{3mm}
+      \bar{P} = \dfrac{\bar{A}_x}{\bar{a}_x} = \dfrac{\delta \bar{A}_x}{1-\bar{A}_x} = \dfrac{0.07\cdot 0.30}{1-0.30}   \hspace{3mm}\Longrightarrow\hspace{3mm}
+       \underline{\bar{P} = 0.03}
+  \eears
+  \bears
+      L= \bar{Z}_x - \bar{P}\bar{Y}_x  &=& \left(1+\frac{\bar{P}}{\delta}\right)\bar{Z}_x -\dfrac{\bar{P}}{\delta}  = \left(1+\frac{0.03}{0.07}\right)\bar{Z}_x -\dfrac{3}{7} \\
+      \Var{L} =0.18 &=& \left(1+\frac{\pi}{\delta}\right)^2\Var{\bar{Z}_x} \hspace{3mm}\Longrightarrow\hspace{3mm}
+               \underline{\Var{\bar{Z}_x} = 0.0882}
+   \eears
+   \bears
+   \Var{L^*} &=& \left(1+\frac{0.06}{0.07}\right)^2\Var{0.0882} \hspace{3mm}\Longrightarrow\hspace{3mm}
+    \boxed{\Var{L^*} = 0.3042}
+\eears
+\esoln}
+
+

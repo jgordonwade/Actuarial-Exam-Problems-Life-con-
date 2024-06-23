@@ -1,0 +1,28 @@
+\JGWitem{MLC Nov 2015,\#9}
+For a 2-year deferred, 2-year term insurance of 2000 on [65], you are given:
+\begin{enumerate}
+   \item The following select and ultimate mortality table with a 3-year select period:
+     \begin{center}\begin{tabular}{cccccc} $x$ & $q_{[x]}$ & $q_{[x]+1}$ & $q_{[x]+2}$ & $q_{x+3}$ & $x+3$ \\ \hline
+             65   &       0.08    &      0.10    &      0.12   &       0.14     &      68  \\
+             66   &       0.09    &      0.11    &      0.13   &       0.15     &      69  \\
+             67   &       0.10    &      0.12    &      0.14   &       0.16     &      70  \\
+             68   &       0.11    &      0.13    &      0.15   &       0.17     &      71  \\
+             69   &       0.12    &      0.14    &      0.16   &       0.18     &      72    \end{tabular}\end{center}
+
+   \item $i=0.04$
+   \item The death benefit it payable at the end of the year of death.
+\end{enumerate}
+Calculate the actuarial present value of this insurance.
+\showsol{\bsoln
+\bears
+  2000\left(\Ax[2|]{\term{[65]}{2}}\right) 
+  &=& 2000\cdot \left(\dfrac{\qx[2|]{[65]}}{1.04^3} + \dfrac{\qx[3|]{[65]}}{1.04^4} \right) 
+\eears
+\bears
+  \qx[2|]{[65]} &=& \px{[65]}\px{[65]+1}\qx{[65]+2} = (1-0.08)\cdot(1-0.10)\cdot 0.12 = 0.099360, \\
+  \qx[3|]{[65]} &=& \px{[65]}\px{[65]+1}\px{[65]+2}\qx{[65]+3} = (1-0.08)\cdot(1-0.10)\cdot(1- 0.12)\cdot 0.14 =0.1020096
+\eears
+\bears
+  2000\left(\Ax[2|]{\term{[65]}{2}}\right) &=& 2000\cdot \left(\dfrac{0.099360}{1.04^3} + \dfrac{0.1020096}{1.04^4} \right) = 351.06
+\eears
+\esoln}

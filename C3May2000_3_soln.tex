@@ -1,0 +1,46 @@
+\JGWitem{May 2000, \#3}
+ For a fully discrete two-year term insurance of 400 on (x):
+\begin{enumerate}
+\item  $i = 0.1$.
+\medskip
+\item  $400\termify{P_{x:\halfbox{2}}} = 74.33$.
+\medskip
+\item $400\termify{\prepostsub{1}{V}{x:\halfbox{2}}} = 16.58$
+\medskip
+\item The contract premium equals the benefit premium.
+\end{enumerate}
+
+\bigskip
+
+Calculate the variance of the loss at issue.
+
+\showMC{\begin{description}
+\item (A) 21,615
+\item (B) 23,125
+\item (C) 27,450
+\item (D) 31,175
+\item (E) 34,150
+\end{description}}
+
+\bsoln 
+The loss at issue is the benefit present value random variable minus 
+the premium stream present value random variable. 
+
+ The reserve $\prepostsub{t}{V}{}$ is the present value $t$ years after 
+issue of the benefit to be paid, minus the present value of the premiums 
+yet to be collected. Since at $t=1$ there is only one more year to 
+go in the contract, and since premia are colllected at the beginning 
+of the year, the present value of the remaining premiums to be collected
+is exactly one annual premium, that is the amount given in 1. We have
+\[
+ 16.58 = 400\termify{\prepostsub{1}{V}{x:\halfbox{2}}} 
+ = 400 vq_{x+1} - 400\termify{P_{x:\halfbox{2}}} 
+ = 400q_{x+1}/1.1 - 74.33.
+\]
+Solving for $q_{x+1}$ we have
+\[
+  q_{x+1} = {(16.58 + 74.33)1.1\over 400} = 0.2500025
+\]
+
+\esoln
+

@@ -1,0 +1,26 @@
+\JGWitem{May 2000, \#39}
+For a continuous whole life annuity of 1 on (x):
+\begin{enumerate}
+\item $T(x)$, the future lifetime of (x), follows a constant force of 
+mortality $0.06$.
+\item The force of interest is $0.04$.
+\end{enumerate}
+Calculate $\Prob{\bar{a}_{\halfbox{T(x)}}>\bar{a}_x}$.
+\showMC{\begin{description}
+\item[(A)] 0.40
+\item[(B)] 0.44
+\item[(C)] 0.46
+\item[(D)] 0.48
+\item[(E)] 0.50
+\end{description}}
+\showsol{\bsoln
+\bears
+    \bar{a}_x &=& \frac{1-e^{-\delta x}}{\delta} = 10, \\
+    \bar{a}_{\halfbox{T(x)}} &=& \frac{1-e^{-\delta T(x)}}{\delta} \\
+    \Prob{\bar{a}_{\halfbox{T(x)}}>\bar{a}_x} 
+       &=& \Prob{\frac{1-e^{-\delta T(x)}}{\delta} > 10} \\
+       &=& \Prob{T(x)> -\log(1-10\delta)/\delta} = \Prob{T(x)> 12.77} \\
+      &=& e^{-12.77\cdot 0.06} = \underline{0.464758}
+\eears
+\esoln}
+     

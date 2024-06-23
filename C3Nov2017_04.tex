@@ -1,0 +1,30 @@
+\JGWitem{C3 Nov 2017, \#4}
+For an annuity-due that pays 100 at the beginning of each year that (45) is alive, you are given:
+\begin{enumerate}
+\item       Mortality for standard lives follows the Illustrative Life Table.
+\item     The force of mortality for standard lives age $45 + t$  is represented as $\mu_{45+t}^{\scriptscriptstyle ILT}$
+\item      The force of mortality for substandard lives age $45 + t ,$ $\mu_{45+t}^{\scriptscriptstyle S}$, is defined by 
+  \[  \mu_{45+t}^{\scriptscriptstyle S} =  \left\{\begin{array}{ll}
+          \mu_{45+t}^{\scriptscriptstyle ILT} + 0.05 & \mbox{ for } 0\leq t < 1, \\ \\ \mu_{45+t}^{\scriptscriptstyle ILT} & \mbox{ for }t\geq 1 \end{array}\right.
+  \]
+\item      $i = 0.06$
+\end{enumerate}
+Calculate the actuarial present value of this annuity for a substandard life age 45.
+
+\showsol{\bsoln
+  The key is to recognize that the only difference in mortality rates between standard is and substandard is in the first year past age 45, $45+t$ for $0\leq t<1$.
+   \bears
+       p_{45}^{\scriptscriptstyle S} &=& \exp\left(-\int_0^1 \mu_{45+t}^{\scriptscriptstyle S} \,dt \right)
+                   = \exp\left(-\int_0^1 \mu_{45+t}^{\scriptscriptstyle ILT}+0.05 \,dt\right) 
+                   = e^{-0.05}\exp\left(-\int_0^1 \mu_{45+t}^{\scriptscriptstyle ILT} \,dt \right) \\
+       p_{45}^{\scriptscriptstyle S}    &=& e^{-0.05}p_{45}^{\scriptscriptstyle ILT}
+    \eears
+    Now 
+    $\ddot{a}_{46}^{\scriptscriptstyle S} = a^{\scriptscriptstyle ILT}_{46}$ because neither of these depend on $p_{45}$. So,
+    \bears
+        \ddot{a}_{45}^{\scriptscriptstyle S} &=& 1+v p_{45}^{\scriptscriptstyle S}  \ddot{a}^{\scriptscriptstyle S}_{46} 
+        = 1+e^{-0.05} vp_{45}^{\scriptscriptstyle ILT}  \ddot{a}^{\scriptscriptstyle ILT}_{46} 
+         = 1+e^{-0.05} \dfrac{0.996}{1.06}\cdot 13.954588 \\ \\
+        && \boxed{100\ddot{a}_{45}^{\scriptscriptstyle S} = 1347.26}
+     \eears
+\esoln}

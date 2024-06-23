@@ -1,0 +1,52 @@
+\JGWitem{May 2000, \#2}
+ Lucky Tom finds coins on his way to work at a Poisson rate of 0.5 
+coins/minute. The denominations are randomly distributed:
+
+\begin{enumerate}
+\item 60\% of the coins are worth 1;
+\item 20\% of the coins are worth 5; and
+\item 20\% of the coins are worth 10.
+\end{enumerate}
+
+Calculate the conditional expected value of the coins Tom found during 
+his one-hour walk today, given that among the coins he found, exactly ten 
+were worth 5 each.
+
+%\showMC{\begin{description}
+%\item (A) 108
+%\item (B) 115
+%\item (C) 128
+%\item (D) 165
+%\item (E) 180
+%\end{description}}
+
+\showsol{\bsoln
+ 0.5 coins per minute is 30 coins per hour. 
+\[
+   \lambda_1=.6*30=18, \quad\quad
+   \lambda_5=.2*30=6, \quad\quad
+   \lambda_{10}=.2*30=6
+\]
+In ``thinning'' a Poisson process, the thinned processes are independent
+of each other so the fact that he found 10 nickels does not affect the 
+number of pennies and dimes he found. 
+\[
+  \Expect{X}=1\cdot\Expect{N_1} + 5\cdot 10 + 10\cdot\Expect{N_10}
+   = 18+50+60=128.
+\]
+\underline{Ans: (C)}
+
+ This is a thinning problem. The total number $N$ of coins he finds in the
+hour has a Poisson(30) distribution. Let $N_1$, $N_5$, and $N_{10}$ be
+the number of coins worth 1, 5, and 10, resp. Then each of these
+has a Poisson distribution, and $\lambda_1=0.6\cdot 30 = 18$, 
+$\lambda_5=0.2\cdot 30 = 6$,  and $\lambda_{10}=0.2\cdot 30 = 6$.
+
+$N_1$, $N_5$ and $N_{10}$ are all independent. 
+The expected number of pennies he finds is 18, we know he found ten nickels, 
+and the expected number of dimes he finds is 6, 
+so the expected total is 
+$18\cdot 1 + 10\cdot 5 + 6\cdot 10 = 18+50 + 60= 128$. 
+
+\esoln}
+

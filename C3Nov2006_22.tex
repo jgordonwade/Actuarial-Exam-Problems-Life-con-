@@ -1,0 +1,36 @@
+\JGWitem{Course M, Nov 2006, \#22}
+The annual number of doctor visits for each individual in a family of 4 has a geometric distribution with mean 1.5. 
+The annual numbers of visits for the family members are mutually independent. An insurance pays 100 per doctor visit beginning with the $4^{th}$ visit per family. 
+
+\medskip
+Calculate the expected payments per year for this family. 
+
+\showMC{\begin{description}
+\item[(A)] 320 
+\item[(B)] 323 
+\item[(C)] 326 
+\item[(D)] 329 
+\item[(E)] 332 
+\end{description}}
+
+\leaveit{\bsoln
+Let $N$ be the total number of annual doctor visits for the whole family. This is a sum of four independent Geometric random variables, so it is a Negative Binomial
+with $r=4$. 
+
+The payments per year for this family is $100\max(0,N-3)$, so we need $\Expect{\max(0,N-3)}$.
+
+Denote $p_n=\Prob{N=n}$. We have:
+\bears
+  \Expect{\max(0,N-3)} &=& \sum_{n=0}^\infty \max(0,n-3)\cdot p_n 
+   = \sum_{n=4}^\infty (n-3)\cdot p_n  \\
+   &=& \sum_{n=4}^\infty np_n - 3\sum_{n=4}^\infty p_n \\
+   &=& \Bigl(\Expect{N} - (p_1+ 2p_2 + 3p_3)\Bigr) - 3\Bigl(1 - (p_0+p_1+p_2+p_3)\Bigr) \\
+   &=& \Expect{N} -3 + 3p_0 + 2p_1 + p_2 \\
+   &=& 4\cdot\frac{3}{2} - 3 + 3\cdot\frac{16}{625} + 2\cdot \frac{192}{3125} + \frac{288}{3125} \\
+   &=& 3.29184
+\eears
+\underline{Ans: D}
+
+\esoln} 
+
+

@@ -1,0 +1,13 @@
+\JGWitem{Nov 2008 \#12}   % \S2 Single Life Survival
+You are given the force of mortality, 
+\begin{minipage}[b]{81.0pt}\[ \mu(x)=\frac{1}{3(100-x)}\]\end{minipage}.
+Calculate the probability that a life aged 70 will die between ages
+75 and 80
+\showsol{\bsoln
+  \bears
+    -\int_{z=x}^{x+t}\mu(z)\,dz &=& \frac{-1}{3}\int_{z=x}^{x+t} \frac{1}{100-z}\,dz \\
+          &=& \frac{-1}{3}\int_{u=100-x-t}^{100-x} \frac{1}{u}\,dz = \log\left(\frac{100-x-t}{100-x}\right)^{1/3} \\
+    \prepostsub{t}{p}{x} &=& \exp\left(-\int_x^{x+t}\mu(z)\,dz\right) = \left(\frac{100-x-t}{100-x}\right)^{1/3} \\
+    \prepostsub{5|5}{q}{70} &=& \prepostsub{75}{p}{70} - \prepostsub{80}{p}{70} = \underline{0.067455}
+  \eears
+\esoln}

@@ -1,0 +1,32 @@
+\JGWitem{Nov 2012 \#06}
+For a special fully continuous 10-year increasing term insurance, you are given:
+\begin{itemize}
+\item[(i)] The death benefit is payable at the moment of death and increases linearly from 10,000 to 110,000.
+\item[(ii)] $\mu=0.01$
+\item[(iii)] $\delta=0.05$
+\item[(iv)] The annual premium rate is 450.
+\item[(v)] Premium-related expenses equal 2\% of premium, incurred continuously.
+\item[(vi)] Claims-related expenses equal 200 at the moment of death.
+\item[(vii)] $\prepostsub{t}{V}{}$ denotes the gross premium reserve at time t for this insurance.
+\item[(viii)] You estimate $\prepostsub{9.6}{V}{}$ using Euler's method with step size 0.2 and the derivative of $\prepostsub{t}{V}{}$ at time 9.6.
+\item[(ix)] Your estimate of $\prepostsub{9.8}{V}{}$ is 126.68.
+\end{itemize}
+Calculate the estimate of $\prepostsub{9.6}{V}{}$.
+
+
+
+\showsol{\bsoln
+
+Thiele's differential equation and the backward Euler step:
+\bears
+   \dfrac{d}{dt}\prepostsub{t}{V}{} &=& (\delta_t + \mu_{x+t})\prepostsub{t}{V}{} - (S_t+E_t) \mu_{x+t} + P_t -e_t  \\
+   \prepostsub{t}{V}{}  &\approx& \dfrac{ \prepostsub{t+h}{V}{} + h\bigl((S_t+E_t) \mu_{x+t} - P_t + e_t \bigr)  }{1 + h\bigl(\delta_t + \mu_{x+t})}
+\eears
+In this problem the Euler step becomes, at $t=9.6$ and $\prepostsub{9.8}{V}{} = 126.68,$
+\bears
+   \prepostsub{t}{V}{}  &\approx& \dfrac{ \overbrace{126.68}^{\prepostsub{9.8}{V}{}} + 0.2\left[ \left(\overbrace{10,000\cdot\left(9.6+1\right)}^{S_{9.6}} + 200\right)\cdot 0.01
+        - 450 + 0.02\cdot 450\right]}{1 + 0.2\left(0.05 + 0.01\right)} \\
+  &=& \boxed{247.905}
+\eears
+
+\esoln}

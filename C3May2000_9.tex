@@ -1,0 +1,48 @@
+\JGWitem{May 2000, \#9}
+ For a 10-year deferred whole life annuity of 1 on (35) payable continuously:
+
+\begin{description}
+\item[(i)] Mortality follows De Moivre's law with $\omega= 85$.
+\item[(ii)] $i = 0$.
+\item[(iii)] Level benefit premiums are payable continuously for 10 years.
+\end{description}
+
+%Calculate the benefit reserve at the end of five years.
+Calculate the net premium policy value at the end of five years.
+\showMC{\begin{description}
+\item[(A)] 9.38
+\item[(B)] 9.67
+\item[(C)] 10.00
+\item[(D)] 10.36
+\item[(E)] 10.54
+\end{description}}
+
+\showsol{\bsoln
+Since $i=0$ we have $v=1$ and $\bar{a}_{\halfbox{T_x}}=T_x$ (this follows from a quick reflection on the meaning of $\bar{a}_{\halfbox{t}}$, or from
+$\bar{a}_{\halfbox{T_x}} = (1-e^{\delta T_x})/\delta$ and L'Hopital's Rule), so $\bar{a}_x=\ecirc_x$. Since also, survival follows the deMoivre's law, we have:
+\bears
+   \prepostsub{n}{E}{x} &=& \prepostsub{t}{p}{x}=\frac{85-x-n}{85-x}, \\
+  \mbox{and \ }  \bar{a}_x &=& \ecirc_x = \frac{85-x}{2}, \\
+  \mbox{so that \ } \prepostsub{n|}{\bar{a}}{x} &=& \prepostsub{t}{E}{x}\bar{a}_{x+n} = \frac{(85-x-n)^2}{2(85-x)}, \\
+  \mbox{and \ } \bar{a}_{x:\halfbox{n}} &=& \bar{a}_x - \prepostsub{n|}{\bar{a}}{x} = \dfrac{(85-x)^2 - (85-x-n)^2}{2(85-x)}
+\eears 
+Now the level benefit premium --- let's call it $\pi$ --- is determined from the equivalence principle,
+\bears
+   0 &=& \prepostsub{10|}{\bar{a}}{35} - \pi\bar{a}_{35:\halfbox{10}} \\
+      \Longrightarrow \pi &=& \dfrac{\prepostsub{10|}{\bar{a}}{35}}{\bar{a}_{35:\halfbox{10}}} = \dfrac{(85-35-10)^2}{(85-35)^2 - (85-35-10)^2}
+                        = \dfrac{16}{9}
+\eears
+Now, prospectively, 
+\bears
+   \prepostsub{5}{V}{} &=& \prepostsub{5|}{\bar{a}}{40} - \pi\bar{a}_{40:\halfbox{5}} \\
+       &=& \frac{(85-40-5)^2}{2(85-40)} - \left(\dfrac{16}{9}\right)\dfrac{(85-40)^2 - (85-40-5)^2}{2(85-40)} = \dfrac{760}{81} \approx \boxed{9.3827}
+\eears
+Or, retrospectively, 
+\bears
+   \prepostsub{5}{V}{} &=& \dfrac{-1}{\prepostsub{5}{E}{35}}\left( -\pi\bar{a}_{35:\halfbox{5}}\right)  \\
+                && \quad\quad \bar{a}_{35:\halfbox{5}} = \dfrac{(85-35)^2 - (85-35-5)^2}{2(85-35)} = \dfrac{19}{4} \\
+                && \quad\quad \prepostsub{5}{E}{35} = \dfrac{85-35-5}{85-35} = \dfrac{9}{10}  \\
+        &=& {\dfrac{16}{9}\cdot\dfrac{19}{4} }\Big/\dfrac{9}{10}  = \dfrac{760}{81} \approx \boxed{9.3827}
+\eears
+%\ldots sorry! I'll patch this up this weekend. {\it --- JGW, March 1, 2019}
+\esoln}

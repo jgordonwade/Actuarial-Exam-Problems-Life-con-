@@ -1,0 +1,25 @@
+\JGWitem{C3, Nov 2006, \#35}
+For a whole life insurance of 1000 on (80), with death benefits payable at the end of the year
+of death, you are given:
+\begin{enumerate}
+  \item Mortality follows a select and ultimate mortality table with a one-year select period. 
+  \item $q_{[80]} = 0.5\cdot q_{80}$
+  \item $i=0.06$
+  \item $1000A_{80}=679.80$
+  \item $1000A_{81}=689.52$
+\end{enumerate}
+Calculate $A_{[80]}$
+\showsol{\bsoln
+   \bears
+       A_{80} &=& vq_{80} + vp_{80}A_{81} \\
+       0.67980 &=& 1.06^{-1}\bigl( q_{80} + 0.68952(1-q_{80})\bigr) \\
+         && \underline{q_{80} = 0.100064} \\ \ \\
+%
+       A_{[80]} &=& vq_{[80]} + vp_{[80]}A_{[80]+1} \\
+       A_{[80]} &=& vq_{[80]} + vp_{[80]}A_{81} \quad\quad\quad\mbox{because select period is one year} \\
+       A_{[80]} &=& 1.06^{-1}\bigl(0.5\cdot 0.10064 + (1-0.5\cdot 0.100064)\cdot 0.68952 \bigr)\bigr) \\
+       && \boxed{1000 A_{[80]} = 665.417}
+\eears
+\esoln}
+
+

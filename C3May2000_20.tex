@@ -1,0 +1,36 @@
+\JGWitem{May 2000, \#20}
+For a last-survivor insurance of 10,000 on independent lives (70) and (80), you are given:
+\begin{enumerate}
+\item The benefit, payable at the end of the year of death, is paid only if the second death
+occurs during year 5.
+\item Mortality follows the Illustrative Life Table.
+\item $i = 0.03$
+\end{enumerate}
+Calculate the actuarial present value of this insurance.
+\showMC{\begin{description}
+\item[(A)] 235
+\item[(B)] 245
+\item[(C)] 255
+\item[(D)] 265
+\item[(E)] 275
+\end{description}}
+\showsol{\bsoln
+\showMC{\underline{ANS: (A).}} Let $F$ be the event that the second death occurs in year 5. We have:
+\bears
+ F  &=& \left\{ \Bigl[(T_x\leq 5)\mbox{ and }(T_y\in(4,5])\Bigr]
+   \mbox{ OR }
+         \Bigl[(T_y\leq 5)\mbox{ and }(T_x\in(4,5])\Bigr]
+ \right\} \\
+ \Prob{F} &=& (\prepostsub{5}{q}{x})(\prepostsub{4|}{q}{y}) + (\prepostsub{5}{q}{y})(\prepostsub{4|}{q}{x}) - (\prepostsub{4|}{q}{x})(\prepostsub{4|}{q}{y}) \\
+     &=& \left(\frac{S(70)-S(75)}{S(70)}\right)\left(\frac{S(84)-S(85)}{S(80)}\right) \\
+      && \;   +\;\left(\frac{S(80)-S(85)}{S(80)}\right)\left(\frac{S(74)-S(75)}{S(70)}\right) \\
+      && \;  -\; \left(\frac{S(74)-S(75)}{S(70)}\right)\left(\frac{S(84)-S(85)}{S(80)}\right)  \\
+ \Prob{F} &=& 0.027220
+\eears
+Now $A = \Prob{F}v^5 = 0.027220/1.03^5 = \underline{0.0234819}$
+
+\esoln}
+
+% p1=(ILT(70)-ILT(75))/ILT(70); p2=(ILT(84)-ILT(85))/ILT(80); p3=(ILT(80)-ILT(85))/ILT(80); p4=(ILT(74)-ILT(75))/ILT(70);  p1*p2 + p3*p4 - p2*p4
+
+ 

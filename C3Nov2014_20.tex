@@ -1,0 +1,47 @@
+\JGWitem{MLC, Nov. 2014, \#20}
+For a mortality table with a select period of two years, you are given:
+\begin{enumerate}
+\item \ \\ \begin{center}\begin{tabular}{ccccc} $x$ & $q_{[x]}$ & $q_{[x]+1}$ & $q_{x+2}$ & $x+2$ \\ \hline
+                                                                                   50 & 0.0050   & 0.0063       & 0.0080     & 52  \\ 
+                                                                                    51 & 0.0060   & 0.0073       & 0.0090     & 53  \\ 
+                                                                                   52 & 0.0070   & 0.0083       & 0.0100     & 54  \\ 
+                                                                                   53 & 0.0080   & 0.0093       & 0.0110     & 55  
+            \end{tabular}\end{center}
+\item The force of mortality is constant between integral ages.
+\end{enumerate}
+Calculate $1000 \, \prepostsub{2.5}{q}{[50]+0.4}$.
+\showsol{\bsoln
+  Constant force $\Longrightarrow \underline{\prepostsub{s}{p}{[x]} = (p_{[x]})^s \mbox{\ for }s\in[0,1]}$
+
+%  \medskip
+%  The probability that a $50.4$-year old, selected at age 50, dies before she hits age $52.9$ \\ is \\
+%  One-minus (the probability that a $50.4$-year old, selected at age 50, survives to age $52.9$):
+%  \bear
+%       \prepostsub{2.5}{p}{[50]+0.4} &=& (\prepostsub{0.6}{p}{[50]+0.4})\cdot(p_{[50]+1})\cdot (\prepostsub{0.5}{p}{[50]+2}) 
+%        \label{C3Nov2014_20_1}
+%   \eear
+%   \hrulefill \\ {\bf \underline{IS THIS RIGHT?}} \\ 
+%   Let's find $\prepostsub{0.6}{p}{[50]+0.4}$:
+%   \bears
+%       p_{[50]} &=& \prepostsub{1}{p}{[50]} = \prepostsub{0.4+0.6}{p}{[50]} = (\prepostsub{0.4}{p}{[50]})\cdot( \prepostsub{0.6}{p}{[50]+0.4})  \\
+%       p_{[50]} &=& (p_{[50]})^{0.4}\cdot( \prepostsub{0.6}{p}{[50]+0.4} ) \\ \quad\Longrightarrow\;
+%        \prepostsub{0.6}{p}{[50]+0.4}  &=& \dfrac{p_{[50]} }{(p_{[50]})^{0.4}} = (p_{[50]})^{0.6}\\ \ \\ 
+%       && \underline{\prepostsub{0.6}{p}{[50]+0.4}  = 0.99700}
+%    \eears
+%   Now back to (\ref{C3Nov2014_20_1}):
+%  \bears
+%       \prepostsub{2.5}{p}{[50]+0.4} &=& (\prepostsub{0.6}{p}{[50]+0.4})\cdot(p_{[50]+1})\cdot (\prepostsub{0.5}{p}{[50]+2})  \\
+%       \prepostsub{2.5}{p}{[50]+0.4} &=& (0.99599)\cdot(1-0.0063)\cdot (1-0.0080)^{0.5} = \underline{0.98675}\\ \ \\
+%        && 1000\,\prepostsub{2.5}{q}{[50]+0.4} = 1000\cdot(1-0.98675) = \boxed{13.255}
+%   \eears
+%   \hrulefill \\
+%   {\bf \underline{OR IS THIS?}} \\ \ \\
+  \bear
+  \prepostsub{2.5}{p}{[50]+0.4} = \dfrac{\prepostsub{2.9}{p}{[50]}}{\prepostsub{0.4}{p}{[50]}}         \label{C3Nov2014_20_2} 
+      &=& \dfrac{(\prepostsub{}{p}{[50]})\cdot(p_{[50]+1})\cdot (\prepostsub{0.9}{p}{[50]+2}) }{\prepostsub{0.4}{p}{[50]}} \\
+      &=& \dfrac{(\prepostsub{}{p}{[50]})\cdot(p_{[50]+1})\cdot (p_{52})^{0.9} }{(p_{[50]})^{0.4}} \nonumber \\
+      &=& \dfrac{(1-0.0050)\cdot(1-0.0063)\cdot(1-0.0080)^{0.9}}{(1-0.0050)^{0.4}} = \underline{0.98358}  \nonumber \\
+        && 1000\,\prepostsub{2.5}{q}{[50]+0.4} = 1000\cdot(1-0.98358) = \boxed{16.42010}  \nonumber
+   \eear
+   
+\esoln}

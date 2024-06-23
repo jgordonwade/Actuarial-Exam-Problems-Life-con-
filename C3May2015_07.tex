@@ -1,0 +1,25 @@
+\JGWitem{C3 May 2015, \#7}
+You are given
+\begin{enumerate}
+\item $A_{35}=0.188$
+\item $A_{65}=0.498$
+\item $\prepostsub{30}{p}{35}=0.883$
+\item $i=0.04$
+\end{enumerate}
+Calculate $1000\,\ddot{a}^{(2)}_{35:\halfbox{30}}$ using the two-term Woolhouse approximation.
+
+\showsol{\bsoln
+The two-term Woolhouse approximation is:
+\[ \ddot{a}_{x:\halfbox{n}}^{(m)}  \approx \ddot{a}_{x:\halfbox{n}}- \dfrac{m-1}{2m}(1-\prepostsub{n}{E}{x})    \]
+which in this problem becomes
+\[ \ddot{a}_{35:\halfbox{30}}^{(2)}  \approx \ddot{a}_{35:\halfbox{30}}- \dfrac{1}{4}(1-\prepostsub{n}{E}{x})    \]
+From the problem data:
+\bears
+   \ddot{a}_{35} &=& \dfrac{1-A_{35}}{d} = \dfrac{1-0.188}{0.04/1.04} = 21.112 \\
+   \ddot{a}_{65} &=& \dfrac{1-A_{65}}{d} = \dfrac{1-0.498}{0.04/1.04} = 13.052 \\
+   \prepostsub{30}{E}{35} &=& 1.04^{-30}\cdot 0.883 = 0.2722454 \\
+   \ddot{a}_{35:\halfbox{30}} &=&   \ddot{a}_{35} - \prepostsub{30}{E}{35} \ddot{a}_{35} = 17.55865 
+\eears
+So $1000\,\ddot{a}^{(2)}_{35:\halfbox{30}} \approx 17.55865 - 0.25\cdot(1-0.2722454) = \boxed{17,376.71}.$
+
+\esoln}

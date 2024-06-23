@@ -1,0 +1,34 @@
+\JGWitem{May 2005 \#10}
+ The scores on the final exam in Ms. B's Latin class have a normal 
+distribution with mean $\theta$
+and standard deviation equal to 8. $\theta$ a random variable with a normal 
+distribution with mean equal to 75 and standard deviation equal to 6.
+
+Each year, Ms. B chooses a student at random and pays the student 1 times 
+the student's score. However, if the student udent fails the exam 
+(score $\leq$ 65 ), then there is no payment.
+
+Calculate the conditional probability that the payment is less than 90, 
+given that there is a payment.
+\begin{description}
+\item[(A)] 0.77
+\item[(B)] 0.85
+\item[(C)] 0.88
+\item[(D)] 0.92
+\item[(E)] 1.00
+\end{description}
+\leaveit{\bsoln
+Let $X$ be the exam score. We have 
+\bears
+  \Expect{X} &=& \Expect{\Expect{X|\Theta}} = \Expect{\Theta} = 75, \\
+  \Var{X} &=& \Var{\Expect{X|\Theta}} + \Expect{\Var{X|\Theta}} = \Var{\Theta} + \Expect{8^2} = 6^2 + 8^2 = 10^2.
+\eears
+\bears
+  \Prob{X\leq 90|X>65} &=& \frac{\Prob{65<X \mbox{ and }X\leq 90}}{\Prob{65<X}} \\
+    &=& \frac{\Prob{(65-75)/10<Z \mbox{ and }Z\leq (90-75)/10}}{\Prob{(65-75)/10<Z}} \\
+    &=& \frac{\Phi(1.5)-\Phi(-1.0)}{1-\Phi(-1.0)} \\
+    &=& \frac{\Phi(1.5)-1+\Phi(1.0)}{\Phi(1.0)} = \frac{  0.93319 - 1 + 0.84134}{0.84134}  = 0.9206
+\eears
+\underline{Ans: D}
+
+\esoln}

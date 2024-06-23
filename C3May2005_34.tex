@@ -1,0 +1,24 @@
+\JGWitem{May 2005 \#34}
+ The distribution of a loss, X , is a two-point mixture:
+\begin{enumerate}
+\item With probability 0.8, X has a two-parameter Pareto distribution with
+ $\alpha=2$ and $\theta=100$.
+\item With probability 0.2, X has a two-parameter Pareto distribution with
+ $\alpha=4$ and $\theta=3000$.
+\end{enumerate}
+Calculate $\Prob{X \leq 200}$.
+
+\leaveit{\bsoln
+\bears
+  \Prob{X\leq 200} &=& \Prob{X\leq 200|pt 1}\Prob{pt 1} + \Prob{X\leq 200|pt 2}\Prob{pt 2} \\
+   &=& 0.8\times F_1(200) + 0.2\times F_2(200) \\
+   &=& 0.8\times \left[1-\left(\frac{100}{100+200}\right)^2\right]
+     + 0.2\times \left[1-\left(\frac{3000}{3000+200}\right)^4\right] \\
+   &=& 0.7566
+\eears
+%\underline{Ans: A}
+
+\esoln}
+
+
+
