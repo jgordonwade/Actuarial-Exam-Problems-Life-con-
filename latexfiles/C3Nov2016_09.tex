@@ -1,0 +1,21 @@
+\JGWitem{C3 Nov 2016, \#9}
+For a special fully discrete 2-year term insurance on (x), you are given:
+\begin{enumerate}
+\item $q_x=0.01$
+\item $q_{x+1}  = 0.02$
+\item $i=0.05$
+\item The death benefit in the first year is 100,000.
+\item Both the benefits and premiums increase by 1\% in the second year.
+\end{enumerate}
+Calculate the annual net premium in the first year.
+\showsol{\bsoln
+  From the equivalence principle:
+\bears
+   0 &=& 100,000\cdot\left(  v\cdot\prepostsub{0|}{q}{x} + 1.01\cdot v^2\cdot\prepostsub{1|}{q}{x}\right) - P\cdot\left(1+1.01vp_x\right) \\
+   0 &=& 100,000\cdot\left(\frac{0.01}{1.05} + \frac{1.01\cdot 0.0198}{1.05^2}\right) - P\cdot\left(1+\frac{1.01(1-0.01)}{1.05}\right) \\
+   0 &=& 2766.26 - 1.9428571P \hspace{0.5in}\Longrightarrow \underline{P=1416.933},
+\eears
+where we've used the fact that $\prepostsub{1|}{q}{x} = (1-q_x)q_{x+1} = 0.0198$.
+
+\esoln}
+

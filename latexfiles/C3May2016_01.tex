@@ -1,0 +1,28 @@
+\JGWitem{ Spring 2016, \#1} % Markov discrete time
+You are using a Markov model for the future repair status of televisions. The three states are:
+\begin{description}
+ \item Fully Functional (F),
+ \item Requires Repairs (R), and
+ \item Beyond Repair (B).
+\end{description}
+You are given:
+\begin{enumerate}
+\item The following annual probability transition matrix:
+  $\left[\begin{array}{ccc} 0.82 & 0.10 & 0.08 \\ 0.60 & 0.05 & 0.35 \\ 0.00 & 0.00 & 1.00 \end{array}\right]$
+\item There are now five televisions that are Fully Functional.
+\item The status of each television is independent of the status of the others.
+\end{enumerate}
+Calculate the probability that exactly two of these five televisions will be Fully
+Functional at the end of two years.
+
+\showsol{\bsoln
+ The number of TV's functional after two years follows a Binomial(5,p) distribution where $p$ is given by the top left entry of the 1-year transition matrix squared.
+
+ That entry is: $0.82^2 + 0.10\cdot 0.6 + 0.08\cdot 0 = 0.7324$ so this is the value of $p$.
+
+  \[ \Prob{N=2}=0.102791. \]
+
+\esoln}
+
+
+% P=[0.82  0.10  0.08 ; 0.60  0.05  0.35 ; 0.00  0.00  1.00 ]

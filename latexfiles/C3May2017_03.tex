@@ -1,0 +1,35 @@
+\JGWitem{ C3, May 2017, \#3}  % LTAM Sample (Nov 2019) #8.21
+You are given the following Markov model:
+\begin{center}{\em diagram  showing a 4-state model with arrows: }
+   \bears  && \quad 0 \rightarrow 1,  \quad  1\rightarrow 2,      \\
+                &&  0\rightarrow 3, \quad 1\rightarrow 3,       \quad 2\rightarrow 3  
+\eears
+\end{center}
+The forces of transition are the following:
+\begin{description}
+  \bull $\mu^{01} = 0.01$
+  \bull $\mu^{03} = 0.02$
+  \bull $\mu^{12} = 0.30$
+  \bull $\mu^{13} = 0.40$
+  \bull $\mu^{23} = 0.70$
+\end{description}
+Calculate the probability that a person in {\it (State 0)} today will be in {\it (State 1)} at the end of 5 years.
+\showsol{\bsoln
+Set \dsy{\mu^{00}=-\sum_{j=1}^3 \mu^{0j} = 0.03} and \dsy{\mu^{11} = -\sum_{j=0\atop j\neq 1}\mu^{1j} = -0.7}. All other $\mu^{ij}$ not given are zero. So,
+  \bears
+     \frac{d}{dt} \prepostsubsup{t}{p}{x}{00}  &=& \sum_{k=0}^3 \prepostsubsup{t}{p}{x}{0k}\mu^{k0} = -0.03\prepostsubsup{t}{p}{x}{00} 
+               \quad\text{ with }\quad\prepostsubsup{0}{p}{x}{00}=1 \\
+               \Longrightarrow && \underline{\prepostsubsup{t}{p}{x}{00} = e^{-0.03t}}  \\ && \\ 
+     \frac{d}{dt} \prepostsubsup{t}{p}{x}{01}  &=& \sum_{k=0}^3 \prepostsubsup{t}{p}{x}{0k}\mu^{k1} = 0.01\prepostsubsup{t}{p}{x}{00} - 0.7\prepostsubsup{t}{p}{x}{01}
+                \quad\text{ with }\quad\prepostsubsup{0}{p}{x}{01}=0 \\
+               \Longrightarrow \prepostsubsup{t}{p}{x}{01} &=& \int_0^t e^{-0.7(t-s)}\bigl(0.01\prepostsubsup{s}{p}{x}{00} \bigr)\, ds \\
+                                &=& \int_0^t e^{-0.7(t-s)}\bigl(0.01e^{-0.03s}\bigr)\,ds \\
+                                &=& 0.01e^{-0.7t}\int_0^t e^{0.67s}\,ds \\
+               \Longrightarrow \prepostsubsup{5}{p}{x}{01} &=& 0.01e^{-3.5}\int_0^5 e^{0.67s}\,ds = \boxed{0.0123957}
+   \eears
+
+%0.01*exp(-0.7*5)*(integral s from 0 to 5 of exp(0.67*s))
+
+
+\esoln}
+  

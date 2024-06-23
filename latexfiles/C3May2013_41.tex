@@ -1,0 +1,13 @@
+\JGWitem{May 2013, \#4}  % Unclear when this was given
+You are given the following information for two independent lives aged 45 and 65.
+\begin{enumerate}
+  \item Mortality for the life age 45 follows the Illustrative Life Table.
+  \item Mortality for the life age 65 follows: $f(y)=0.2e^{-0.2y}$.
+\end{enumerate}
+Calculate $\prepostsub{10}{p}{\overline{45:65}}$
+\showsol{\bsoln
+  \bears
+     \prepostsub{10}{p}{\overline{45:65}} &=& 1-\prepostsub{10}{q}{\overline{45:65}} = 1-(\prepostsub{10}{q}{45})(\prepostsub{10}{q}{65}) 
+      = 1 - \left(1-\frac{8640860}{9164050}\right)(1-e^{-2}) \\ &=&  0.950\,635
+  \eears
+\esoln}

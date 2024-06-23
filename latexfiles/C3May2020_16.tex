@@ -1,0 +1,36 @@
+\JGWitem{ LTAM May 2020, \#16 }
+An insurer issues fully discrete whole life policies of 100,000 to a group of lives age (60).
+The annual premium for each policy is 3765.
+
+\smallskip
+At the end of year 5, there were 100 policies still in force. In the following year:
+\begin{itemize}
+  \item[(i)] One policyholder died;
+  \item[(ii)] Expenses of 11\% of each premium paid were incurred;
+  \item[(ii)] Actual interest earned was 5\%.
+\end{itemize}
+You are also given that reserves per policy at the end of the 5$^{th}$ and 6$^{th}$ years are
+$_5\!V = 11,190$ and $_6\!V = 13,529,$ respectively.
+
+\medskip
+Calculate the profit on this group of policies in the 6th year.
+
+\showsol{\bsoln
+  Reserves in consecutive years are related via the recursion formula
+  \[  \underbrace{\Bigl(\text{(Old reserve)} + \text{(Prem. collected)} - \text{(Exp. Incurred)}\Bigr)(1+i)}_{\text{funds on hand at end of $6^{th}$ year}}
+      = \left\{\begin{array}{cl} \text{Death Benefit} & \text{ if (x) dies} \\ \text{New reserve} & \text{ if (x) lives}. \end{array}\right.\]
+
+   In this case, for policies in which the insured dies in the $6^{th}$ years, this yields
+  \[  \Bigl( 11,190+ 3765(1- 0.11) \Bigr)1.05 - 100,000 = -84,732.11, \]
+      and for policies in which the insured survives the $6^{th}$ years, this yields
+  \[  \Bigl( 11,190+ 3765(1- 0.11) \Bigr)1.05 - 13,529 = 1738.89, \]
+  so if one person dies and 99 survives, then the profit that year is 
+  \[  99 \cdot 1738.89 - 84,732.11 = \boxed{87,418.00} \]
+     
+
+\esoln}
+
+
+
+   
+

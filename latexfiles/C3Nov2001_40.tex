@@ -1,0 +1,47 @@
+\JGWitem{Nov 2001, \#40}
+For a special fully discrete 10-payment whole life insurance on (30) with 
+level annual benefit premium $\pi$:
+\begin{enumerate}
+\item The death benefit is equal to 1000 plus the refund, 
+  without interest, of the benefit premiums paid.
+\item $A_{30} = 0.102$
+\item $\prepostsub{10|}{A}{30} = 0.088$
+\item $\termifyn{(IA)_{30:\halfbox{10}}}=0.078$.
+\item $\ddot{a}_{30:\halfbox{10}} = 7.747$.
+\end{enumerate}
+Calculate $\pi$.
+\showMC{\begin{description}
+\item[(A)] 14.9
+\item[(B)] 15.0
+\item[(C)] 15.1
+\item[(D)] 15.2
+\item[(E)] 15.3
+\end{description}}
+\showsol{\bsoln
+\showMC{\bf Ans: (B)}
+Think about the meaning of, ``\ldots the refund, without interest, of the benefit premiums paid'', if $K_{30}=k$ for various values of $k$, and compare
+the the values of $\termifyn{(IA)_{30:\halfbox{10}}}$:
+\begin{center}\begin{tabular}{c|ccccccccc}
+If $K_x=k$                                          &$ 0    $&$ 1      $&$ 2       $&$ \ldots $&$    9     $&$ 10       $&$ 11        $&$ 12       $& \ldots \\ \hline
+Amt refunded                                   &$ \pi $&$ 2\pi $&$ 3\pi  $&$ \ldots $&$ 10\pi  $&$ 10\pi  $&$ 10\pi  $&$ 10\pi  $& \ldots  \\
+$\termifyn{(IA)_{30:\halfbox{10}}}$:    &$ 1 $&$ 2          $&$ 3      $&$ \ldots $&$ 10       $&$ 0        $&$ 0         $&$ 0        $& \ldots 
+\end{tabular}\end{center}
+reflecting the fact that the policy is a ``10-payment'' policy.
+
+\medskip
+So the APV of the premium refund portion of the benefit can be written as
+\[
+    \pi\Bigl( \termifyn{(IA)_{30:\halfbox{10}}} + 10\cdot \prepostsub{10|}{A}{30} \Bigr)
+\]
+
+\bigskip
+So the Equivalence Principle in this problem becomes
+\bears   
+      0 &=& 1000A_{30} + \pi\Bigl( \termifyn{(IA)_{30:\halfbox{10}}} + 10\cdot \prepostsub{10|}{A}{30} \Bigr) - \pi\ddot{a}_{30:\halfbox{10}} \\
+      0 &=& 1000A_{30} + \pi\Bigl[ \termifyn{(IA)_{30:\halfbox{10}}} + 10\cdot \prepostsub{10|}{A}{30} - \ddot{a}_{30:\halfbox{10}} \Bigr] \\
+      0 &=& 1000\cdot 0.102  + \pi\Bigl[ 0.078 + 10\cdot 0.088 - 7.747 \Bigr] \\ 
+         && \quad\quad\boxed{\pi = 15.024}
+\eears
+
+
+\esoln}

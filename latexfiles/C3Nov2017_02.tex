@@ -1,0 +1,24 @@
+\JGWitem{C3 Nov 2017 \#02}  % LTAM Practice (Nov 2019) #8.23
+You are given the following excerpt from a double decrement table:
+\begin{center}\begin{tabular}{c|ccc}  
+    $x$ & $\ell_x^{(\tau)}$ & $\qx{x}[(1)]$ & $\qx{x}[(2)]$ \\ \hline
+   \rule{0pt}{13pt} 53 & \underline{\hspace{0.25in}}  & 0.025                                     & 0.030  \\
+   \rule{0pt}{13pt} 54 & 5000                                      & \underline{\hspace{0.25in}}  & 0.040 \\
+   \rule{0pt}{13pt} 55 & 4625                                   & 0.055   & 0.050
+\end{tabular}\end{center}
+Calculate $\qx[2]{53}[(1)]$
+\showsol{\bsoln
+\bears
+  \dfrac{5000}{\ell_{53}^{(\tau)}} = \dfrac{\ell_{54}^{(\tau)}}{\ell_{53}^{(\tau)}} &=& 1-\left( \qx{53}[(1)] + \qx{53}[(2)] \right) = 1-(0.025+0.030) = 0.945 
+    \quad\Longrightarrow\quad \underline{\ell_{53}^{(\tau)}=5291} \\
+  \dfrac{4625}{5000} = \dfrac{\ell_{55}^{(\tau)}}{\ell_{54}^{(\tau)}} &=& 1-\left( \qx{54}[(1)] + \qx{54}[(2)] \right) = 1-\left( \qx{54}[(1)] + 0.04 \right) 
+    \quad\Longrightarrow\quad \underline{\qx{54}[(1)]=0.035} 
+\eears
+\bears
+  d_{53}^{(1)} &=& 5291\cdot 0.025 = \underline{132.275} \\
+  d_{54}^{(1)} &=& 5000\cdot 0.035 = \underline{175} \\
+  \qx[2]{53}[(1)] &=& \dfrac{  d_{53}^{(1)}  + d_{54}^{(1)}}{\ell_{53}^{(\tau)}} = \dfrac{132.275 + 175}{5291} = \boxed{0.058075}
+%
+\eears
+
+\esoln}  

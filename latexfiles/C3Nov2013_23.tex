@@ -1,0 +1,45 @@
+\JGWitem{C3 Nov 2013 \#23} % LTAM Sample (Nov 2019) #8.10
+You are pricing an automobile insurance on (x). The insurance pays 10,000 immediately if (x) gets into an accident 
+within 5 years of issue. The policy pays only for the first accident and has no other benefits.
+You are given:
+\begin{itemize}
+\item[(i)] You model (x)'s driving status as a multi-state model with the following 3 states:
+\begin{description}
+   \item 0 - low risk, without an accident
+   \item 1 - high risk, without an accident
+   \item 2 - has had an accident
+\end{description}
+\item[(ii)] (x) is initially in state 0.
+\item[(iii)] The following transition intensities for $0\leq t \leq 5$:
+  \bears
+      \mu_{x+t}^{01} &=& 0.2 + 0.1t \\       \mu_{x+t}^{02} &=& 0.05 + 0.05t \\       \mu_{x+t}^{12} &=& 0.15 + 0.01t^2 
+  \eears
+No other transitions are possible.
+\item[(iv)] $\px[3]{x}[01] = 0.4174$
+\item[(v)] $\delta = 0.02$
+\item[(vi)] The continuous function $g(t)$ is such that the expected present value of the benefit up to time $a$ equals 
+  \dsy{\int_0^a g(t)\,dt,} $0\leq a\leq 5,$   where t is the time of the first accident.
+\end{itemize}
+Calculate $g(3).$
+\showsol{\bsoln
+  The insurance pays when either 3 years goes by or the first accident happens, to the thing to use is
+  $\Ax*{x}[02]$ which, according to 
+Equation (8.16) on page 248 of AMLCR(ed 1):
+\[   \Ax*{x}[ik] = \int_0^\infty \sum_{j\neq k} e^{-\delta t}\px[t]{x}[ij]\mu_{x+t}^{jk}\,dt. \]
+So we have
+\bears
+    g(t) &=& 10^4\sum_{j\neq k} e^{-\delta t}\px[t]{x}[ij]\mu_{x+t}^{jk}  \\
+           &=& 10^4\,e^{-\delta t}\left(\px[t]{x}[00]\mu_{x+t}^{02} + \px[t]{x}[12]\mu_{x+t}^{12}\right) \\ && \\ 
+    g(3) &=& 10^4\cdot e^{-3\cdot 0.02}\left(\px[3]{x}[00]\cdot (0.05+3\cdot 0.05) + 0.4174\cdot \left(0.15+0.01\cdot 3^2\right)\right)
+\eears
+Now
+\bears
+  \px[3]{x}[00] &=& \exp\left(-\int_0^3 \mu_{x+t}^{01} + \mu_{x+t}^{02}\,dt\right) 
+       = \exp\left(-\int_0^3 0.25 + 0.15t\,dt \right) = 0.240508,
+\eears
+so
+\bears
+   g(3) &=& 10^4\cdot e^{-3\cdot 0.02}\left( 0.240508\cdot (0.05+3\cdot 0.05)  + 0.4174\cdot \left(0.15+0.01\cdot 3^2\right)\right)  \\
+   &=& \boxed{1396.43.}
+\eears
+\esoln}  

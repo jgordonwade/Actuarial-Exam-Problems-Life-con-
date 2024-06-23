@@ -1,0 +1,27 @@
+\JGWitem{LTAM, May 2019, \#3 }
+You are given:
+\begin{itemize}
+\item A life table uses a Makeham mortality model with parameters
+  $A =0.00022, B = 2.7\times 10^{-6},$ and $c=1.124$.
+  \item $\px[10]{50} = 0.9803$.
+\end{itemize}
+Calculate \dsy{\frac{d}{dt} \qx[t]{50}} at $t=10$. 
+
+\showsol{\bsoln
+  We're asked to compute the derivative of the \cdf of $T_{50}$ at a $t=10$, which is the \pdf of $T_{50}$ at $t=10$, which we know is given
+  by $\px[10]{50}\mu_{60}$. So, 
+  \bears
+%      \px[t]{x} &=& \exp\left(-\int_0^t \mu_{x+s}\,ds\right) \\
+%      \qx[t]{x} &=& 1-\exp\left(-\int_0^t \mu_{x+s}\,ds\right) \\
+%      \frac{d}{dt} \qx[t]{x} &=& \exp\left(-\int_0^t \mu_{x+s}\,ds\right)\cdot \frac{d}{dt}\int_0^t \mu_{x+s}\,ds \\
+%      \frac{d}{dt} \qx[t]{x} &=& \px[t]{x}\mu_{x+t} \\
+      \frac{d}{dt} \qx[t]{50}\Bigr|_{10} &=& 0.9803\cdot \frac{d}{dt}\mu_{x+t}\Bigr|_{x+t=60}
+   \eears
+   For the Makeham model, 
+   \bears
+      \mu_{x+t} &=& A(x+t) + Bc^{x+t} \\
+      \mu_{60} \Bigr|_{z=60} &=& 0.00022 + (2.7\times 10^{-6})\cdot 1.124^{60} = 0.00322153
+   \eears
+So \dsy{\frac{d}{dt} \qx[t]{50}\Bigr|_{10} = 0.9803\cdot  0.00322153= \boxed{0.003168}}
+\esoln}
+

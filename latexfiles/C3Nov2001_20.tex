@@ -1,0 +1,33 @@
+\JGWitem{Nov 2001, \#20}
+Don, age 50, is an actuarial science professor. His career is subject to two decrements:
+\begin{enumerate}
+\item Decrement 1 is mortality. The associated single decrement table follows De Moivre’s
+law with $\omega=100$.
+\item  Decrement 2 is leaving academic employment, with $\mu_{50}^{(2)}=0.05$ for $t\geq 0.$
+\end{enumerate}
+Calculate the probability that Don remains an actuarial science professor for at least five but
+less than ten years.
+\showMC{\begin{description}
+\item[(A)] 0.22
+\item[(B)] 0.25
+\item[(C)] 0.28
+\item[(D)] 0.31
+\item[(E)] 0.34
+\end{description}}
+\showsol{\bsoln
+\showMC{\underline{ANS: (A)}}
+
+The quantity we seek is $\prepostsubsup{5|5}{q}{50}{(\tau)}$ which we can write cleanly in terms of
+the survival function, so let's get the survival function, $\prepostsubsup{t}{p}{50}{(\tau)}$.  
+
+\medskip
+The phrase ``asssociated single decrement table follows deMoivre's law'' indicates that
+\dsy{\prepostsubsup{t}{p}{50}{'(1)} = 1-\frac{t}{50}}, and the fact that decrement (2) has a constant hazard rate
+indicates that \dsy{\prepostsubsup{t}{p}{50}{'(2)} = e^{-t/20}.} So
+\bears
+   \prepostsubsup{t}{p}{50}{(\tau)} &=& \left(\prepostsubsup{t}{p}{50}{'(1)}\right)\left(\prepostsubsup{t}{p}{50}{'(2)}\right)
+         = \frac{1}{50}(50-t)e^{-t/20}, \\
+   \prepostsubsup{5|5}{q}{50}{(\tau)} &=&  \prepostsubsup{5}{p}{50}{(\tau)} - \prepostsubsup{10}{p}{50}{(\tau)} \\
+                    &=& \frac{1}{50}\left( 45e^{-5/20} - 40e^{-10/20} \right)  = \underline{0.215696}
+ \eears
+ \esoln}

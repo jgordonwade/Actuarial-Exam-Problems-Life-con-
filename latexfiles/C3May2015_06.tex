@@ -1,0 +1,29 @@
+\JGWitem{C3 May 2015 \#06} %LTAM Sample Q's (Nov 2019) #8.17
+A life insurance company uses the following 3-state Markov model to calculate premiums for a 3-year sickness policy issued to Healthy lives.
+\begin{center} Healthy(H) \hspace{1in} Sick(S) \hspace{1in}Dead (D) \end{center}
+The company will pay a benefit of 20,000 at the end of each year if the policyholder is Sick at that time.
+The insurance company uses the following transition probabilities, applicable in each of the three years:
+three years:
+\begin{center}\begin{tabular}{c|ccc} & \rule{10pt}{0pt} H \rule{10pt}{0pt}& \rule{10pt}{0pt}S \rule{10pt}{0pt}& \rule{10pt}{0pt}D \rule{10pt}{0pt} \\ \hline
+\rule{0pt}{14pt} H & 0.950 & 0.025 & 0.025  \\ 
+S & 0.300 & 0.600 & 0.100 \\
+D & 0.000 & 0.000 & 1.000
+\end{tabular}\end{center}
+Calculate the expected present value at issue of sickness benefit payments using an interest rate of 6\%.
+\showsol{\bsoln
+\bears
+  Q &=& \left[\begin{array}{rrr}0.95 & 0.025 & 0.025 \\0.3 & 0.6 & 0.1 \\0 & 0 & 1\end{array}\right], \\
+  Q^2 &=& \left[\begin{array}{rrr}0.91 & 0.03875 & 0.05125 \\0.465 & 0.3675 & 0.1675 \\0 & 0 & 1\end{array}\right], \\
+  Q^3 &=& \left[\begin{array}{rrr}0.87612 & 0.046 & 0.077875 \\0.552 & 0.23212 & 0.21588 \\0 & 0 & 1\end{array}\right]
+\eears
+\begin{center}\begin{tabular}{cc} $k$ & Probability that (H) is sick at the end  of $k^{th}$ year \\ \hline  1 &  0.025 \\ 2 & 0.03875 \\ 3 &  0.046 \end{tabular}\end{center}
+You can get these probabilities more directy with the path-path approach.
+
+Anyhow:
+\[ \text{EPV} = 20,000\cdot \left(\dfrac{0.025}{1.06} + \dfrac{0.03875}{1.06^2} + \dfrac{0.046}{1.06^3}\right) = \boxed{1933.90} \]
+
+\esoln}
+
+%Q=[ 0.950 , 0.025 , 0.025  ; 0.300 , 0.600 , 0.100 ; 0.000 , 0.000 , 1.000 ]
+
+

@@ -1,0 +1,18 @@
+\JGWitem{ C3, May 2021 \#12}
+
+\includegraphics[scale=0.8]{c:/Users/gwade/BGSUmath/Actuarial/MyCourse3stuff/SingleProblems/images/C3May2021_12.png}
+
+
+\showsol{\bsoln
+Since we're asked for the standard deviation, we need to start with the loss random variable per se, and not just EPV's. Let $G$ be the premium. 
+\bears
+    L_0^g &=& \overbrace{100,000\, v^{K_{45}+1}}^{\text{PV of benefit}} 
+           + \overbrace{(100+0.45G + 0.05G\ax{\angl{K_{45}+1}})}^{\text{per premium exp's}} + \overbrace{1000v^{K_{45}+1}}^{\text{Claim exp.}} - G\ax{\angl{K_{45}+1}}  \\ \\
+    L_0^g &=& 101,000\, v^{K_{45}+1} + 100+0.45G - 0.95G\ax{\angl{K_{45}+1}} \\ \\ 
+    L_0^g &=& 101,000\, v^{K_{45}+1} + 100+0.45G - 0.95G\left(\dfrac{1-v^{K_{45}+1}}{d}\right) \\
+    L_0^g &=& \left(101,000 + \dfrac{0.95G}{d}\right)v^{K_{45}+1} + 100 + 0.45G \\
+    \Std{L_0^g} &=& \left(101,000 + \dfrac{0.95G}{d}\right)\sqrt{\Ax[][2]{45}-(\Ax{45})^2} \\
+    \Std{L_0^g} &=& \left(101,000 + \dfrac{0.95 \cdot 1050}{0.05/1.05}\right)\sqrt{ 0.034633 - 0.15161^2 } = \boxed{13,161}
+\eears        
+
+\esoln}

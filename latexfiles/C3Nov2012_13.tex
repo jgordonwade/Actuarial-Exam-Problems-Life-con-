@@ -1,0 +1,56 @@
+\JGWitem{C3 Nov 2012, \#13}  % LTAM.Sample Nov 2019, 8.4
+You are given:
+\begin{itemize}
+\item[(i)] The following excerpt from a triple decrement table:
+\begin{center}\begin{tabular}{ccccc}
+ $x$ & $\ell_x^{(\tau)}$ &  $d_x^{(1)}$  &  $d_x^{(2)}$  &  $d_x^{(3)}$   \\ \hline 
+50 & 100,000 & 490 & 8,045 & 1,100 \\ 
+51 & 90,365   &        & 8,200 & \\
+52 & 80,000
+\end{tabular}\end{center}
+\item[(ii)] All decrements are uniformly distributed over each year of age in the triple decrement table.
+\item[(iii)] $\qx{x}[*(3)]$ is the same for all ages.
+\end{itemize}
+Calculate $\qx{51}[*(1)]$ 
+\showsol{\bsoln
+   What can we tell immediately from the table?
+  Since $\ell_{x+1}^{(\tau)} = \ell_x^{(\tau)} - \left(d_x^{(1)} + d_x^{(2)} + d_x^{(3)}\right)$, we know that
+  $d_{51}^{(1)} + d_{51}^{(3)} = \ell_{51}^{(\tau)} - \ell_{52}^{(\tau)} - d_{51}^{(2)}$ so that  
+ %                                          90365 - 80000 - 8200
+  \be \label{Nov2012.13.e}  d_{51}^{(1)} + d_{51}^{(3)} = 2165. \ee
+
+
+  \bigskip
+  Now, because all decrements are uniformly distributed over each year of age,
+  the key relationship for this problem is equation (8.30) AMLCR(ed.2) which is
+  \be  \label{Nov2012.13.a} 
+     \px{x}[*(j)] = \left(\px{x}[00]\right)^{\left(\px{x}[0j]/\px{x}[0\bullet]\right)},
+  \ee
+  Since $\px{x}[00]=\ell_{x+1}^{(\tau)}/\ell_{x}^{(\tau)},$ and $\px{x}[0j]/\px{x}[0\bullet] = d_{x}^{(j)}/\left(d_x^{(1)} + d_x^{(2)} + d_x^{(3)}\right)$,
+  and because $\qx{x}[*(j)] = 1-\px{x}[*(j)]$, this becomes 
+  \bear  
+      \qx{x}[*(j)] = 1- \left(\ell_{x+1}^{(\tau)}/\ell_{x}^{(\tau)}\right)^{\left(d_{x}^{(j)}/\left(d_x^{(1)} + d_x^{(2)} + d_x^{(3)}\right)\right)}
+    \label{Nov2012.13.c}    
+  \eear
+  Since $\qx{x}[*(3)]$ is the same for all ages, let's call it $q^{*(3)}$, from equation (\ref{Nov2012.13.c}) we have
+  \be \label{Nov2012.13.d}    
+      q^{*(3)} = 1- \left(\ell_{51}^{(\tau)}/\ell_{50}^{(\tau)}\right)^{\left(d_{50}^{(3)}/\left(d_{50}^{(1)} + d_{50}^{(2)} + d_{50}^{(3)}\right)\right)}
+      %  1- (90365/100000)^(1100/(490+8045+1100))
+      = 0.0115\,000
+  \ee
+  From this, the given table, and (\ref{Nov2012.13.e}) we get
+  \bears 
+     %  0.0115 &=& 1- \left(\ell_{52}^{(\tau)}/\ell_{51}^{(\tau)}\right)^{\left(d_{51}^{(3)}/\left(d_{51}^{(1)} + d_{51}^{(2)} + d_{51}^{(3)}\right)\right)} 
+      0.0115  &=& 1- (80,000/90,365)^{\left(d_{51}^{(3)}/\left(8200+2165\right)\right)} 
+%       0.0115  = 1- (80000/90365)^(x/(8200+2165))
+     \rightarrow\quad  \underline{d_{51}^{(3)} = 984}
+   \eears
+   and so, from (\ref{Nov2012.13.e}), % 2165-984 
+   \underline{$d_{51}^{(1)} = 1181.$}
+
+   Finally, using the now-known values of $d_{51}^{(j)}$ in (\ref{Nov2012.13.c}), we obtain
+   \[      \qx{51}[*(1)] = 1- \left(\ell_{52}^{(\tau)}/\ell_{51}^{(\tau)}\right)^{\left(d_{51}^{(1)}/\left(d_x^{(1)} + d_x^{(2)} + d_x^{(3)}\right)\right)}
+       = 1- (80000/90365)^{1181/(8200+2165)} = \boxed{0.0137856}. \]
+
+
+\esoln}

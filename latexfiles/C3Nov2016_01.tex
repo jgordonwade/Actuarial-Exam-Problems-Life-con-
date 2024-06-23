@@ -1,0 +1,17 @@
+\JGWitem{ MLC Nov 2016, \# 1}
+For the country of Bienna, you are given:
+\begin{enumerate}
+\item Bienna publishes mortality rates in biennial form, that is, mortality rates are of the form: \( \qx[2]{2x}\) for $x=0,1,2,\ldots$. 
+\item Deaths are assumed to be uniformly distributed between ages $2x$ and $2x+2$ , for $x=0,1,2,\ldots$. 
+\item $\qx[2]{50} = 0.02$
+\item $\qx[2]{52} = 0.04$
+\end{enumerate}
+Calculate the probability that (50) dies during the next 2.5 years.
+\showsol{\bsoln
+  \bears
+      \prepostsub{2.5}{q}{50} &=& \prepostsub{2}{q}{50}  + (\prepostsub{2}{p}{50})(\prepostsub{0.5}{q}{52})  \\
+                                               &=& \prepostsub{2}{q}{50}  + (\prepostsub{2}{p}{50})(0.25\cdot \prepostsub{2}{q}{52}) 
+                                                                          \quad \mbox{\ under 2-year UDD; $\frac{1}{2}$ is $\frac{1}{4}$ of a 2 year period} \\
+      &=& 0.02 + 0.98\cdot 0.25\cdot 0.04 = \underline{0.0298}
+  \eears
+\esoln}

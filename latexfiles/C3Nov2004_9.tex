@@ -1,0 +1,27 @@
+\JGWitem{Nov 2004, \#9}
+For a special fully continuous last survivor insurance of 1 on (x) and (y), you are given:
+\begin{enumerate}
+\item $T_x$ and $T_y$ are independent.
+\item $\mu_{x+t} = 0.08$ for $t > 0$, 
+\item $\mu_{y+t} = 0.04$ for $t > 0$, 
+\item $\delta = 0.06$
+\item $\pi$ is the annual benefit premium payable until the 
+  first of (x) and (y) dies.
+\end{enumerate}
+Calculate $\pi$.
+\showsol{\bsoln
+Because $\pi$ is the benefit premium, it is computed from the equivalance principle:
+\[
+  0 = \overline{A}_{\overline{xy}} - \pi\overline{a}_{xy} 
+  \quad\Longrightarrow\quad
+  \pi = \frac{\overline{A}_{\overline{xy}}}{\overline{a}_{xy}}
+\]
+Use:
+\bears
+  \overline{A}_{\overline{xy}} + \overline{A}_{xy} &=& \overline{A}_{x} + \overline{A}_{x} \\
+  \overline{A}_{xy} &=& \frac{\mu}{\mu+\delta} \quad\mbox{ where }\mu = \mu_x + \mu_y, \\
+  \overline{a}_{xy} &=& \frac{1-\overline{A}_{xy}}{\delta}
+\eears
+\underline{ANS:} 0.054857
+
+\esoln}

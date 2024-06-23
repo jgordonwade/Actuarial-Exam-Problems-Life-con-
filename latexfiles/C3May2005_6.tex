@@ -1,0 +1,32 @@
+\JGWitem{May 2005 \#6}
+ Insurance losses are a compound Poisson process where:
+\begin{enumerate}
+\item The approvals of insurance applications arise in accordance with a Poisson process at
+a rate of 1000 per day.
+\item Each approved application has a 20\% chance of being from a smoker and an 80\%
+ chance of being from a non-smoker.
+\item The insurances are priced so that the expected loss on each approval is $-100$.
+\item The variance of the loss amount is 5000 for a smoker and is 8000 for a non-smoker.
+\end{enumerate}
+Calculate the variance for the total losses on one day's approvals.
+\showMC{\begin{description}
+\item[(A)] 13,000,000
+\item[(B)] 14,100,000
+\item[(C)] 15,200,000
+\item[(D)] 16,300,000
+\item[(E)] 17,400,000
+\end{description}}
+\leaveit{\bsoln
+Assuming that the losses from each application are independent, we can decompose the total loss $S$ into the losses $S_1$ due to smokers
+and the losses $S_2$ due to non-smokers, and $\Var{S}=\Var{S_1} + \Var{S_2}$. Each of $S_1$ and $S_2$ are compound random variables with Poisson frequency. We have:
+\bears
+   \Var{S_1} &=& \Var{N_1}\Expect{X_1}^2 + \Expect{N_1}\Var{X_1} \\
+              &=& 200\times 100^2 + 200\times 5000 = 3,000,000 \\
+   \Var{S_2} &=& \Var{N_2}\Expect{X_2}^2 + \Expect{N_2}\Var{X_2} \\
+              &=& 800\times 100^2 + 800\times 8000 = 14,400,000 \\
+   \Var{S} &=& 3,000,000 + 14,400,000 = 17,400,000
+\eears
+\underline{Ans: E}
+
+\esoln}
+

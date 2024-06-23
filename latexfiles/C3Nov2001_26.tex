@@ -1,0 +1,37 @@
+\JGWitem{Nov 2001, \#26}
+ You are given:
+\begin{enumerate}
+\item $A_x = 0.28$
+\item $A_{x+20} = 0.40$
+\item $A_{x:\halfbox{20}}\!\!\!\!\raisebox{0.80ex}{$\scriptscriptstyle 1$}\;\;\; = 0.25$
+\item $i = 0.05$
+\end{enumerate}
+Calculate $a_{x:\halfbox{20}}$
+\showMC{\begin{description}
+\item[(A)] 11.0
+\item[(B)] 11.2
+\item[(C)] 11.7
+\item[(D)] 12.0
+\item[(E)] 12.3
+\end{description}}
+\leaveit{\bsoln
+``Endowment insurance is term plus pure endowment'':
+\bears
+  A_{x:\halfbox{n}} &=& \termify{A_{x:\halfbox{n}}} +
+           A_{x:\halfbox{n}}\!\!\!\raisebox{0.80ex}{$\scriptscriptstyle 1$}
+  =\Bigl(A_x-A_{x:\halfbox{n}}\!\!\!\raisebox{0.80ex}{$\scriptscriptstyle 1$}
+         \;\;A_{x+n}\Bigr) + 
+      A_{x:\halfbox{n}}\!\!\!\raisebox{0.80ex}{$\scriptscriptstyle 1$}\;\;\\
+  &=& A_x + A_{x:\halfbox{n}}\!\!\!\raisebox{0.80ex}{$\scriptscriptstyle 1$}\;\;
+       \bigl(1-A_{x+n}) \\
+  &=& 0.28 + 0.25(1-0.4) = 0.43, \\
+  \ddot{a}_{x:\halfbox{n}} &=& {1-A_{x:\halfbox{n}}\over d} = 11.97, \\
+  a_{x:\halfbox{n}} &=& \ddot{a}_{x:\halfbox{n}} -1 +
+            A_{x:\halfbox{n}}\!\!\!\raisebox{0.80ex}{$\scriptscriptstyle 1$}
+   = 11.22
+\eears
+\showMC{\bf Ans: (B)}
+
+%{\em REMARK: }$\ddot{a}_{x:\halfbox{n}} =11.97$.
+
+\esoln}

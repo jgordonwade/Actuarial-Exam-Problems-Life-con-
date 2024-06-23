@@ -1,0 +1,28 @@
+\JGWitem{C3 May 2012, \#3}
+For a fully discrete 3-year term insurance of 10,000 on (40), you are given:
+\begin{enumerate}
+\item $\mu_{40+t}$, $t\geq 0$, is a force of mortality consistent with the Illustrative Life Table
+\item $\mu_{40+t}+0.02$, $t=0,1,$ and $2$,is the force of mortality for this insured.
+\item $i=0.06$
+\end{enumerate}
+Calculate the annual benefit premium for this insurance.
+\showsol{\bsoln
+
+  \bigskip
+  \ldots $p_x=e^{-0.02}p_x^{\scriptscriptstyle ILT}$ so
+  \bears
+    &&   p_{40}^{\scriptscriptstyle ILT} = 0.997219, \quad
+             p_{41}^{\scriptscriptstyle ILT} = 0.997018, \quad
+             p_{41}^{\scriptscriptstyle ILT} = 0.996798, \quad \\
+    &&   p_{40} = 0.977473, \quad
+             p_{41} = 0.977276, \quad
+             p_{42} = 0.977060 \\ \\
+      && \prepostsub{2}{p}{40} = 0.977473\times 0.977276 = 0.955260 \quad\quad 
+      \prepostsub{3}{p}{40} = 0.95526\times 0.97706 = 0.933347 \\ \\
+    \ddot{a}_{40:\halfbox{3}} &=& 1 + vp_{40} + v^2\prepostsub{2}{p}{40} = 1 + \dfrac{0.977473}{1.06} + \dfrac{0.955260}{1.06^2} = 2.772322 \\
+    A_{40:\halfbox{3}} &=& 1-d\ddot{a}_{40:\halfbox{3}} = 1+\dfrac{0.06}{1.06}\cdot 2.772322  = 0.843076 \\
+    \termify{A_{40:\halfbox{3}}} &=& A_{40:\halfbox{3}} - v^3\prepostsub{3}{p}{40} = 0.843076 - \dfrac{0.933347}{1.06^3} = 0.059420 \\ \\
+    \pi &=& 10,000 \dfrac{    \termify{A_{40:\halfbox{3}}}}{     \ddot{a}_{40:\halfbox{3}}} \quad\text{ from the Eqiv. Princ.} \\
+    && \boxed{\pi = 214.33}
+\eears
+\esoln}

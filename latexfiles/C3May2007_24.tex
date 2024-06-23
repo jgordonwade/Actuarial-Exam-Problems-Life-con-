@@ -1,0 +1,23 @@
+\JGWitem{ C3 May 2007, \#24 }
+For a three-year temporary life annuity due of 100 on (75), you are given:
+\begin{itemize}
+\item{(i)} \dsy{\int_0^x \mu_z\,dz = 0.01x^{1.2}}
+\item{(ii)} $i = 0.11$
+\end{itemize}
+Calculate the actuarial present value of this annuity.
+\showsol{\bsoln
+Use the ``current payments'' formula
+\[   \ax**{\endowxn} = \sum_{k=0}^{n-1} v^k\px[k]{x} \]
+which in this case comes to
+\[   \ax**{\endow{75}{3}} = 1 + v\px{75} + v^2\px[2]{75}. \]
+Since
+    \dsy{\px[k]{75} = \dfrac{S_0(75+k)}{S_0(75)}}
+and
+\dsy{S_0(x) = \exp(-\int_{z=0}^x \mu_z\,dz) = \exp(-x^{1.2}/100), }
+we have \[ \px[k]{75} = \exp\left( -\left[\left(75+k\right)^{1.2}+75^{1.2}\right]/100\right),\]
+and so \bears
+     \px{75} = \px[1]{75} &=&= \exp\left( -\left[76^{1.2}-75^{1.2}\right]/100\right) = 0.971907 \\
+     \px[2]{75} &=& \exp\left( -\left[77^{1.2}-75^{1.2}\right]/100\right) = 0.944532 \\
+     100 \ax**{\endow{75}{3}} &= &100\cdot\left( 1 + \dfrac{0.971907}{1.11} + \dfrac{0.944532}{1.11^2}\right) = \boxed{264.22}
+\eears
+\esoln}

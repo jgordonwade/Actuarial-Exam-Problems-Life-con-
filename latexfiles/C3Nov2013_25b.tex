@@ -1,0 +1,35 @@
+\JGWitem{MLC Nov 2013, \#25b}
+You are given:
+\begin{enumerate}
+\item \ \begin{center}\begin{tabular}{c|cccccccc} 
+   $x$            & 50           &  51           &   52           &  53             &   54           &   55          &  56            &   57 \\ \hline
+C   $\ell_x$   &  99,395   &    89,247  &     78,592  &     66,910   &    56,072   &    44,807  &     33,181  &     22,369
+\end{tabular}\end{center}
+
+
+\medskip
+\item Under the ``constant force'' assumption, $\beta=  \prepostsub{3.4|2.5}{q}{50}.$
+\item Under the UDD assumption, $\alpha =  \prepostsub{3.4|2.5}{q}{50}.$
+\end{enumerate}
+\medskip
+Calculate $\alpha/\beta$. 
+
+\showsol{\bsoln
+Under UDD, 
+\bears
+   \alpha = \qx[3.4|2.5]{50}  &=& \dfrac{\ell_{53.4}-\ell_{55.9}}{\ell_{50}}  \\ 
+          &=& \dfrac{ (0.6\cdot \ell_{53}+0.4\cdot\ell_{54}) - (0.1\ell_{55}+0.9\ell_{56}) }{\ell_{50}}   \\  
+          &=& \dfrac{(0.6\cdot 66,910  + 0.4 \cdot 56,072)-(0.1\cdot 44,807  + 0.9\cdot 33,181) }{99,395} = \underline{0.28403}
+% ((0.6*66910 + 0.4*56072) - (0.1*44807 + 0.9*33181))/99395
+\eears
+
+Under Constant Force,
+\bears
+   \beta = \qx[3.4|2.5]{50}  &=& \dfrac{\ell_{53.4}-\ell_{55.9}}{\ell_{50}}  \\ 
+          &=& \dfrac{ \ell_{53}^{0.6}\ell_{54}^{0.4} - \ell_{55}^{0.1}\ell_{56}^{0.9}}{\ell_{50}} \\
+          &= &\dfrac{66,910^{0.6}\cdot 56,072^{0.4}-44,807^{0.1}\cdot 33,181^{0.9} }{99,395} = \underline{0.283223}
+\eears
+So $\alpha/\beta = 0.28403/0.283223 = \boxed{1.002849}$
+
+
+\esoln}

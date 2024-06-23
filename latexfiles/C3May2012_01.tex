@@ -1,0 +1,19 @@
+\JGWitem{MLC May 2012, \#1}
+For a 2-year select and ultimate mortality model, you are given:
+\begin{enumerate}
+   \item $q_{[x]+1} = 0.95\,q_{x+1}$
+   \item $\ell_{76} = 98,153$
+   \item $\ell_{77} = 96,124$
+\end{enumerate}
+Calculate $\ell_{[75]+1}$.
+\showsol{\bsoln
+    From given items b. and c., we have $q_{76} = 1-\ell_{77}/\ell_{76} = 0.020672, $ so that (from a.) $q_{[75]+1}=0.95\qx{76}=0.01963822.$
+
+    Now,
+    \bears
+        \qx{[75]+1}&=&1-\dfrac{\ell_{[75]+2}}{\ell_{[75]+1}} = 1-\dfrac{\ell_{77}}{\ell_{[75]+1}} \\ 
+        0.01963822 &=& = 1-\dfrac{96,124}{ l_{[75]+1} } 
+        \quad \quad\Longrightarrow \boxed{\ell_{[75]+1} = 98,049.5}
+     \eears
+\esoln}
+

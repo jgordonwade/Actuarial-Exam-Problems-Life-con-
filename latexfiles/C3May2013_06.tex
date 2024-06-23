@@ -1,0 +1,62 @@
+\JGWitem{C3, May 2013, \#6}
+You are given the following double-decrement table:
+\begin{center}\begin{tabular}{|c|c|c|c|c|c|c|} \hline
+   $x$ & $q_x^{(1)}$  & $q_x^{(2)}$  & $q_x^{(\tau)}$  & $l_x^{(\tau)}$  & $d_x^{(1)}$  & $d_x^{(2)}$  \\ \hline\hline
+  48   &                     &                    &     0.075           &                        &                     &    260 \\ \hline
+  49   &    0.020       &       0.060     &                       &        3,700        &                     &           \\ \hline
+  50   &                    &                      &                       &                         & 132               &           \\ \hline
+  \end{tabular}\end{center}
+Calculate $\prepostsubsup{3}{q}{48}{(1)}$. 
+\showMC{\begin{description}
+\item[(A)]  Less than 0.0625
+\item[(B)]  At least 0.0625, but less than 0.0650
+\item[(C)]  At least 0.0650, but less than 0.0675
+\item[(D)]  At least 0.0675, but less than 0.0700
+\item[(E)]  At least 0.0700
+\end{description}}
+
+\showsol{\bsoln
+  \showMC{\underline{ANS: (A)}}
+  \bears
+       \prepostsubsup{3}{q}{48}{(1)} &=& \prepostsubsup{}{q}{48}{(1)}  + \prepostsubsup{}{p}{48}{(\tau)} q_{49}^{(1)} + \prepostsubsup{2}{p}{48}{(\tau)} q_{50}^{(1)} \\
+                          &=& \prepostsubsup{}{q}{48}{(1)}  + (1-\prepostsubsup{}{q}{48}{(\tau)}) q_{49}^{(1)} + (1-\prepostsubsup{}{q}{48}{(\tau)})(1-\prepostsubsup{}{q}{49}{(\tau)}) q_{50}^{(1)}
+  \eears
+
+  Fill in what's needed in the table.
+\begin{enumerate}
+   \item  $\prepostsubsup{}{q}{49}{(1)} + \prepostsubsup{}{q}{49}{(2)} = \underline{\prepostsubsup{}{q}{49}{(\tau)}= 0.080.}$
+   \item  $l_{49}^{(\tau)}  = l_{48}p_{48}^{(\tau)} = l_{48}(1-q_{48}^{(\tau)} ) $  \\ implies $3700=(0.920)\cdot l_{48}$, which implies \underline{$l_{48}^{(\tau)} = 4000$.}
+   \item $l_{48}^{(\tau)} \cdot q_{48}^{(\tau)} = d_{48}^{(\tau)} = d_{48}^{(1)} + d_{48}^{(2)} $ \\
+      implies $4021.74\times 0.075 = d_{48}^{(1)}  + 260$, which implies \underline{$d_{48}^{(1)} = 40$}
+   \item   \dsy{(d_{48}^{(1)})/(l_{48}^{(\tau)}) = \underline{q_{48}^{(1)} = 0.010}}
+%   \item   $l_{49}^{(\tau)}\cdot q_{49}^{(1)} = \underline{d_{49}^{(1)} = 74}$
+% \item   $l_{49}^{(\tau)}\cdot q_{49}^{(2)} = \underline{d_{49}^{(2)} = 222}$
+   \item   $l_{49}^{(\tau)}\cdot (1-q_{49}^{(\tau)}) = \underline{l_{50}^{(\tau)} = 3404}$
+   \item   $ (d_{50}^{(1)})/(l_{50}^{(\tau)}) =  \underline{q_{50}^{(1)} = 0.038778}$
+\end{enumerate}
+
+\begin{center}\begin{tabular}{|c|c|c|c|c|c|c|} \hline
+   $x$ & $q_x^{(1)}$  & $q_x^{(2)}$  & $q_x^{(\tau)}$  & $l_x^{(\tau)}$  & $d_x^{(1)}$  & $d_x^{(2)}$  \\ \hline\hline
+  48   &  (d) 0.01            &                    &     0.075           &     (b) 4000     &   (c) 40                  &    260 \\ \hline
+  49   &    0.020             &       0.060     &  (a) 0.08         &        3,700        &                    &           \\ \hline
+  50   & (f) 0.03778     &                      &                        &   (e) 3404         & 132               &           \\ \hline
+  \end{tabular}\end{center}
+  \bears
+       \prepostsubsup{3}{q}{48}{(1)} 
+       &=& \prepostsubsup{}{q}{48}{(1)}  + (1-\prepostsubsup{}{q}{48}{(\tau)}) q_{49}^{(1)} + (1-\prepostsubsup{}{q}{48}{(\tau)})(1-\prepostsubsup{}{q}{49}{(\tau)}) q_{50}^{(1)} \\
+       &=& 0.01 \; +\;  (1-0.075)\times 0.02 \; +\; (1-0.075)\times(1-0.08)\times 0.03778  \\ &=&  \underline{0.0615}
+  \eears
+
+%  clear all
+%  q48_tau = 0.075;       d48_2 = 260;       q49_1 = 0.02;       q49_2=0.06;        l49_tau = 3700;        d50_1 = 132;      disp(' Given')
+%  q49_tau = q49_1+q49_2
+%  l48_tau = l49_tau/(1-q48_tau)
+%  d48_1 = l48_tau*q48_tau - d48_2  
+%  q48_1 =   d48_1/l48_tau 
+%  l50_tau = l49_tau*(1-q49_tau )
+%  q50_1 = d50_1/l50_tau
+% ThisANS = q48_1  + (1-q48_tau)*q49_1 + (1-q48_tau)*(1-q49_tau)*q50_1
+
+
+
+\esoln}

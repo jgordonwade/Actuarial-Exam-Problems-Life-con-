@@ -1,0 +1,31 @@
+\JGWitem{Course M, Nov 2006, \#10}
+You arrive at a subway station at 6:15. Until 7:00, trains arrive at a Poisson rate of 1 train per 30 minutes. Starting at 7:00, they arrive at a Poisson rate of 2 trains per 30 minutes. 
+
+\medskip
+Calculate your expected waiting time until a train arrives. 
+
+\showMC{\begin{description}
+\item[(A)] 24 minutes 
+\item[(B)] 25 minutes 
+\item[(C)] 26 minutes 
+\item[(D)] 27 minutes 
+\item[(E)] 28 minutes 
+\end{description}}
+
+\leaveit{\bsoln
+Let $T$ be the waiting time for the first train. We have
+\[
+  S_T(t) = \Prob{T>t} = \left\{\begin{array}{ll}
+        e^{-t/30} & \mbox{ for }t\leq 45 \\
+        e^{-45/30}\times e^{-(t-45)/15} & \mbox{ otherwise,}
+     \end{array}\right.
+\]
+and so 
+\bears
+   \Expect{T} &=& \int_0^\infty S_T(t) \,dt \\
+              &=& \int_0^{45} e^{-t/30}\,dt 
+                + e^{-45/30}\int_{45}^{\infty} e^{-(t-45)/15} \,dt = 30-15e^{-1.5} \approx 26.653.
+\eears
+\underline{Ans: D}
+
+\esoln}

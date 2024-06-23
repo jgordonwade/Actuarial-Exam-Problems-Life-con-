@@ -1,0 +1,39 @@
+\JGWitem{MLC Nov 2013, \#25}
+You are given:
+\begin{enumerate}
+\item \ \begin{center}\begin{tabular}{cc} $x$ & $l_x$ \\ \hline
+        60  &       99,999  \\
+        61  &       88,888  \\
+        62  &       77,777  \\
+        63  &       66,666  \\
+        64  &       55,555  \\
+        65  &       44,444  \\
+        66  &       33,333  \\
+        67  &       22,222  
+\end{tabular}\end{center}
+\medskip
+\item $a=  \prepostsub{3.4|2.5}{q}{60}$, assuming a uniform distribution of deaths over each year of age.
+\item $b=  \prepostsub{3.4|2.5}{q}{60}$, assuming a constant force of mortality over each year of age.
+
+\end{enumerate}
+\medskip
+Calculate $100,000(a-b)$. 
+
+\showsol{\bsoln
+Under UDD, 
+\bears
+   a = \qx[3.4|2.5]{60}  &=& \dfrac{\ell_{63.4}-\ell_{65.9}}{\ell_{60}}  \\ 
+          &=& \dfrac{ (0.6\cdot \ell_{63}+0.4\cdot\ell_{64}) - (0.1\ell_{65}+0.9\ell_{66}) }{\ell_{60}}   \\  
+          &=& \dfrac{(0.6\cdot 66,666  + 0.4 \cdot 55,555)-(0.1\cdot 44,444  + 0.9\cdot 33,333) }{99,999} = \underline{0.2\overline{777}}
+\eears
+
+Under Constant Force,
+\bears
+   b = \qx[3.4|2.5]{60}  &=& \dfrac{\ell_{63.4}-\ell_{65.9}}{\ell_{60}}  \\ 
+          &=& \dfrac{ \ell_{63}^{0.6}\ell_{64}^{0.4} - \ell_{65}^{0.1}\ell_{66}^{0.9}}{\ell_{60}} \\
+          &=& \dfrac{66,666^{0.6}\cdot 55,555^{0.4}-44,444^{0.1}\cdot 33,333^{0.9} }{99,999} = \underline{0.27671612}
+\eears
+So $100,000\cdot (a-b) = 100,000\cdot (0.2\overline{777} - 0.27671612) = \boxed{106.166}.$
+
+
+\esoln}

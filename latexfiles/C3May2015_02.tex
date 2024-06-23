@@ -1,0 +1,25 @@
+\JGWitem{C3 May 2015 \#02} % LTAM Sample (nov 2019) \#8.16
+You are pricing a type of \sout{disability}LIFE? insurance using the following model:
+\begin{center} Healthy(0) \hspace{1in} Disabled(1) \hspace{1in}  Dead(2)   \end{center}
+The insurance will pay a benefit only if, by age 65, the insured had been disabled for a period of at least one year. 
+You are given the following forces of transition:
+\begin{itemize}
+\item[(i)] $\mu^{01} = 0.02$
+\item[(ii)] $\mu^{02} = 0.03$
+\item[(i)] $\mu^{12} = 0.11$
+\end{itemize}
+Calculate the probability that a benefit will be paid for a Healthy life aged 50 who purchases this insurance.
+\showsol{\bsoln
+  The insurance only pays if (50)  becomes disabled within 14 years {\it and} then that disabled 64 year old does not dies within one year.
+  The probability for this is $\px[14]{50}[01]\cdot \px{64}[\overline{11}]$
+  We have
+  \bears
+      \px[t]{50}[00] &=& e^{-0.05 t} \\  
+      \px[14]{50}[01] &=& 0.02\cdot \int_0^{14} e^{-0.03s}        \px[14-s]{50}[00] \, ds = 0.02\int_0^{14} e^{-0.03s} e^{-0.05 (14-s)} \,ds = \underline{0.160462} \\
+      \px{64}[\overline{11}] &=& e^{-0.11} = \underline{0.895834 } \\ && \\ && \px[14]{50}[01]\cdot \px{64}[\overline{11}] = \boxed{0.14375}
+  \eears
+   Wrong.
+
+
+
+\esoln}

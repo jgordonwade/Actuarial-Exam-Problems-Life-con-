@@ -1,0 +1,34 @@
+\JGWitem{May 2005 \#40}
+For aggregate losses, $S$:
+\begin{enumerate}
+\item The number of losses has a negative binomial distribution with mean 3 and
+variance 3.6.
+\item The common distribution of the independent individual loss amounts is uniform from
+0 to 20.
+\end{enumerate}
+Calculate the $95^{th}$ percentile of the distribution of $S$ as approximated by the normal
+distribution.
+\showMC{\begin{description}
+\item[(A)] 61
+\item[(B)] 63
+\item[(C)] 65
+\item[(D)] 67
+\item[(E)] 69
+\end{description}}
+
+\leaveit{\bsoln
+\bears 
+  \mu &=& \Expect{N}\Expect{X} = 3\times 10 = 30, \\
+  \sigma^2 &=& \Var{N}\Expect{X}^2 + \Expect{N}\Var{X} \\
+  &=& 3.6\times 100 + 3\times 100/12 = 460 = (21.45)^2 \\
+  \Prob{S\leq \alpha} &=& 0.95 \\
+  \Prob{30 + 21.45Z \leq \alpha} &=& 0.95 \\
+  \Prob{Z \leq (\alpha-30)/21.45} &=& 0.95 \\
+  (\alpha - 30)/21.45 &=& 1.645 \\
+  \alpha = 65.28
+\eears
+\underline{Ans: C}
+
+\esoln}
+  
+ 

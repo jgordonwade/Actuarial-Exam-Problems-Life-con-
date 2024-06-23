@@ -1,0 +1,28 @@
+\JGWitem{C3, May 2014, \#9}  % alpha and beta formulas for annuities
+For a fully discrete whole life insurance of 1000 on (x) with net premiums payable
+quarterly, you are given:
+\begin{enumerate}
+\item[(i)] $i = 0.06$
+\item[(ii)] $\ax**{x}=3.4611$
+\item[(iii)] $P^{(W)}$ and $P^{(UDD)}$ are the annualized net premiums calculated using the 2-term Woolhouse (W) and
+  the uniform distribution of deaths (UDD) assumptions, respectively.
+\end{enumerate}
+Calculate $\dfrac{P^{(UDD)}}{P^{(W)}}.$
+\showsol{\bsoln
+From the equivalence principle, 
+ \bears
+  0 &=& 1000\Ax{x} - P\ax**{x}[(4)] \\
+  P &=& \dfrac{1000\Ax{x}}{\ax**{x}[(4)]} \\
+  \dfrac{P^{(UDD)}}{P^{(W)}} &=& \dfrac{\ax**{x} - 3/8}{\alpha(4)\ax**{x} - \beta(4)}
+\eears
+Now $\alpha(4)$ and $\beta(4)$ are in the Tables but they depend on $i^{(4)}$ and $d^{(4)}:$
+\bears
+  i^{(4)} &=& 4(1.06^{1/4}-1) = 0.058695385, \\
+  d^{(4)} &=& 4(1-1.06^{-1/4}) = 0.057846553 \\
+   \alpha(4) &=& \dfrac{id}{i^{(m)}d^{(m)}} = \dfrac{0.06^2/1.06}{0.058695385\cdot 0.057846553} = 1.0002653, \\
+   \beta(4) &=& \dfrac{i-i^{(m)}}{i^{(m)}d^{(m)}} = \dfrac{0.06-0.058695385}{0.058695385\cdot 0.057846553} = 0.3842385,
+ \eears
+ so
+ \[   \dfrac{P^{(UDD)}}{P^{(W)}} =  \dfrac{3.4611 - 3/8}{1.0002653\cdot 3.4611 - 0.3842385} = \boxed{1.002703} \]
+
+\esoln}

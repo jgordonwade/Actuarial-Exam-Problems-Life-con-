@@ -1,0 +1,36 @@
+\JGWitem{Nov 2000, \#4}
+ Amber, age 25, has a future lifetime random variable survival funtion given by $S_{25}(t)=1-t/75.$    % \S2 Single Life Survival
+If she takes up skydiving for the next year, her assumed mortality will be such that for the coming year only, she will have a constant 
+force of mortality of $0.1$.
+
+Calculate the decrease in the 11-year temporary complete life expectancy for 
+Amber if she takes up skydiving.
+\showMC{\begin{description}
+\item[(A)] 0.10
+\item[(B)] 0.35
+\item[(C)] 0.60
+\item[(D)] 0.80
+\item[(E)] 1.00
+\end{description}}
+
+\showsol{\bsoln
+The n-year temporary complete life expectancy is 
+\[
+   \ecirc_{x:\halfbox{n}} = \int_{t=0}^{n} \prepostsub{t}{p}{x}\,dt.
+\]
+In this problem $x=25$ and $n=11$, and ``de Moivre'' means $S(x) = (\omega-x)/\omega$ which means $\prepostsub{t}{p}{x} = 1-t/(\omega-x)$, so that
+\[
+   \ecirc_{25:\halfbox{11}} = \int_{t=0}^{11} 1-t/75\,dt = 10.1933.
+\]
+Under the modification, for $t>1$ we have $\px[t]{[x]}=\px{[x]}\cdot(\px[(t-1)]{[x]+1})=\px{[x]}\cdot(\px[(t-1)]{x+1}),$ and so we have 
+\bears
+   \ecirc_{x:\halfbox{n}} = \int_{t=0}^{n} \prepostsub{t}{p}{[x]}\,dt 
+     &=& \int_{t=0}^{1} \prepostsub{t}{p}{[x]}\,dt +\int_{t=1}^{n} \prepostsub{t}{p}{[x]}\,dt \\
+     &=&    \int_{t=0}^{1} \prepostsub{t}{p}{[x]}\,dt  + \int_{t=1}^{n} \px{[x]}\cdot(\px[(t-1)]{x+1})\,dt \\
+     &=&    \int_{t=0}^{1} \prepostsub{t}{p}{x}\,dt  + \px{[x]}\int_{t=0}^{n-1} \prepostsub{t}{p}{x+1}\,dt  \\
+     &=&    \int_{t=0}^{1} e^{-0.1t}  \,dt  + e^{-0.1}\int_{t=0}^{n-1} 1-t/74\,dt  \\
+     &=& 9.3886.
+\eears
+Difference is 0.8047
+
+\esoln}

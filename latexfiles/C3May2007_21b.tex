@@ -1,0 +1,32 @@
+\JGWitem{May 2007 \#21}   % \S2 Single Life Survival
+The future lifetime random variable for a certain model of building follows a DeMoivre$(\omega)$ (what we in Math 4260 have called the ``$\mbox{gen-DeMoivre}(\omega, 1)$'' distribution).
+
+\bigskip
+A new model of building is proposed, with a future lifetime random variable following a $\mbox{gen-DeMoivre}(\omega,a)$ distribution, with the same $\omega.$
+
+\bigskip
+
+You are given the following additional information:
+\begin{enumerate}
+\item The survival function for one of the new model of buildings is  ${\displaystyle S_0(x)=\left(\frac{\omega-x}{\omega}\right)^a}$ for $x<\omega$. 
+\item The new model predicts a $1/3$ higher complete life expectency (over the previous old model with the same $\omega$) for buildings aged 30.
+\item The complete life expectency for buildings aged 60 under the new model is 20 years. 
+\end{enumerate}
+Calculate the complete life expectency of the old model, for buildings aged 70. 
+
+\showsol{\bsoln
+If $S_0(x)=[(\omega-x)/\omega]^a$ for $x<\omega$ then
+\bears
+   \ecirc_x &=& 
+\int_{t=0}^{\omega-x} \prepostsub{t}{p}{x}\,dt = \int_{t=0}^{\omega-x} \frac{S_0(x+t)}{S_0(x)}\,dt = \frac{1}{(\omega-x)^a} \int_{t=0}^{\omega-x} (\omega-x-t)^a\,dt \\
+            &=& \frac{\omega-x}{a+1}
+\eears
+With $\ecirc^*_x$ denoting the complete future expection of life of the new model of buuldings, and from the problem statement, we have:
+\bears
+    \frac{4}{3} &=& \frac{\left[\frac{\omega-30}{a+1}\right]}{\left[\frac{\omega-30}{2}\right]} \quad\Longrightarrow\quad \underline{a+1 = 3/2} \\
+    \ecirc^*_{60} &=& 20 = \frac{\omega-60}{a+1} = \frac{2}{3}\cdot(\omega-60) \quad\Longrightarrow\quad \underline{\omega = 90} \\
+    \ecirc_{70} &=& (90-70)/2 = 10.
+\eears
+\underline{ANS: 10 years}
+
+\esoln}

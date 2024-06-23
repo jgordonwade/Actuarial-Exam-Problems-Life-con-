@@ -1,0 +1,64 @@
+\JGWitem{C3 May 2007, \#13}
+A 3-year term insurance pays 1000 at the end of the year of death of (x) if
+that death occurs within three years, and level premium are payable annually.
+You are given:
+\begin{enumerate}
+\item $i= 0.10$
+\item The mortality rates and net premium policy values are given by: 
+\begin{center}\begin{tabular}{|c|c|c|} \hline
+   $k$ & $q_{x+k}$ & $\prepostsub{k+1}{V}{}$ \\ \hline
+    0 & 0.3 &	95.833  \\ \hline
+    1 &	0.4 &	120.833 \\ \hline
+    2 &	0.5 &  0 \\ \hline
+\end{tabular}\end{center}
+\item $\prepostsub{1}{L}{}$ is the present value net loss random variable at time 1, based on the benefit premium. 
+\item $K_x$ is the full number of years in the future lifetime of (x).
+\end{enumerate}
+Calculate $\Var{\prepostsub{1}{L}{}\left|\right.\,K_x\geq 1}$.
+\showMC{\begin{description}
+\item[(A)] 238,000 
+\item[(B)] 247,000 
+\item[(C)] 256,000 
+\item[(D)] 265,000 
+\item[(E)] 274,000 
+\end{description}}
+\showsol{\bsoln
+After one year, given that $K_x\geq 1$, the remaining contract is a two-year term insurance, and
+Since the policy is a three year term insurance, then the benefit reserve after two years is
+\(
+   \prepostsub{2}{V}{}= 1000v q_{x+2} - P
+\)
+from which we can find $P$:
+\bears
+   _2\!V &=& 1000v q_{x+2} - P 
+    \\ P &=& 1000v q_{x+2} - _2\!V = \dfrac{1000}{1.1}0.5 - 120.833 = 333.71.
+\eears
+Now, one year into this 3-year term insurance, there are three possibilities given that the insured has survived the first year
+(e.g, that $K_x\geq 1$) : The insured could die between $t=1$ and $t=2$, which is when $K_x=1$, or 
+the insured could die between $t=2$ and $t=3$, which is when $K_x=2$, or the insured could survive the term if the insurance,
+which is $K_x\geq 3$. We have
+\bears
+   \Prob{K_x=1}=q_{x+1}=0.4 \\
+   \Prob{K_x=2}=\qx{1|}{x+1}=(1-\qx{x+1})\qx{x+2}=(1-0.4)\cdot0.5=0.3, \\
+   \Prob{K_x\geq 3}=\px[2]{x+1} = 1-(0.3-0.4) = 0.3. 
+\eears
+So:
+\bears
+   \prepostsub{1}{L}{} &=& \left\{\begin{array}{cl} 
+      1000v-P & \mbox{ w/ prob. } 0.4, \\
+      1000v^2-P(1+v) & \mbox{ w/ prob. } 0.3, \\
+      -P(1+v) & \mbox{ w/ prob. } 0.3 \\
+    \end{array}\right\}
+   = \left\{\begin{array}{rl} 
+           575.38 & \mbox{ w/ prob. } 0.4, \\
+          189.36 & \mbox{ w/ prob. } 0.3, \\
+          -637.08 & \mbox{ w/ prob. } 0.3 \\
+    \end{array}\right. \\
+%\eears
+%\bears    
+    \Expect{_1\!V} &=&   575.38\cdot 0.4 + 189.36 \cdot 0.3 + (-637.08)\cdot  0.3 = 95.836, \\
+    \Expect{\left(_1\!V\right)^2} &=&   (575.38)^2\cdot 0.4 + (189.36)^2 \cdot 0.3 + (-637.08)^2\cdot  0.3 = 264,943, \\
+    \Var{_1\!V} &=& 264,943 - 95.836^2 = \boxed{255,758}
+\eears
+
+\esoln}

@@ -1,0 +1,27 @@
+\JGWitem{ C3, Nov 2003, \#22}
+For a whole life insurance of 1 on (41) with death benefit payable at the end of year of death, you are given:
+\begin{enumerate}
+     \item $i=0.05$
+     \item $p_{40} = 0.9972$
+     \item $A_{41} - A_{40} = 0.00822$
+     \item $\pretwo{A}_{41} \;- \pretwo{A}_{40} = 0.00433$
+     \item $Z$ is the present-value random variable for this insurance.
+\end{enumerate}
+Calculate Var(Z).
+\showsol{\bsoln
+Use $A_{41} - A_{40} = 0.00822$ plus recursion formula to get $\Ax{41}=0.21650$, and similar for $\Ax[][2]{41}$.
+
+Here are the details:
+\bears
+  \Ax{41}-0.00822 = \Ax{40} &=& v\qx{40} + v\px{40}\Ax{41} \\
+  \Ax{41}-0.00822 &=& (1/1.05)(1-0.9972) + (1/1.05)0.9972\Ax{41} \\ 
+   && \quad\quad\Longrightarrow \underline{\Ax{41}=0.216496} \\
+  \Ax[][2]{41}-0.00433 = \Ax[][2]{40} &=& v^2\qx{40} + v^2\px{40}\Ax[][2]{41} \\
+  \Ax[][2]{41}-0.00433 &=& (1/1.05)^2(1-0.9972) + (1/1.05)^20.9972\left(\Ax[][2]{41}\right)  \\ 
+   &&  \quad\quad\Longrightarrow \underline{\Ax[][2]{41}= 0.0719262} \\
+  \Var{Z} &=& 0.0719262 - (0.216496)^2 = \boxed{0.025056.}
+\eears
+% X-0.00433 = (1/1.05)^2(1-0.9972) + (1/1.05)^20.9972*X
+
+
+\esoln}

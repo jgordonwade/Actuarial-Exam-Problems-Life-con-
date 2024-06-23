@@ -1,0 +1,45 @@
+\JGWitem{May 2005 \#26}
+ You are given:
+\begin{enumerate}
+\item $\mu_x(t) = 0.03$ for $t>0$.
+\item $\delta=0.05$.
+\item $T(x)$ is the future lifetime random variable.
+\item $g$ is the standard deviation of $\bar{a}_{\halfbox{T(x)}}$.
+\end{enumerate}
+Calculate $\Prob{\bar{a}_{\halfbox{T(X)}}>\bar{a}_x-g}$.
+\showMC{\begin{description}
+\item[(A)] 0.53
+\item[(B)] 0.56
+\item[(C)] 0.63
+\item[(D)] 0.68
+\item[(E)] 0.79
+\end{description}}
+
+\showsol{\bsoln
+We need to compute the variance:
+\bears
+   g^2 &=& \Var{\bar{a}_{\halfbox{T(x)}}} = \Var{\frac{1-e^{-\delta T(x)}}{\delta}} 
+        = \frac{\Var{e^{-\delta T(x)}}}{\delta^2} = \frac{\pretwo{\bar{A}_x}- \bar{A}_x^2}{\delta^2} 
+\eears
+We have:
+\bears
+   \bar{A}_x &=& \frac{\mu}{\mu + \delta} = 0.375 \\
+   \pretwo{\bar{A}_x} &=& \frac{\mu}{\mu + 2\delta} = 0.23076923 
+\eears
+so that 
+\[
+   g = \sqrt{\frac{\pretwo{\bar{A}_x}- \bar{A}_x^2}{\delta^2}} = 6.00481.
+\]
+and 
+\[
+   \bar{a}_x = \frac{1-\bar{A}_x}{\delta} = 12.5
+\]
+ so that $\bar{a}_x - g = 11.1573$
+
+\ldots 
+
+
+ \underline{Ans: $e^{-0.03\times 7.85374} \approx 0.79$}
+
+\esoln}
+

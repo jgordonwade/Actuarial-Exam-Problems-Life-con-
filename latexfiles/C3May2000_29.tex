@@ -1,0 +1,44 @@
+\JGWitem{May 2000, \#29}
+ For a whole life annuity-due of 1 on (x), payable annually:
+\begin{enumerate}
+\item $q_x = 0.01$
+\item $q_{x+1} = 0.05$
+\item $i = 0.05$
+\item $\ddot{a}_{x+1}=6.951$
+\end{enumerate}
+Calculate the change in the actuarial present value of this annuity-due if 
+$p_{x+1}$ is increased by $0.03$.
+\showMC{\begin{description}
+\item[(A)] 0.16
+\item[(B)] 0.17
+\item[(C)] 0.18
+\item[(D)] 0.19
+\item[(E)] 0.20
+\end{description}}
+\leaveit{\bsoln
+Note that
+\bears
+   \ddot{a}_x &=& 1 + vp_x + \prepostsub{2}{E}{x}\ddot{a}_{x+2} 
+   = 1 + vp_x + v^2p_x p_{x+1}\cdot\ddot{a}_{x+2}.
+\eears
+If $p_{x+1}$ is replaced by $p_{x+1}+0.03$ then the new APV, call it $\ddot{a}'_{x}$, is
+\bears
+   \ddot{a}'_x &=& 1 + vp_x + v^2p_x (p_{x+1}+0.03)\cdot\ddot{a}_{x+2} \\
+    &=& \ddot{a}_x + 0.03\times v^2p_x\cdot\ddot{a}_{x+2},
+\eears
+so the change in the APV, call it $\Delta$-APV, is 
+\bears
+  \Delta\rm{-APV} &=& 0.03\times v^2p_x\cdot\ddot{a}_{x+2}.
+\eears
+Now, $\ddot{a}_{x+1} = 1 + vp_{x+1}\ddot{a}_{x+2}$. Solving this for $\ddot{a}_{x+2}$ and using it (and the other given data) in $\Delta$-APV, we have:
+\bears
+   \Delta\rm{-APV} &=& 0.03\times v^2p_x\cdot\ddot{a}_{x+2} \\
+    &=& 0.03 \times vp_x(\ddot{a}_{x+1}-1)/p_{x+1} = \underline{0.177188}
+\eears
+
+
+ 
+
+\showMC{\bf Ans: (C)}
+
+\esoln}

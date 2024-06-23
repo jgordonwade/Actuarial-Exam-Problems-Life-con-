@@ -1,0 +1,48 @@
+\JGWitem{Nov 2004, \#3}
+For a fully continuous whole life insurance of 1 on (x), you are given: 
+\begin{enumerate}
+\item The forces of mortality and interest are constant, 
+\item $\pretwo{\overline{A}}_x=0.20$, 
+\item The net level annual premium for a unit whole life insurance paying immediately upon death is $0.03.$ %$\overline{P}(\overline{A}_x) = 0.03$, and, 
+\item $\prepostsub{0}{L}{}$ is the loss-at-issue random variable based on the 
+ benefit premium
+\end{enumerate}
+Calculate $\Var{\prepostsub{0}{L}{}}$. 
+\showMC{\begin{description}
+\item[(A)] 0.20
+\item[(B)] 0.21
+\item[(C)] 0.22
+\item[(D)] 0.23
+\item[(E)] 0.24
+\end{description}}
+\showsol{\bsoln
+Since $\delta$ and $\mu$ are constant we have 
+$\overline{A}_x=\mu/(\mu+\delta)$ and $\overline{a}_x = 1/(\mu+\delta)$ 
+so that the equivalence principle becomes
+\[ 0 = \dfrac{\mu}{\mu+\delta} -\dfrac{P}{\mu+\delta}, \]
+so \underline{$\mu=0.03$} according to the given data. 
+
+\medskip
+Then $\pretwo{\overline{A}}_x=0.20$ and 
+$\pretwo{\overline{A}}_x=0.03/(0.03+2\delta)$ mean that 
+$0.03/(0.03+2\delta)=0.20$ so that $\underline{\delta=0.06}$. 
+
+\medskip 
+We'll also need: $\overline{A}_x=\mu/(\mu+\delta) = 0.03/0.09 = 1/3$.
+
+\medskip
+Now, 
+\bears
+  \prepostsub{0}{L}{} &=& \overline{Z}_x + P\overline{Y}_x 
+     = \left(1+\frac{P}{\delta}\right)\overline{Z}_x  - \frac{P}{\delta} \\
+  \Var{\prepostsub{0}{L}{}} &=& \left(1+\frac{P}{\delta}\right)^2\Var{\overline{Z}_x} 
+   = \left(1+\frac{P}{\delta}\right)^2\left[{\pretwo{\overline{A}}_x - \overline{A}_x^2}\right] \\
+   &=& \left(1+\frac{0.03}{0.06}\right)^2\times(0.20 - (1/3)^2) = 0.20.
+\eears
+\esoln}
+
+
+%Holiday Inn 
+%3700 Central Ave.
+%139.00/night
+%conf. # 612 605 04

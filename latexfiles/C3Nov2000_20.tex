@@ -1,0 +1,33 @@
+\JGWitem{Nov 2000, \#20}
+ $Y$ is the present-value random variable for a special 3-year temporary 
+life annuity-due on (x). You are given:
+\begin{enumerate}
+\item $\prepostsub{t}{p}{x}=0.9^t$, $t\geq 0$.
+\item $K$ is the curtate-future-lifetime random variable for (x).
+\item $Y=\left\{\begin{array}{cl}
+   1.00 & \mbox{ for }K=0, \\
+   1.87 & \mbox{ for }K=1, \\
+   2.72 & \mbox{ for }K=2,3,\ldots.
+  \end{array}\right.$
+\end{enumerate}
+Calculate $\Var{Y}$.
+\showMC{\begin{description}
+\item[(A)] 0.19
+\item[(B)] 0.30
+\item[(C)] 0.37
+\item[(D)] 0.46
+\item[(E)] 0.55
+\end{description}}
+\showsol{\bsoln
+\bears
+  \prepostsub{k|}{q}{x} &=& \prepostsub{t}{p}{x} - \prepostsub{t+1}{p}{x} = 0.9^t(0.1), \\
+  Y&=&\left\{\begin{array}{cl}
+   1.00 & \mbox{ w/ prob.  } 0.1, \\
+   1.87 &  \mbox{ w/ prob.  } 0.09, \\
+   2.72 & \mbox{ w/ prob. } 0.81
+  \end{array}\right. \\
+  \Expect{Y} &=& 1\cdot 0.1 + 1.87\cdot 0.09  + 2.72\cdot 0.81 = 2.4715, \\
+  \Expect{Y^2} &=& 1^2\cdot 0.1 + 1.87^2\cdot 0.09  + 2.72^2\cdot 0.81 = 6.407425, \\
+  \Var{Y} &=& 6.407425 - 2.4715^2 = \boxed{0.29911275}
+\eears
+\esoln}

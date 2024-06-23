@@ -1,0 +1,28 @@
+\JGWitem{ C3, Nov 2006, \#12}
+For a whole life insurance of 1 on (x) with benefits payable at the moment of death, you are given:
+\begin{enumerate}
+\item \( \delta_t = \left\{ \begin{array}{cc} 0.02 & \text{ for }t<12, \\ 0.03 & \text{ for }t\geq 12 \end{array}\right. \)
+\item \( \mu_x(t) = \left\{ \begin{array}{cc} 0.04 & \text{ for }t<5, \\ 0.05 & \text{ for }t\geq 5 \end{array}\right. \)
+\end{enumerate}
+Calculate the actuarial present value of this insurance.
+
+\showsol{\bsoln
+
+After simplifying, 
+\begin{description}
+ \bull Discount factor is
+   \({\displaystyle \exp\left(-\int_0^t \delta_z \,dz\right) = \left\{\begin{array}{rl} e^{-0.02t} & \text{ for }t<12 \\ e^{0.12}\cdot e^{-0.03t} & \text{ for }t\geq 12 \end{array}\right. }\)
+  \medskip
+ \bull PDF for $T_x$ is
+   \({\displaystyle \frac{-d}{dt}\exp\left(-\int_0^t \delta_z \,dz\right) =
+       \left\{\begin{array}{rl} 0.04\cdot e^{-0.04t} & \text{ for }t<5 \\ e^{0.05}0.05\cdot e^{-0.05t} & \text{ for }t\geq 5 \end{array}\right. }\)
+\end{description}
+\bears
+ \bar{A}_x &=& \int_{t=0}^\infty \text{(Discount factor)}\cdot\text{(PDF)}\,dt \\
+    &=& 0.04\int_{t=0}^5 e^{-0.06t}\,dt + 0.05\cdot e^{0.12}\int_{5}^{12} e^{0.07t}\,dt + 0.05e^{0.17}\int_{12}^\infty e^{-0.08t}\,dt \\ 
+    &=& \frac{0.04}{0.06}\cdot (1-e^{-0.3}) + \frac{0.05\cdot e^{0.05}}{0.07}\cdot(e^{-0.35}-e^{-0.84}) + \frac{0.05e^{0.17}}{0.08}e^{-0.96} \\
+    && \boxed{\bar{A}_x = 0.661422}
+\eears
+
+\esoln}
+

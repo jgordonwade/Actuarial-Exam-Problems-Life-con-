@@ -1,0 +1,33 @@
+\JGWitem{ MLC Nov 2016, \# 3}
+In a population initially consisting of 75\% females and 25\% males, you are given:
+\begin{enumerate}
+\item  For a female, the force of mortality is constant and equals $\mu$.
+\item For a male, the force of mortality is constant and equals $1.5\mu$.
+\item At the end of 20 years, the population consists of 85\% females and 15\% males.
+\end{enumerate}
+Calculate the probability that a female survives one year.
+\showsol{\bsoln
+
+Hint: Here's a way to think about it. We know the initial male/female ratio, and we also know that ratio after 20 years.
+The ratio changes over time because the males have a higher force of mortality, with a given relationship between the forces of mortality
+for males and females. and that relationship is expressed with a single parameter, $\mu.$
+
+So if you can work out {\em an expression for the male/female ratio as it changes over time.} It should depend on time and on $\mu.$
+Once you get this expression, you can use the remaining problem data, I think.
+
+\hrulefill
+
+The probability of a female surviving one year is $e^{-\mu}$, so this is the number we need.
+
+\bigskip
+
+If $F$ is the initial number of females and
+ $M$ is the initial number of males, then initially \(\dfrac{M}{F} =  \dfrac{1}{3}\). Over the twenty year period,
+ $Fe^{-20\mu}$ of the females survive, and $Me^{-30\mu}$ of the males survive, and so:
+ \bears
+     \dfrac{15}{85} &=& \dfrac{Me^{-30\mu}}{Fe^{-20\mu}} = \dfrac{M}{F}\dfrac{e^{-30\mu}}{e^{-20\mu}} = \dfrac{1}{3}e^{-10\mu} \\
+     \dfrac{9}{17} &=& e^{-10\mu} \\
+      \left(\dfrac{9}{17}\right)^{1/10} &=& e^{-\mu} = \boxed{0.93838}
+\eears
+\esoln}
+

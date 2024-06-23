@@ -1,0 +1,30 @@
+\JGWitem{May 2005 \#1}
+ A 3 year insurance on (x) pays 1000 at the end of the year of death or at the end of three years, whichever occurs first. 
+You are given:
+\begin{enumerate}
+\item $\prepostsub{k}{L}{}$ is the present value of future net loss random variable at time $k$.
+\item The effective annual interest rate is 10\%.
+\item $\ddot{a}_{x:\halfbox{3}}=2.70182$.
+\item Premiums are determined by the equivalence principle. There are no policy expenses. 
+\end{enumerate}
+Calculate $\prepostsub{1}{L}{}$ , given that (x) dies in the second year from issue.
+\showMC{\begin{description}
+\item[(A)] 540
+\item[(B)] 630
+\item[(C)] 655
+\item[(D)] 720
+\item[(E)] 910
+\end{description}}
+%First note that $\prepostsub{1}{L}{} = 1000 \prepostsub{1}{L}{x:\halfbox{3}}$, so we look for $\prepostsub{1}{L}{x:\halfbox{3}}.$
+\showsol{\bsoln
+Denote the premium by $P$. Then
+\bears
+%   d &=& 0.1/1.1 \\
+   P &=& 1000\cdot\frac{A_{x:\halfbox{n}}}{\ddot{a}_{x:\halfbox{n}}}  = \frac{1-d\ddot{a}_{x:\halfbox{n}}}{\ddot{a}_{x:\halfbox{n}}} 
+   = 1000\cdot\frac{1-(0.1/1.1)\cdot(2.70182)}{2.70182} = 279.11
+\eears
+Now if the insured dies during the second year of the policy, then the present value of loss random variable 
+reflects the fact the at time $t=2$  we have to pay 1000 which has a present value at time $1$ of $1000v$ or $909.09$, but we collected a premium payment of
+$279.21$ at the beginning of the year, so the loss is $\boxed{629.88}$. 
+        
+\esoln}          

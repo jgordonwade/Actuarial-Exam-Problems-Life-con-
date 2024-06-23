@@ -1,0 +1,34 @@
+\JGWitem{Nov 2001, \#25}
+For a special fully continuous whole life insurance on (65):
+\begin{enumerate}
+\item The death benefit at time t is $b_t=1000e^{0.04t}, \; t\geq 0$
+\item Level benefit premiums are payable for life.
+\item $\mu_{65}(t)=0.02$ for $t\geq 0$
+\item $\delta = 0.04$
+\end{enumerate}
+Calculate $\prepostsub{2}{V}{}$, the benefit reserve at the end of year 2.
+\showMC{\begin{description}
+\item[(A)] 0
+\item[(B)] 29
+\item[(C)] 37
+\item[(D)] 61
+\item[(E)] 83
+\end{description}}
+\showsol{\bsoln
+We need the premium:
+\bears
+  0 &=& A - \pi\bar{a}_x \\
+    &=& \left(\int_0^\infty v^tb_t f_{T_{65}}(t)\,dt \right) - \pi\bar{a}_x \\
+    &=& \left(\int_0^\infty (e^{-0.04 t})(1000e^{0.04t})(0.02e^{-0.02t})\,dt \right) - \pi\bar{a}_x \\
+    &=& 1000\left(\int_0^\infty 0.02e^{-0.02t}\,dt \right) - \frac{\pi}{0.02+0.04} \\
+  \pi &=& 60
+\eears
+
+Now 
+\bears
+  \prepostsub{2}{V}{} &=& \left(\int_0^\infty (e^{-0.04  t})(1000e^{0.04{t+2}})(0.02e^{-0.02t})\,dt \right) - \frac{60}{0.06} \\
+                      &=& 1000(e^{0.08}-1) = 83.2871
+\eears
+\esoln}
+
+

@@ -1,0 +1,27 @@
+\JGWitem{ C3, Nov 2013 \#19}
+
+\includegraphics[scale=0.8]{c:/Users/gwade/BGSUmath/Actuarial/MyCourse3stuff/SingleProblems/images/C3Nov2013_19.png}
+
+\showsol{\bsoln
+
+\bears
+L_0 &=& \overbrace{10,000\,v^{K_{45}+1} }^{\text{Death ben}}
++ \overbrace{0.7P + 0.1P \ax**{\angl{T_{45}}} }^{\text{commissions}}
+\;-\overbrace{P \ax**{\angl{T_{45}}} }^{\text{premium income}} \\ \\
+%
+L_0 &=& 10,000\,v^{K_{45}+1} - P\left(0.9\cdot \ax**{\angl{T_{45}}} - 0.7\right) \\ \\
+L_0 &=& 10,000\,v^{K_{45}+1} - P\left(0.9\cdot \dfrac{1-v^{K_{45}+1}}{d} - 0.7\right) 
+%L_0 &=& \left(10,000 + \dfrac{0.9P}{d}\right)v^{K_{45}+1} - \dfrac{0.9P}{d} + 0.7P \\ \\ 
+\eears
+If $T_{45}=10.5$ then $K_{45}+1 = 11,$ and so in this case
+\bears
+    3767 &=& 10,000\,1.06^{-11} - P\left(0.9\cdot \dfrac{1-1.06^{-11}}{0.06/1.06} - 0.7\right) \\
+  P &=& \underline{219.94}
+\eears
+With this value of $P$, as the SOA solution computes, 
+\bears
+  \Expect{L_0} &=& 10,000\,Ax{45}   - P\left(0.9\ax**{45} - 0.7\right) = \boxed{-627.48}
+\eears
+    
+
+\esoln}

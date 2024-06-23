@@ -1,0 +1,52 @@
+\JGWitem{C3 Nov 2014 \#02}  % 8.13 in LTAM Sample ,Nov 2019
+For a double decrement table, you are given:
+\begin{itemize}
+\item[(i)] $\qx{x}['(1)] = 0.1$
+\item[(ii)]  $\qx{x}[(2)] = 0.2$
+\item[(iii)] Each decrement is uniformly distributed over each year of age in its associated single decrement table.
+\end{itemize}
+Calculate $\qx{x}[(1)]$
+\showsol{\bsoln
+Since each decrement is uniformly distributed over each year of age in its associated single decrement table, we know from an unnumbered equation
+on page 278 of AMLCR(2) that 
+\bears
+    \qx{x}[(2)] = \px{x}[02] = \qx{x}[*(2)]\left(1-\dfrac{1}{2}\cdot \qx{x}[*(1)]\right). 
+\eears
+From this we find
+\bears
+    0.2 &=& \qx{x}[*(2)]\left(1-\dfrac{1}{2}\cdot 0.1\right)  %= 0.95\cdot \qx{x}[*(2)] 
+                  \qquad\Longrightarrow \qquad\underline{\qx{x}[*(2)]=4/19=0.2105263} 
+%     \\ \rule{0pt}{14pt} \\%
+%    \qx{x}[(1)] = \px{x}[01] &=& \qx{x}[*(1)]\left(1-\dfrac{1}{2}\cdot \qx{x}[*(2)]\right)  = 0.1\cdot \left(1-\dfrac{0.2105263}{2}\right)
+%   = \underline{0.089473685}
+%     \\ \rule{0pt}{14pt} \\
+%%
+%     \dfrac{\px{x}[01}{\px{x}[0\bullet]} &=& \dfrac{\px{x}[01}{\px{x}[01] + \px{x}[02]} = \dfrac{0.089473685}{0.089473685 + 0.2} = 0.309091 \\
+%     \qx{x}[(1)]
+\eears
+
+So in the associated single decrement models, for $0\leq t\leq 1$ we have
+\bears 
+     \mu_{x+t}^{(1)} = \dfrac{0.1}{1-0.1\cdot t} = \dfrac{1}{10-t} \quad&\text{and}&\quad \mu_{x+t}^{(2)} = \dfrac{4/19}{1-t/19} = \dfrac{1}{19/4 -t} \\
+     \px[t]{x}['(1)] = \dfrac{10-t}{10} \quad&\text{and}&\quad      \px[t]{x}['(2)] = \dfrac{19/4-t}{19/4}   \\
+     \px{x}['(1)] = \dfrac{9}{10} \quad&\text{and}&\quad      \px{x}['(2)] = \dfrac{15}{19}   \\
+     \qx{x}['(1)] = \dfrac{1}{10} \quad&\text{and}&\quad      \qx{x}['(2)] = \dfrac{4}{19}   \\
+\eears
+\bears
+     \px{x}[(01)] = \qx{x}[(1)] &=& \qx{x}[*(1)]\left(1-\dfrac{1}{2}\qx{x}[*(2)]\right) \\
+                                           &=& \dfrac{1}{10}\left(1-\dfrac{1}{2}\dfrac{4}{19}\right) = \boxed{\dfrac{17}{190} \approx 0.08947368}
+\eears
+
+Or, a longer way:
+\bears
+    \px[t]{x}[00] &=& \px[t]{x}['(1)]\px[t]{x}['(2)]  = \dfrac{10-t}{10}\cdot \dfrac{19/4-t}{19/4}  \\
+     \px{x}[(01)] = \qx{x}[(1)] &=& \int_0^1      \px[t]{x}[00] \cdot \mu_{x+t}^{(1)} \,dt = \int_0^1  \dfrac{19/4-t}{10\cdot 19/4} \,dt = \boxed{0.0894737}
+\eears
+%Wrong?  No, if you round     \px{x}[00] which is 27/38, to 0.71055, then you get the same as the published solution
+%0.0894737 - (27/38 - 0.71055)
+
+\esoln}    
+
+
+
+

@@ -1,0 +1,33 @@
+\JGWitem{C3 May 2007, 29}
+For a special fully discrete, 30-year deferred, annual life annuity-due of 200 on (30), you are given: 
+\begin{enumerate}
+\item The single benefit premium is refunded without interest at the end of the year of death if death occurs during the deferral period. 
+\item Mortality follows the Illustrative Life Table. 
+\item $i= 0.06 $
+\end{enumerate}
+Calculate the single benefit premium for this annuity. 
+\showMC{\begin{description}
+\item[(A)] 350
+\item[(B)] 360
+\item[(C)] 370
+\item[(D)] 380
+\item[(E)] 390
+\end{description}}
+
+
+
+\showsol{\bsoln
+The single benefit premium is the expected value of the benefits.
+\bears
+   P &=& 200\ax**[30|]{30} + P\Ax{\term{30}{30}}  
+   \\&=& 200\left(\Ex[30]{30}\right)\ax**{60} + P\left(\Ax{30}-\Ex[30]{30}\Ax{60}\right) 
+   \\&=& 200\left(\Ex[30]{30}\right)\left(\dfrac{1-\Ax{60}}{d}\right) + P\left(\Ax{30}-\Ex[30]{30}\Ax{60}\right) 
+\eears
+Now $\Ex[30]{30}=\dfrac{\ell_{60}}{\ell_{30}\cdot 1.06^{30}} = \dfrac{8188073}{9501380\cdot 1.06^{30}} = 0.15004415,$
+and $\Ax{60}=0.36913104$, so 
+\bears
+  P &=& 200\cdot 0.15004415\left(\dfrac{1-0.36913104}{0.05660377}\right) + P\left(0.10248356 - 0.15004415\cdot 0.36913104\right)
+    \\ P &=& 334.45898  + P\cdot 0.04709761
+  \quad\Longrightarrow \boxed{P=350.99}
+\eears
+\esoln}

@@ -1,0 +1,24 @@
+\JGWitem{C3, May 2013 \#21}
+You are given:
+\begin{enumerate}
+\item $\delta_t=0.06, \; t\geq 0$
+\item $\mu_x(t)=0.01, \; t\geq 0$
+\item Y is the present value random variable for a continuous annuity of 1 per year,
+payable for the lifetime of (x) with 10 years certain.
+\end{enumerate}
+Calculate $\Prob{Y>\Expect{Y}}$
+\showsol{\bsoln
+\bears
+    Y = \ax*{\angl{10}} + \actsymb[10]{I}{x}\ax{\angl{T_{x+10}}} &=& \dfrac{1-e^{-0.06\cdot 10}}{0.06} + \left(e^{-(\mu+\delta)\cdot 10}\right)\dfrac{1-e^{-0.06\cdot T_{x+10}}}{0.06} \\
+%       &=& \left\{\begin{array}{rl}
+ %                 7.51981 & \text{for }T_{x+10}\leq 10 \\
+   %                (1 - e^{-0.06 T_{x+10}}\right. \\
+    \Expect{Y} &=&  7.51981 + 8.27642 \left(1 - \dfrac{\mu}{\mu+\delta}\right) = 14.6139 \\
+    \Prob{Y>\Expect{Y}} &=& \Prob{ 7.51981 + 8.27642 \left(1 - e^{-0.06 T_{x+10}}\right) > 14.6139 } \\ 
+    &=& \Prob{ T_{x+10}>32.4321} = e^{-0.01\cdot 32.4321}
+     = \boxed{0.7230}
+\eears
+But this is wrong. Why?
+
+
+\esoln}

@@ -1,0 +1,52 @@
+\JGWitem{ May 2013, \#20 }
+Scientists are searching for a vaccine for a disease. You are given:
+\begin{itemize}
+  \item 100,000 lives age x are exposed to the disease.
+  \item Future lifetimes are independent, except that the vaccine, if available, will be given to all at the end of year 1.
+  \item The probability that the vaccine will be available is 0.2.
+  \item For each life during year 1, $\qx{x}=0.02$.
+  \item For each life during year 2, $\qx{x+1}=0.01$ if the vaccine has been given, and $\qx{x+1}=0.02$ if it has not been given.
+\end{itemize}
+Calculate the standard deviation of the number of survivors at the end of year 2.
+
+\showsol{\bsoln
+  We're going to use (A.7) of Appendix A.4 in the text, which is 
+  \[ \Var{N} = \Expect{\Var{N|P}} + \Var{\Expect{N|P}} \]
+  for random variable $N$ and $P$ which we will define, where $P$ is the probability that (x) survives 
+
+  \smallskip
+   \begin{description}
+   \bull If the vaccine \underline{is not} available:
+    
+     then for an individual (x), 
+    \(       \qx{x} = \qx{x+1} = 0.02, \) so that \(  \px{x} = \px{x+1} = 0.98, \) so that
+    \[    \px[2]{x} = \px{x}\px{x+1} = 0.98^2 = 0.9604 \]
+
+  \bull If the vaccine \underline{is } available, then similarly
+     \[     \px[2]{x} = 0.98\cdot 0.99 = 0.9702. \]
+  \end{description}
+
+So for a given individual, the
+    probability of that individual's surviving two years is itself a random variable (depending on whether the vaccine is developed or not), call it ${P}$:
+   \bears 
+          P &\eqdef& \Prob{ \text{ (x) survives two years }} 
+           = \left\{ \begin{array}{rl} 0.9604 & \text{w/ prob. }0.8 \\ 0.9702 & \text{w/ prob. }0.2 \end{array}\right.  \\
+          \Expect{P} &=& 0.2\cdot 0.9702 + 0.8\cdot 0.9604 = 0.96236  \\
+          \Expect{P^2} &=& 0.2\cdot 0.9702^2 + 0.8\cdot 0.9604^2 = 0.926152136 \\
+          \Var{P} &=&     \Expect{P^2} -       \Expect{P}^2  = 0.926152136  - 0.96236^2 = 0.0000153664.
+    \eears
+ 
+    Now let $N$ be the number of people of the original 100,000 that survive two years, so that 
+    \[   N|{P} \sim \text{Binomial}(100000,{P}), \]
+    so that
+    \bears
+        \Expect{N|{P}} &=& 100000\,{P}, \\
+        \Var{N|{P}} &=& 100000\,{P}(1-{P}).
+    \eears
+    Now \bears
+        \Var{\Expect{N|{P}}} &=& \Var{100000\,{P}} = 100000^2\Var{P} = 100000^2\cdot 0.0000153664 = 153664 \\
+        \Expect{\Var{N|P}} &=& \Expect{100000\,{P}(1-{P})} = 100000\cdot(0.96236  - 0.926152136 ) = 3620.79
+    \eears
+     so that \(  \Var{N} = 153664  + 3620.79 = 157284.79, \) so \[ \boxed{\Std{N} = 396.59.} \]
+
+\esoln}

@@ -1,0 +1,36 @@
+\JGWitem{Course M, Nov 2006, \#30}
+You are the producer for the television show Actuarial Idol. Each year, 1000 actuarial clubs audition for the show. The probability of a club being accepted is 0.20. 
+
+\smallskip
+The number of members of an accepted club has a distribution with mean 20 and variance 20. Club acceptances and the numbers of club members are mutually independent. 
+
+\smallskip
+Your annual budget for appearing on the show equals 10 times the expected number of persons plus 10 times the standard deviation of the number of persons. 
+
+\smallskip
+Calculate your annual budget for persons appearing on the show. 
+
+\showMC{\begin{description}
+\item[(A)] 42,600 
+\item[(B)] 44.200 
+\item[(C)] 45,800 
+\item[(D)] 47,400 
+\item[(E)] 49,000 
+\end{description}}
+
+\leaveit{\bsoln
+
+The number $S$ of people appearing on the show is a compound random variable where $N$ is the number of clubs accepted and $X$ is the number of members in an accepted club.
+\bears
+   N &\sim& \mbox{Binomial}(1000,0.2) \\
+   \Expect{N} &=& 1000\times 0.2 = 200 \\
+   \Var{N} &=& 1000\times 0.2 \times (1-0.2) = 160 \\
+   \Expect{S} &=& \Expect{N}\Expect{X} = 200\times 20 = 4000 \\
+   \Var{S} &=& \Var{N}\Expect{X}^2 + \Var{X}\Expect{N} \\
+           &=& 160\times 20^2 + 20^2\times 200 = 68,000 = (260.768)^2 \\
+   \mbox{Budget} &=& 10\times 4000 + 10\times 260.77 = 42,607.68 
+\eears
+\underline{Ans: A}
+   
+\esoln} 
+
